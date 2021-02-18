@@ -7,24 +7,66 @@
 //
 
 import UIKit
+import Firebase
+
 
 class HomeViewController: UIViewController {
 
+    let vm = HomeViewModel()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        initView()
+        initVM()
+    }
 
-        // Do any additional setup after loading the view.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        initVM()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    
+    
+    
+    
+    // MARK:- Init view and view model
+    
+    private func initView() {
+            
+        
     }
-    */
+    
+    private func initVM() {
+        vm.loadInfoClosure = { [weak self] in
+            guard let self = self else { return }
+            
+        }
+        vm.loadInfo()
+    }
+    
+    @IBAction func logoutButtonTapped(_ sender: Any) {
+        let alert = UIAlertController(title: "Are you sure to sign out?", message: nil, preferredStyle: .actionSheet)
+        alert.addAction(.init(title: "Sign Out", style: .destructive, handler: { [weak self](_) in
+            guard let self = self else { return }
+            FBAuthentication.shared.signOutUser { (isSuccess, error) in
+                if error != nil {
+                    Alert.showAlert(at: self, title: "Sign Out Validation", message: error!)
+                } else {
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let loginVC = storyboard.instantiateViewController(withIdentifier: Identifiers.login)
+                    loginVC.modalTransitionStyle = .crossDissolve
+                    self.present(loginVC, animated: true)
+                }
+            }
+        }))
+        alert.addAction(.init(title: "Cancel", style: .cancel, handler: nil))
+        DispatchQueue.main.async {
+            self.present(alert, animated: true)
+        }
+    }
 
+
+   
 }

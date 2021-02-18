@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>348853894627-3n8357a59anen2vpsfrtrehsdmlaug8a.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.348853894627-3n8357a59anen2vpsfrtrehsdmlaug8a</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDTmEH7BdvvdHzC3r_2A7or22DPjKXjPvU</string>
+	<key>GCM_SENDER_ID</key>
+	<string>348853894627</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>ru.mcoff.Beautify</string>
+	<key>PROJECT_ID</key>
+	<string>beautify-3f70a</string>
+	<key>STORAGE_BUCKET</key>
+	<string>beautify-3f70a.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:348853894627:ios:c92f2600ba130aa54634d6</string>
+	<key>DATABASE_URL</key>
+	<string>https://beautify-3f70a-default-rtdb.europe-west1.firebasedatabase.app</string>
+</dict>
+</plist>
