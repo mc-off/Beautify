@@ -465,21 +465,32 @@
                     </tabBar>
                     <connections>
                         <segue destination="Vej-Au-puD" kind="relationship" relationship="viewControllers" id="Kvz-Sh-Zhq"/>
+                        <segue destination="ejf-oA-Wb9" kind="relationship" relationship="viewControllers" id="oFS-En-haB"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="51N-FE-rMG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2267" y="139"/>
         </scene>
-        <!--Home-->
+        <!--Test-->
         <scene sceneID="HvB-vI-V8B">
             <objects>
-                <viewControllerPlaceholder storyboardName="Home" id="Vej-Au-puD" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="trash.circle" catalog="system" id="zuR-K3-gS2"/>
+                <viewControllerPlaceholder storyboardName="Test" id="Vej-Au-puD" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" image="folder" catalog="system" id="zuR-K3-gS2"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yUZ-zh-YOJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2875" y="72"/>
+            <point key="canvasLocation" x="2903" y="71"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="Iwx-Vl-nNw">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Profile" id="ejf-oA-Wb9" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Profile" image="person.fill" catalog="system" id="REv-GA-grq"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bbj-Mg-yQZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2914" y="202"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pHt-Yk-9qg">
@@ -505,7 +516,8 @@
     <resources>
         <image name="Avatar" width="64" height="64"/>
         <image name="ellipsis" catalog="system" width="128" height="37"/>
-        <image name="trash.circle" catalog="system" width="128" height="121"/>
+        <image name="folder" catalog="system" width="128" height="95"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
         <namedColor name="ActivityIndecatorColor">
             <color red="0.12200000137090683" green="0.1289999932050705" blue="0.14100000262260437" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

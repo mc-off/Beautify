@@ -115,6 +115,8 @@ class FBAuthentication {
             error == nil ? complation(true, nil) : complation(false, error?.localizedDescription) }
     }
     
-    
-    
+    func changePassword(password: String, complation: @escaping(Bool, String?) -> ()) {
+        Auth.auth().currentUser?.updatePassword(to: password, completion: { (error) in
+            error == nil ? complation(true, nil) : complation(false, error?.localizedDescription) })
+    }
 }

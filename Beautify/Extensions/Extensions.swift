@@ -72,3 +72,19 @@ extension UIColor {
         }
     }
 }
+
+extension UIImageView {
+func load(url: String) {
+    DispatchQueue.global().async { [weak self] in
+        if let Url = URL(string: url) {
+            if let data = try? Data(contentsOf: Url) {
+                if let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        self?.image = image
+                    }
+                }
+            }
+        }
+    }
+    }
+}
