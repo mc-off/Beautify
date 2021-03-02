@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D166BE6263551FC004FC587 /* Cc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D166BE5263551FC004FC587 /* Cc.swift */; };
 		6D441F852630050E00A29616 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D441F842630050E00A29616 /* HomeViewModel.swift */; };
 		6D441F8726300E0F00A29616 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6D441F8626300E0F00A29616 /* GoogleService-Info.plist */; };
 		6D441F892630337900A29616 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D441F882630337800A29616 /* Profile.storyboard */; };
@@ -25,6 +26,11 @@
 		6D87FC08262FF25F00D38EC3 /* SystemAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D87FC07262FF25F00D38EC3 /* SystemAuthorization.swift */; };
 		6D87FC0A262FF28400D38EC3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D87FC09262FF28400D38EC3 /* Constants.swift */; };
 		6D87FC0C262FF2B000D38EC3 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D87FC0B262FF2B000D38EC3 /* Enums.swift */; };
+		6D93E70D263AE85D00C573F2 /* MasterCreationViewComntroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D93E70C263AE85D00C573F2 /* MasterCreationViewComntroller.swift */; };
+		6D93E710263B0B5400C573F2 /* MasterCrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D93E70F263B0B5400C573F2 /* MasterCrationViewModel.swift */; };
+		6D93E712263B181F00C573F2 /* FBMasters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D93E711263B181F00C573F2 /* FBMasters.swift */; };
+		6D93E715263B213B00C573F2 /* MasterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D93E713263B213B00C573F2 /* MasterTableViewCell.swift */; };
+		6D93E716263B213B00C573F2 /* MasterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D93E714263B213B00C573F2 /* MasterTableViewCell.xib */; };
 		6DCAE07425F67359009EFDEC /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCAE07325F67359009EFDEC /* Utilities.swift */; };
 		6DE64F7B2630390B004BA4A1 /* Test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DE64F7A2630390B004BA4A1 /* Test.storyboard */; };
 		6DE64F7E26305770004BA4A1 /* EditeProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE64F7C26305770004BA4A1 /* EditeProfileViewController.swift */; };
@@ -43,6 +49,7 @@
 
 /* Begin PBXFileReference section */
 		5228FE8EC5442C5D71A572D9 /* Pods_Beautify.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Beautify.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D166BE5263551FC004FC587 /* Cc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cc.swift; sourceTree = "<group>"; };
 		6D441F842630050E00A29616 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		6D441F8626300E0F00A29616 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6D441F882630337800A29616 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
@@ -61,6 +68,11 @@
 		6D87FC07262FF25F00D38EC3 /* SystemAuthorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemAuthorization.swift; sourceTree = "<group>"; };
 		6D87FC09262FF28400D38EC3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		6D87FC0B262FF2B000D38EC3 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		6D93E70C263AE85D00C573F2 /* MasterCreationViewComntroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterCreationViewComntroller.swift; sourceTree = "<group>"; };
+		6D93E70F263B0B5400C573F2 /* MasterCrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterCrationViewModel.swift; sourceTree = "<group>"; };
+		6D93E711263B181F00C573F2 /* FBMasters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBMasters.swift; sourceTree = "<group>"; };
+		6D93E713263B213B00C573F2 /* MasterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterTableViewCell.swift; sourceTree = "<group>"; };
+		6D93E714263B213B00C573F2 /* MasterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MasterTableViewCell.xib; sourceTree = "<group>"; };
 		6DCAE07325F67359009EFDEC /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		6DE64F7A2630390B004BA4A1 /* Test.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Test.storyboard; sourceTree = "<group>"; };
 		6DE64F7C26305770004BA4A1 /* EditeProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditeProfileViewController.swift; sourceTree = "<group>"; };
@@ -109,9 +121,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		6D166BE4263551D4004FC587 /* Masters */ = {
+			isa = PBXGroup;
+			children = (
+				6D166BE5263551FC004FC587 /* Cc.swift */,
+				6D93E713263B213B00C573F2 /* MasterTableViewCell.swift */,
+				6D93E714263B213B00C573F2 /* MasterTableViewCell.xib */,
+				6D93E70B263AE83400C573F2 /* Creation */,
+			);
+			path = Masters;
+			sourceTree = "<group>";
+		};
 		6D87FBEA262FEADD00D38EC3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6D166BE4263551D4004FC587 /* Masters */,
 				6DE64F8026305775004BA4A1 /* Profile */,
 				6D87FBEB262FEAE900D38EC3 /* Login */,
 			);
@@ -131,6 +155,7 @@
 		6D87FBEC262FEB0B00D38EC3 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				6D93E70E263B0B3C00C573F2 /* Master */,
 				6D87FBED262FEB2300D38EC3 /* Auth */,
 				6DE64F8126305786004BA4A1 /* Profile */,
 			);
@@ -162,6 +187,7 @@
 			children = (
 				6D87FBFC262FECC900D38EC3 /* FBAuthentication.swift */,
 				6D87FBFE262FEFCA00D38EC3 /* FBDDatabase.swift */,
+				6D93E711263B181F00C573F2 /* FBMasters.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -188,6 +214,22 @@
 				6D441F882630337800A29616 /* Profile.storyboard */,
 			);
 			path = Scenes;
+			sourceTree = "<group>";
+		};
+		6D93E70B263AE83400C573F2 /* Creation */ = {
+			isa = PBXGroup;
+			children = (
+				6D93E70C263AE85D00C573F2 /* MasterCreationViewComntroller.swift */,
+			);
+			path = Creation;
+			sourceTree = "<group>";
+		};
+		6D93E70E263B0B3C00C573F2 /* Master */ = {
+			isa = PBXGroup;
+			children = (
+				6D93E70F263B0B5400C573F2 /* MasterCrationViewModel.swift */,
+			);
+			path = Master;
 			sourceTree = "<group>";
 		};
 		6DE64F8026305775004BA4A1 /* Profile */ = {
@@ -307,6 +349,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6DE64F7B2630390B004BA4A1 /* Test.storyboard in Resources */,
+				6D93E716263B213B00C573F2 /* MasterTableViewCell.xib in Resources */,
 				6DF0489725F662670033BD66 /* LaunchScreen.storyboard in Resources */,
 				6D441F8726300E0F00A29616 /* GoogleService-Info.plist in Resources */,
 				6D441F892630337900A29616 /* Profile.storyboard in Resources */,
@@ -371,8 +414,11 @@
 				6D87FC08262FF25F00D38EC3 /* SystemAuthorization.swift in Sources */,
 				6D87FBF3262FEBA100D38EC3 /* LoginViewModel.swift in Sources */,
 				6D87FBFB262FEC8700D38EC3 /* Deffaults.swift in Sources */,
+				6D166BE6263551FC004FC587 /* Cc.swift in Sources */,
 				6D87FBF1262FEB8400D38EC3 /* SignUpViewModel.swift in Sources */,
 				6DCAE07425F67359009EFDEC /* Utilities.swift in Sources */,
+				6D93E70D263AE85D00C573F2 /* MasterCreationViewComntroller.swift in Sources */,
+				6D93E710263B0B5400C573F2 /* MasterCrationViewModel.swift in Sources */,
 				6D87FC0C262FF2B000D38EC3 /* Enums.swift in Sources */,
 				6D87FBF5262FEBB900D38EC3 /* ResetPasswordViewModel.swift in Sources */,
 				6D87FC0A262FF28400D38EC3 /* Constants.swift in Sources */,
@@ -382,9 +428,11 @@
 				6DE64F7E26305770004BA4A1 /* EditeProfileViewController.swift in Sources */,
 				6DF048A125F662C60033BD66 /* ResetPasswordViewController.swift in Sources */,
 				6DE64F85263057A4004BA4A1 /* EditeProfileViewModel.swift in Sources */,
+				6D93E712263B181F00C573F2 /* FBMasters.swift in Sources */,
 				6DF048A325F662D50033BD66 /* HomeViewController.swift in Sources */,
 				6D441F852630050E00A29616 /* HomeViewModel.swift in Sources */,
 				6D87FBFD262FECC900D38EC3 /* FBAuthentication.swift in Sources */,
+				6D93E715263B213B00C573F2 /* MasterTableViewCell.swift in Sources */,
 				6D87FBFF262FEFCA00D38EC3 /* FBDDatabase.swift in Sources */,
 				6D87FC02262FF1D300D38EC3 /* Extensions.swift in Sources */,
 				6D87FBEF262FEB3E00D38EC3 /* SignUpViewController copy.swift in Sources */,

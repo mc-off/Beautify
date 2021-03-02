@@ -49,6 +49,7 @@ PODS:
     - GoogleUtilities/Logger
   - GTMSessionFetcher/Core (1.5.0)
   - leveldb-library (1.22)
+  - LocationPicker (1.4.2)
   - nanopb (2.30906.0):
     - nanopb/decode (= 2.30906.0)
     - nanopb/encode (= 2.30906.0)
@@ -60,6 +61,7 @@ DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Database
   - Firebase/Storage
+  - LocationPicker
 
 SPEC REPOS:
   trunk:
@@ -73,6 +75,7 @@ SPEC REPOS:
     - GoogleUtilities
     - GTMSessionFetcher
     - leveldb-library
+    - LocationPicker
     - nanopb
     - PromisesObjC
 
@@ -87,9 +90,10 @@ SPEC CHECKSUMS:
   GoogleUtilities: 3dc4ff0d5e4840e2fa8eef0889620e8c33d4218c
   GTMSessionFetcher: b3503b20a988c4e20cc189aa798fd18220133f52
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
+  LocationPicker: 9af49409ec3ca13fdf4bf6b39e1a3c7dec029f4a
   nanopb: 1bf24dd71191072e120b83dd02d08f3da0d65e53
   PromisesObjC: 8c196f5a328c2cba3e74624585467a557dcb482f
 
-PODFILE CHECKSUM: e3bacd9228fbaad3ec402232b4c6eab751527db5
+PODFILE CHECKSUM: 44dbef30c8e09ea0acd6b5da895a252e7bd46fba
 
 COCOAPODS: 1.10.1

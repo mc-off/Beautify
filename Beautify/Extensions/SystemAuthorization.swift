@@ -36,5 +36,17 @@ struct SystemAuthorization {
                 complation(false, "Please go to Settings>Message now>Photos>Choose Read and Write to able access photos")
         }
     }
+    
+    func locationAuthorization(complation: @escaping(Bool, String?)->()) {
+        let locStatus = CLLocationManager.authorizationStatus()
+        switch locStatus {
+            case .notDetermined, .denied, .restricted:
+                complation(false, nil)
+            case .authorizedAlways, .authorizedWhenInUse:
+                complation(true, nil)
+            default:
+                complation(false, "Please enable Location Services in your Settings")
+        }
+    }
 
 }
