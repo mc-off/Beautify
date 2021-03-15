@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 
 
-class HomeViewController: UIViewController {
+class ProfileViewController: UIViewController {
     
     @IBOutlet weak var HeaderView: UIView!
     @IBOutlet weak var tableView: UITableView!
@@ -88,7 +88,7 @@ class HomeViewController: UIViewController {
 
 // MARK:- TableView datasource and delegate
 
-extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 3

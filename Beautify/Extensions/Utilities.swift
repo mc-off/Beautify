@@ -20,12 +20,21 @@ class Utilities {
         
         
         
-        let passwordTest = NSPredicate(format: "SELF MATCHES %@ ", "^[a-zA-Z0-9]{6,}$")
-//                                       "^(?=.*[a-z])(?=.*[$@$#!%*?&])[A-Za-z\\d$@$#!%*?&]{6,}")
+    let passwordTest = NSPredicate(format: "SELF MATCHES %@ ", "^[a-zA-Z0-9]{6,}$")
+        //                                       "^(?=.*[a-z])(?=.*[$@$#!%*?&])[A-Za-z\\d$@$#!%*?&]{6,}")
         return passwordTest.evaluate(with: password)
     }
     
     static func isTextFieldEmpty(_ textField:UITextField) -> Bool {
         return textField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == ""
+    }
+    
+    static func randomString(of length: Int) -> String {
+        let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+        var s = ""
+        for _ in 0 ..< length {
+            s.append(letters.randomElement()!)
+        }
+        return s
     }
 }

@@ -2,7 +2,7 @@
 //  EditeProfileViewController.swift
 //  Message Now
 //
-//  Created by Hazem Tarek on 7/21/20.
+//  Created by Артем Маков on 01.02.2021.
 //  Copyright © 2020 Hazem Tarek. All rights reserved.
 //
 

@@ -28,7 +28,7 @@
         <!--Profile-->
         <scene sceneID="J1M-ql-nvC">
             <objects>
-                <viewController id="Ydd-ds-cmf" customClass="HomeViewController" customModule="Beautify" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Ydd-ds-cmf" customClass="ProfileViewController" customModule="Beautify" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5Ov-lu-RvL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

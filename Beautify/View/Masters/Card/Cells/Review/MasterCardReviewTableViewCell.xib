@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="176" id="KGk-i7-Jjw" customClass="MasterCardReviewTableViewCell" customModule="Beautify" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="376" height="176"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="345" height="176"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Мальвина" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9CK-eA-Ibd">
+                        <rect key="frame" x="16" y="10" width="84" height="21.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Постоянный клиент" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e5m-Ng-60X">
+                        <rect key="frame" x="16" y="39.5" width="116.5" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Avatar" translatesAutoresizingMaskIntoConstraints="NO" id="IrG-Qh-RB7">
+                        <rect key="frame" x="223" y="60" width="106" height="106"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="106" id="kTz-f5-VnB"/>
+                            <constraint firstAttribute="width" constant="106" id="ztz-4r-Le7"/>
+                        </constraints>
+                    </imageView>
+                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2qL-7Q-H9Q">
+                        <rect key="frame" x="221" y="22" width="110" height="20"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="5Cs-YM-G8G">
+                                <rect key="frame" x="0.0" y="0.0" width="22" height="20"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="7fm-e0-Jc5">
+                                <rect key="frame" x="22" y="0.0" width="22" height="20"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="uvB-e7-Tdd">
+                                <rect key="frame" x="44" y="0.0" width="22" height="20"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="rhz-TB-3Nt">
+                                <rect key="frame" x="66" y="0.0" width="22" height="20"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.lefthalf.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="j1a-uK-DJf">
+                                <rect key="frame" x="88" y="0.0" width="22" height="20"/>
+                            </imageView>
+                        </subviews>
+                    </stackView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sLm-iT-aEa">
+                        <rect key="frame" x="16" y="64" width="197" height="101"/>
+                        <string key="text">Самый большой отзыв о том, как же получить скидку скидку скидку скидку скидку скидку скидку скидку скидку скидку скидку скидку скидку скидку скидку  скидку скидку скидку скидку скидку скидку скидку скидку скидку скидку скидку скидку скидку скидку</string>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="2qL-7Q-H9Q" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="22" id="1w7-ae-dNx"/>
+                    <constraint firstAttribute="bottom" secondItem="IrG-Qh-RB7" secondAttribute="bottom" constant="10" id="6OB-Cn-kuB"/>
+                    <constraint firstItem="9CK-eA-Ibd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="7g3-XD-SlA"/>
+                    <constraint firstItem="sLm-iT-aEa" firstAttribute="bottom" secondItem="IrG-Qh-RB7" secondAttribute="bottom" id="7gX-sF-CIS"/>
+                    <constraint firstItem="sLm-iT-aEa" firstAttribute="top" secondItem="e5m-Ng-60X" secondAttribute="bottom" constant="10" id="E4M-2K-kWw"/>
+                    <constraint firstItem="IrG-Qh-RB7" firstAttribute="top" secondItem="2qL-7Q-H9Q" secondAttribute="bottom" constant="18" id="KPE-MK-Tex"/>
+                    <constraint firstItem="sLm-iT-aEa" firstAttribute="leading" secondItem="e5m-Ng-60X" secondAttribute="leading" id="PVa-V8-hBS"/>
+                    <constraint firstItem="e5m-Ng-60X" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Zh0-m9-TT6"/>
+                    <constraint firstItem="e5m-Ng-60X" firstAttribute="top" secondItem="9CK-eA-Ibd" secondAttribute="bottom" constant="8" id="bJF-7c-xjD"/>
+                    <constraint firstItem="IrG-Qh-RB7" firstAttribute="leading" secondItem="sLm-iT-aEa" secondAttribute="trailing" constant="10" id="bqQ-qJ-Dfm"/>
+                    <constraint firstAttribute="trailing" secondItem="IrG-Qh-RB7" secondAttribute="trailing" constant="16" id="dS4-tb-NvX"/>
+                    <constraint firstItem="9CK-eA-Ibd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="gqh-nL-Zfj"/>
+                    <constraint firstAttribute="trailing" secondItem="2qL-7Q-H9Q" secondAttribute="trailing" constant="14" id="vNN-Sz-Ydt"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="tintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <point key="canvasLocation" x="82.608695652173921" y="176.11607142857142"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Avatar" width="64" height="64"/>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
+        <image name="star.lefthalf.fill" catalog="system" width="128" height="116"/>
+    </resources>
+</document>

@@ -15,6 +15,9 @@ class MasterCreationViewController: UIViewController {
     private var image = UIImage() { didSet {
     imagePicker.setImage(image, for: .normal) } }
     
+    private let vm  = MasterCreationViewModel()
+
+    
     @IBOutlet weak var imagePicker: UIButton!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var typeTextField: UITextField!
@@ -41,6 +44,7 @@ class MasterCreationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI();
+        setupVM();
         location = nil
     }
     
@@ -62,6 +66,13 @@ class MasterCreationViewController: UIViewController {
         activityIndicator.stopAnimating()
         
         print("setup ui")
+    }
+    
+    private func setupVM() {
+        vm.showAlertClosure = { [unowned self] in
+            self.navigationController?.popViewController(animated: true)
+            Alert.showAlert(at: self, title: "", message: self.vm.messageAlert!)
+        }
     }
     
     @objc private func dismissKeyboard() {
@@ -105,7 +116,7 @@ class MasterCreationViewController: UIViewController {
         navigationController?.pushViewController(locationPicker, animated: true)
     }
     
-    @IBAction func completeButtonTapped(_ sender: Any) {
+    @IBAction func completeButtonTapped(_ sender: UIBarButtonItem) {
         print(nameTextField.text!)
         print(typeTextField.text!)
         print(descriptionTextField.text!)
@@ -124,6 +135,8 @@ class MasterCreationViewController: UIViewController {
         print(calendar.component(.minute, from: toDatePicker.date))
         
         print(priceRangeSegment.selectedSegmentIndex)
+        
+        vm.createPressed(photo: image, name: nameTextField.text!, type: typeTextField.text!, description: descriptionTextField.text!, coordinate: location!.coordinate, fromTime: fromDatePicker.date, toTime: toDatePicker.date, priceTier: priceRangeSegment.selectedSegmentIndex)
     }
     @IBAction func imagePickerTapped(_ sender: Any) {
         SystemAuthorization.shared.photoAuthorization { [weak self] (isAuth, message) in

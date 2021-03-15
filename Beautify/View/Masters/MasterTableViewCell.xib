@@ -26,26 +26,26 @@
                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ucR-kq-ymf">
                         <rect key="frame" x="144" y="10" width="178" height="126"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yjb-ym-zMd">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yjb-ym-zMd">
                                 <rect key="frame" x="0.0" y="0.0" width="178" height="19.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OkL-ff-AUT">
-                                <rect key="frame" x="0.0" y="19.5" width="178" height="14.5"/>
+                                <rect key="frame" x="0.0" y="21.5" width="178" height="14.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
                                 <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kMD-Zt-Ps6">
-                                <rect key="frame" x="0.0" y="34" width="178" height="17"/>
+                                <rect key="frame" x="0.0" y="38" width="178" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Z8L-VT-b1s" userLabel="Stars And Dollars">
-                                <rect key="frame" x="0.0" y="51" width="178" height="20"/>
+                                <rect key="frame" x="0.0" y="55" width="178" height="20"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PYp-u7-jsw">
                                         <rect key="frame" x="0.0" y="0.0" width="110" height="20"/>
@@ -84,7 +84,7 @@
                                 </subviews>
                                 <color key="tintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Working hours" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pqf-aC-r8e">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Working hours" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pqf-aC-r8e">
                                 <rect key="frame" x="0.0" y="111.5" width="178" height="14.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
@@ -93,16 +93,31 @@
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="height" constant="126" id="2eL-Jz-v06"/>
-                            <constraint firstItem="Pqf-aC-r8e" firstAttribute="top" secondItem="Z8L-VT-b1s" secondAttribute="bottom" constant="30" id="5U2-0M-ECW"/>
+                            <constraint firstItem="kMD-Zt-Ps6" firstAttribute="top" secondItem="OkL-ff-AUT" secondAttribute="bottom" constant="2" id="9a9-1b-Xwh"/>
+                            <constraint firstItem="Pqf-aC-r8e" firstAttribute="top" secondItem="Z8L-VT-b1s" secondAttribute="bottom" constant="35" id="JKD-Gs-qqg"/>
+                            <constraint firstItem="Z8L-VT-b1s" firstAttribute="top" secondItem="kMD-Zt-Ps6" secondAttribute="bottom" id="SiN-gi-XZh"/>
+                            <constraint firstItem="OkL-ff-AUT" firstAttribute="top" secondItem="Yjb-ym-zMd" secondAttribute="bottom" constant="2" id="UNU-PO-ajd"/>
+                            <constraint firstAttribute="bottom" secondItem="Pqf-aC-r8e" secondAttribute="bottom" id="fHK-WT-vb2"/>
+                            <constraint firstItem="Yjb-ym-zMd" firstAttribute="top" secondItem="ucR-kq-ymf" secondAttribute="top" id="kVZ-rU-5QK"/>
                         </constraints>
                     </stackView>
                 </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="ucR-kq-ymf" firstAttribute="leading" secondItem="FwN-P1-hVJ" secondAttribute="trailing" constant="8" id="Bvi-iZ-v0Z"/>
                     <constraint firstItem="FwN-P1-hVJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Nth-hT-SuU"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="addressLabel" destination="kMD-Zt-Ps6" id="1b9-3C-NTb"/>
+                <outlet property="nameLabel" destination="Yjb-ym-zMd" id="6uX-kA-BAn"/>
+                <outlet property="priceRange" destination="PCi-o9-FmD" id="ZJ6-dI-fyo"/>
+                <outlet property="profileImage" destination="FwN-P1-hVJ" id="Ah8-oD-I3g"/>
+                <outlet property="stars" destination="PYp-u7-jsw" id="5fB-cm-loD"/>
+                <outlet property="typeLabel" destination="OkL-ff-AUT" id="lby-x2-1pe"/>
+                <outlet property="workingHoursLabel" destination="Pqf-aC-r8e" id="bZJ-SP-9rG"/>
+            </connections>
             <point key="canvasLocation" x="224.63768115942031" y="202.90178571428569"/>
         </tableViewCell>
     </objects>
