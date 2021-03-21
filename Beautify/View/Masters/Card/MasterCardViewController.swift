@@ -21,7 +21,10 @@ class MasterCardViewController: UIViewController {
         
         headSegmentedControl.superview?.clipsToBounds = true
         
-        tableView.backgroundColor = UIColor.secondarySystemBackground
+        tableView.contentInsetAdjustmentBehavior = .automatic
+
+        tableView.tableHeaderView = UIView(frame: CGRect(origin: .zero, size: CGSize(width: 0.0, height: CGFloat.leastNormalMagnitude)))
+
         
         tableView.register(UINib(nibName: "MasterCardDescriptionTableViewCell", bundle: nil), forCellReuseIdentifier: "MasterCardDescriptionTableViewCell")
         
@@ -61,6 +64,10 @@ extension MasterCardViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        return nil
+//    }
+    
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if (headSegmentedControl.selectedSegmentIndex == 0) {
             switch section {
@@ -82,7 +89,7 @@ extension MasterCardViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if (headSegmentedControl.selectedSegmentIndex == 0) {
-            return 40
+            return 30
         } else {
             return 0
         }
@@ -125,9 +132,17 @@ extension MasterCardViewController: UITableViewDelegate, UITableViewDataSource {
                 return UITableViewCell()
             }
         default:
-            return  tableView.dequeueReusableCell(withIdentifier: "MasterCardReviewTableViewCell",
-            for: indexPath)
+            let cell =  tableView.dequeueReusableCell(withIdentifier: "MasterCardReviewTableViewCell",
+                                          for: indexPath)
+            cell.backgroundColor = (indexPath.item % 2 == 0) ? UIColor.systemBackground : UIColor.systemGroupedBackground
+            return cell
         }
     }
     
+//    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+//        guard let headerView = view as? UITableViewHeaderFooterView else { return }
+//        headerView.tintColor = .clear //use any color you want here .red, .black etc
+//    }
+    
+
 }

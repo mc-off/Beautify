@@ -17,7 +17,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="df1-3v-FzE">
-                        <rect key="frame" x="14" y="8" width="291" height="90"/>
+                        <rect key="frame" x="16" y="8" width="293" height="90"/>
                         <string key="text">Приглашаем в наш салон маникюра!
 
 Лучшие мастера, чистый инструмент и отличные расходники ждут вас!</string>
@@ -27,10 +27,10 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="df1-3v-FzE" secondAttribute="trailing" constant="14" id="0Q9-wR-gSB"/>
+                    <constraint firstAttribute="trailing" secondItem="df1-3v-FzE" secondAttribute="trailing" constant="10" id="0Q9-wR-gSB"/>
                     <constraint firstAttribute="bottom" secondItem="df1-3v-FzE" secondAttribute="bottom" constant="8" id="ETv-cW-vqV"/>
                     <constraint firstItem="df1-3v-FzE" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="dTL-U6-YGw"/>
-                    <constraint firstItem="df1-3v-FzE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="14" id="eid-3r-RHH"/>
+                    <constraint firstItem="df1-3v-FzE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="eid-3r-RHH"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

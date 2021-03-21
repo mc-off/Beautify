@@ -18,7 +18,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="Q33-Rr-EW4">
-                        <rect key="frame" x="15" y="7" width="434" height="46"/>
+                        <rect key="frame" x="16" y="7" width="434" height="46"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Gm-a6-Fp4">
                                 <rect key="frame" x="0.0" y="0.0" width="46" height="46"/>
@@ -67,9 +67,9 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="Q33-Rr-EW4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="7" id="QUX-vK-q0L"/>
-                    <constraint firstAttribute="trailing" secondItem="Q33-Rr-EW4" secondAttribute="trailing" constant="15" id="c12-4v-2Y1"/>
+                    <constraint firstAttribute="trailing" secondItem="Q33-Rr-EW4" secondAttribute="trailing" constant="16" id="c12-4v-2Y1"/>
                     <constraint firstAttribute="bottom" secondItem="Q33-Rr-EW4" secondAttribute="bottom" constant="7" id="h9t-tJ-M0V"/>
-                    <constraint firstItem="Q33-Rr-EW4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="iKp-m3-I05"/>
+                    <constraint firstItem="Q33-Rr-EW4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="iKp-m3-I05"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
