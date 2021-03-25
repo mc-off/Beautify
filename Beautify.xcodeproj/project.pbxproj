@@ -40,6 +40,8 @@
 		6D93E712263B181F00C573F2 /* FBMasters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D93E711263B181F00C573F2 /* FBMasters.swift */; };
 		6D93E715263B213B00C573F2 /* MasterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D93E713263B213B00C573F2 /* MasterTableViewCell.swift */; };
 		6D93E716263B213B00C573F2 /* MasterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D93E714263B213B00C573F2 /* MasterTableViewCell.xib */; };
+		6D97333D2658B82B0022C54D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D97333C2658B82B0022C54D /* MapViewController.swift */; };
+		6D97333F2658B8E30022C54D /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D97333E2658B8E30022C54D /* Map.storyboard */; };
 		6DCAE07425F67359009EFDEC /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCAE07325F67359009EFDEC /* Utilities.swift */; };
 		6DCE047126514E5A00E5AA83 /* MasterCardReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCE046F26514E5A00E5AA83 /* MasterCardReviewTableViewCell.swift */; };
 		6DCE047226514E5A00E5AA83 /* MasterCardReviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DCE047026514E5A00E5AA83 /* MasterCardReviewTableViewCell.xib */; };
@@ -93,6 +95,8 @@
 		6D93E711263B181F00C573F2 /* FBMasters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBMasters.swift; sourceTree = "<group>"; };
 		6D93E713263B213B00C573F2 /* MasterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterTableViewCell.swift; sourceTree = "<group>"; };
 		6D93E714263B213B00C573F2 /* MasterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MasterTableViewCell.xib; sourceTree = "<group>"; };
+		6D97333C2658B82B0022C54D /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		6D97333E2658B8E30022C54D /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		6DCAE07325F67359009EFDEC /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		6DCE046F26514E5A00E5AA83 /* MasterCardReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterCardReviewTableViewCell.swift; sourceTree = "<group>"; };
 		6DCE047026514E5A00E5AA83 /* MasterCardReviewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MasterCardReviewTableViewCell.xib; sourceTree = "<group>"; };
@@ -215,6 +219,7 @@
 		6D87FBEA262FEADD00D38EC3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6D97333A2658B7B40022C54D /* Map */,
 				6D166BE4263551D4004FC587 /* Masters */,
 				6DE64F8026305775004BA4A1 /* Profile */,
 				6D87FBEB262FEAE900D38EC3 /* Login */,
@@ -290,6 +295,7 @@
 			isa = PBXGroup;
 			children = (
 				6D87FBE8262FEAB500D38EC3 /* Main.storyboard */,
+				6D97333E2658B8E30022C54D /* Map.storyboard */,
 				6DE64F7A2630390B004BA4A1 /* Test.storyboard */,
 				6D441F882630337800A29616 /* Profile.storyboard */,
 			);
@@ -310,6 +316,22 @@
 				6D93E70F263B0B5400C573F2 /* MasterCrationViewModel.swift */,
 			);
 			path = Master;
+			sourceTree = "<group>";
+		};
+		6D97333A2658B7B40022C54D /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				6D97333B2658B7D90022C54D /* Popup */,
+				6D97333C2658B82B0022C54D /* MapViewController.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		6D97333B2658B7D90022C54D /* Popup */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Popup;
 			sourceTree = "<group>";
 		};
 		6DCE046E26514CBC00E5AA83 /* Review */ = {
@@ -389,6 +411,7 @@
 				6DF0488425F662640033BD66 /* Frameworks */,
 				6DF0488525F662640033BD66 /* Resources */,
 				1988F4DBD8431032A2EF27E5 /* [CP] Embed Pods Frameworks */,
+				3F826ADE7CAF7CEF4948C487 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -449,6 +472,7 @@
 				6D87FBE9262FEAB500D38EC3 /* Main.storyboard in Resources */,
 				6DF0489425F662670033BD66 /* Assets.xcassets in Resources */,
 				6DCE047226514E5A00E5AA83 /* MasterCardReviewTableViewCell.xib in Resources */,
+				6D97333F2658B8E30022C54D /* Map.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,6 +494,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Beautify/Pods-Beautify-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3F826ADE7CAF7CEF4948C487 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Beautify/Pods-Beautify-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Beautify/Pods-Beautify-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Beautify/Pods-Beautify-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		4D8E9BF063A65A69677603AF /* [CP] Check Pods Manifest.lock */ = {
@@ -528,6 +569,7 @@
 				6D0D9862265140D400BE2B23 /* MasterCardPriceListTableViewCell.swift in Sources */,
 				6DE64F85263057A4004BA4A1 /* EditeProfileViewModel.swift in Sources */,
 				6D93E712263B181F00C573F2 /* FBMasters.swift in Sources */,
+				6D97333D2658B82B0022C54D /* MapViewController.swift in Sources */,
 				6DF048A325F662D50033BD66 /* ProfileViewController.swift in Sources */,
 				6D441F852630050E00A29616 /* HomeViewModel.swift in Sources */,
 				6D87FBFD262FECC900D38EC3 /* FBAuthentication.swift in Sources */,

@@ -11,8 +11,9 @@ pod 'Firebase/Auth'
     pod 'Firebase/Database'
     pod 'Firebase/Storage'
     pod 'LocationPicker'
-
-
+    pod 'GoogleMaps'
+    pod 'GooglePlaces'
+    pod 'SlideUpPanel'
 end
 
 

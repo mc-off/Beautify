@@ -465,7 +465,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="Vej-Au-puD" kind="relationship" relationship="viewControllers" id="Kvz-Sh-Zhq"/>
-                        <segue destination="ejf-oA-Wb9" kind="relationship" relationship="viewControllers" id="oFS-En-haB"/>
+                        <segue destination="LwY-NQ-7dp" kind="relationship" relationship="viewControllers" id="s7E-hc-fd0"/>
+                        <segue destination="ejf-oA-Wb9" kind="relationship" relationship="viewControllers" id="Ygx-C7-ahG"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="51N-FE-rMG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -482,6 +483,16 @@
             </objects>
             <point key="canvasLocation" x="2903" y="71"/>
         </scene>
+        <!--Map-->
+        <scene sceneID="0fA-8E-rHk">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Map" id="LwY-NQ-7dp" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Map" image="map" catalog="system" selectedImage="map.fill" id="cbx-E7-LlI"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4oa-sf-ZrD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2926" y="139"/>
+        </scene>
         <!--Profile-->
         <scene sceneID="Iwx-Vl-nNw">
             <objects>
@@ -490,7 +501,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bbj-Mg-yQZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2914" y="202"/>
+            <point key="canvasLocation" x="2916" y="228"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pHt-Yk-9qg">
@@ -517,6 +528,8 @@
         <image name="Avatar" width="64" height="64"/>
         <image name="ellipsis" catalog="system" width="128" height="37"/>
         <image name="folder" catalog="system" width="128" height="95"/>
+        <image name="map" catalog="system" width="128" height="113"/>
+        <image name="map.fill" catalog="system" width="128" height="113"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <namedColor name="ActivityIndecatorColor">
             <color red="0.12200000137090683" green="0.1289999932050705" blue="0.14100000262260437" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
