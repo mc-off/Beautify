@@ -9,44 +9,31 @@
 import UIKit
 import GoogleMaps
 import CoreLocation
-import SlideUpPanel
 
 
-class MapViewController: UIViewController, GMSMapViewDelegate {
+class MapViewController: UIViewController, GMSMapViewDelegate, MapMarkerDelegate {
+    
+    func didTapInfoButton() {
+        print("tapped to info window")
+    }
+    
 
-    @IBOutlet var mapMasterInfoView: UIView!
-    @IBOutlet var initialSlidePanelInfoView: UIView!
     
     var mapView:GMSMapView?
-    var cardViewController : SlideUpPanel!
     var london: GMSMarker?
     var marker2: GMSMarker?
     var londonView: UIImageView?
+    var locationMarker : GMSMarker?
+
+    
+    var infoWindow: MapInfoWindow?
+
 
     override func viewDidLoad() {
       super.viewDidLoad()
         
-        cardViewController = SlideUpPanel(vc: self, cardHeight: nil)
-                cardViewController.contentArea = mapMasterInfoView
-                let guide = view.safeAreaLayoutGuide
-                //NSLayoutConstraint.activate([
-                 //   guide.bottomAnchor.constraint(equalToSystemSpacingBelow: cardViewController.view.bottomAnchor, multiplier: 1.0)
-                 //])
-
-                self.addChild(cardViewController)
-                self.view.addSubview(cardViewController.view)
-                
-                cardViewController.view.translatesAutoresizingMaskIntoConstraints = false
-                
-                NSLayoutConstraint.activate([
-                    cardViewController.view.bottomAnchor.constraint(equalTo: guide.bottomAnchor)
-                ])
-        //        cardViewController.view.attachAnchors(to: containerView)
-                cardViewController.didMove(toParent: self)
         
-       
-//        self.view.addSubview(cardViewController.view)
-
+        
       let camera = GMSCameraPosition.camera(
         withLatitude: 51.5,
         longitude: -0.127,
@@ -79,8 +66,6 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
 
         
         self.marker2 = marker2
-
-
         
     }
 //
@@ -94,18 +79,69 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
 //      })
 //    }
     
-    func centerInMarker(mapView: GMSMapView, marker: GMSMarker) {
+    func centerInMarker(marker: GMSMarker) {
         var bounds = GMSCoordinateBounds()
         bounds = bounds.includingCoordinate(marker.position)
-        let update = GMSCameraUpdate.fit(bounds, with: UIEdgeInsets(top: (mapView.frame.height)/2 - 160, left: (mapView.frame.width)/2, bottom: (mapView.frame.height)/2 + 160, right: (mapView.frame.width)/2))
-        mapView.moveCamera(update)
+        
+        var camera = GMSCameraPosition.camera(
+            withLatitude: marker.position.latitude,
+            longitude: marker.position.longitude,
+            zoom: 18
+          )
+        let zoom = GMSCameraUpdate.setCamera(camera)
+        
+        self.mapView?.moveCamera(zoom)
+        
     }
     
-    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
-        self.centerInMarker(mapView: mapView, marker: marker)
-        cardViewController.contentArea = mapMasterInfoView
-        cardViewController.cardVisible = true
-        return true
-    }
+        func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+            
+            locationMarker = marker
+            self.mapView?.selectedMarker = marker
+            
+            centerInMarker(marker: locationMarker!)
 
+                infoWindow = Bundle.main.loadNibNamed("MapInfoWindowView", owner: self, options: nil)![0] as? MapInfoWindow
+            
+                infoWindow?.delegate = self
+
+            
+                let frame = CGRect(x: 0, y: 0, width: 300, height: infoWindow?.frame.height ?? 200)
+            
+                infoWindow?.frame = frame
+                infoWindow?.center = mapView.projection.point(for: marker.position)
+            infoWindow?.center.y = (infoWindow?.center.y)! - sizeForOffset(view: infoWindow!)
+                self.view.addSubview(infoWindow!)
+            
+            return false
+        }
+        
+        // MARK: Needed to create the custom info window
+        func mapView(_ mapView: GMSMapView, didChange position: GMSCameraPosition) {
+            if (locationMarker != nil){
+                guard let location = locationMarker?.position else {
+                    print("locationMarker is nil")
+                    return
+                }
+                infoWindow?.center = mapView.projection.point(for: location)
+                infoWindow!.center.y = infoWindow!.center.y - sizeForOffset(view: infoWindow!)
+            }
+        }
+        
+        // MARK: Needed to create the custom info window
+        func mapView(_ mapView: GMSMapView, markerInfoWindow marker: GMSMarker) -> UIView? {
+            return UIView()
+        }
+
+        
+        // MARK: Needed to create the custom info window
+        func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
+            infoWindow?.removeFromSuperview()
+        }
+        
+        // MARK: Needed to create the custom info window (this is optional)
+        func sizeForOffset(view: UIView) -> CGFloat {
+            return  110
+        }
+        
 }

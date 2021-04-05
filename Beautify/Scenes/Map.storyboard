@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ih6-W7-Zev">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ih6-W7-Zev">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -15,16 +17,12 @@
                     <view key="view" contentMode="scaleToFill" id="IGH-X0-23Z">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="dtc-oe-We5"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" image="map" catalog="system" selectedImage="map.fill" id="ggK-aS-tbl"/>
                     <navigationItem key="navigationItem" id="oac-cS-7lh"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="initialSlidePanelInfoView" destination="G8Z-KF-RCb" id="PIL-Tz-oJJ"/>
-                        <outlet property="mapMasterInfoView" destination="6lk-ku-FPh" id="q6j-WE-n6W"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TaC-aY-RIZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <view contentMode="scaleToFill" id="6lk-ku-FPh">
@@ -35,7 +33,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="409" height="156"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Ноготочки у Парочки" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MBJ-Nd-EXT">
-                                    <rect key="frame" x="16" y="10" width="185.5" height="21.5"/>
+                                    <rect key="frame" x="16" y="10" width="184.5" height="21.5"/>
                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -43,40 +41,40 @@
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rMK-FX-TuZ">
                                     <rect key="frame" x="16" y="39.5" width="32" height="17"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="textColor" systemColor="secondaryLabelColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="Mhr-TK-Ls2" userLabel="Stars And Dollars">
-                                    <rect key="frame" x="16" y="70" width="246" height="20"/>
+                                    <rect key="frame" x="16" y="70" width="245" height="20"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AbI-Pw-BW7">
                                             <rect key="frame" x="0.0" y="0.0" width="110" height="20"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="fjN-03-Mct">
-                                                    <rect key="frame" x="0.0" y="0.0" width="22" height="20"/>
+                                                    <rect key="frame" x="0.0" y="-0.5" width="22" height="20"/>
                                                 </imageView>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="vXm-mZ-Y3a">
-                                                    <rect key="frame" x="22" y="0.0" width="22" height="20"/>
+                                                    <rect key="frame" x="22" y="-0.5" width="22" height="20"/>
                                                 </imageView>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="6fF-LG-SK8">
-                                                    <rect key="frame" x="44" y="0.0" width="22" height="20"/>
+                                                    <rect key="frame" x="44" y="-0.5" width="22" height="20"/>
                                                 </imageView>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="VuF-VW-Avi">
-                                                    <rect key="frame" x="66" y="0.0" width="22" height="20"/>
+                                                    <rect key="frame" x="66" y="-0.5" width="22" height="20"/>
                                                 </imageView>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.lefthalf.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="qE0-gX-4H4">
-                                                    <rect key="frame" x="88" y="0.0" width="22" height="20"/>
+                                                    <rect key="frame" x="88" y="-0.5" width="22" height="20"/>
                                                 </imageView>
                                             </subviews>
                                         </stackView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(10)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TwI-7N-amY">
-                                            <rect key="frame" x="116" y="0.0" width="29" height="20"/>
+                                            <rect key="frame" x="116" y="0.0" width="28.5" height="20"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="textColor" systemColor="secondaryLabelColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TCV-em-1Zh">
-                                            <rect key="frame" x="151" y="0.0" width="60" height="20"/>
+                                            <rect key="frame" x="150.5" y="0.0" width="60" height="20"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dollarsign.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="bDt-Dq-WcC">
                                                     <rect key="frame" x="0.0" y="0.5" width="20" height="19"/>
@@ -90,13 +88,13 @@
                                             </subviews>
                                         </stackView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(10)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FVJ-1X-JEB">
-                                            <rect key="frame" x="217" y="0.0" width="29" height="20"/>
+                                            <rect key="frame" x="216.5" y="0.0" width="28.5" height="20"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="textColor" systemColor="secondaryLabelColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <color key="tintColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="tintColor" systemColor="systemYellowColor"/>
                                     <constraints>
                                         <constraint firstItem="TCV-em-1Zh" firstAttribute="leading" secondItem="TwI-7N-amY" secondAttribute="trailing" constant="26" id="AB0-Ca-Lba"/>
                                     </constraints>
@@ -129,7 +127,7 @@
                                 <constraint firstAttribute="bottom" secondItem="9jg-S3-NLI" secondAttribute="bottom" constant="14" id="ddr-dE-rDJ"/>
                             </constraints>
                         </view>
-                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bwH-IY-fXE">
+                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bwH-IY-fXE">
                             <rect key="frame" x="20" y="186" width="369" height="40"/>
                             <color key="backgroundColor" name="ButtonBackground"/>
                             <constraints>
@@ -140,14 +138,14 @@
                             </state>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <viewLayoutGuide key="safeArea" id="Dqc-iC-xub"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="4pc-iX-P6m" secondAttribute="trailing" id="BQW-EY-VuF"/>
                         <constraint firstItem="bwH-IY-fXE" firstAttribute="top" secondItem="4pc-iX-P6m" secondAttribute="bottom" constant="30" id="HOM-cW-jSu"/>
                         <constraint firstItem="4pc-iX-P6m" firstAttribute="top" secondItem="6lk-ku-FPh" secondAttribute="top" id="UpK-mn-CtJ"/>
                         <constraint firstItem="4pc-iX-P6m" firstAttribute="leading" secondItem="Dqc-iC-xub" secondAttribute="leading" id="i8h-yA-2lE"/>
                     </constraints>
-                    <viewLayoutGuide key="safeArea" id="Dqc-iC-xub"/>
                 </view>
                 <view contentMode="scaleToFill" id="G8Z-KF-RCb">
                     <rect key="frame" x="0.0" y="0.0" width="514" height="293"/>
@@ -160,12 +158,12 @@
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <viewLayoutGuide key="safeArea" id="jal-aw-NWR"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstItem="5Dn-xT-Dvj" firstAttribute="centerY" secondItem="G8Z-KF-RCb" secondAttribute="centerY" id="YHt-mo-D8x"/>
                         <constraint firstItem="5Dn-xT-Dvj" firstAttribute="centerX" secondItem="G8Z-KF-RCb" secondAttribute="centerX" id="ogQ-vC-Y1x"/>
                     </constraints>
-                    <viewLayoutGuide key="safeArea" id="jal-aw-NWR"/>
                 </view>
             </objects>
             <point key="canvasLocation" x="-477" y="84"/>
@@ -174,8 +172,8 @@
     <resources>
         <image name="dollarsign.circle" catalog="system" width="128" height="121"/>
         <image name="dollarsign.circle.fill" catalog="system" width="128" height="121"/>
-        <image name="map" catalog="system" width="128" height="113"/>
-        <image name="map.fill" catalog="system" width="128" height="113"/>
+        <image name="map" catalog="system" width="128" height="110"/>
+        <image name="map.fill" catalog="system" width="128" height="110"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
         <image name="star.lefthalf.fill" catalog="system" width="128" height="116"/>
         <namedColor name="ButtonBackground">
@@ -184,5 +182,14 @@
         <namedColor name="ToolActive">
             <color red="1" green="0.3411764705882353" blue="0.28235294117647058" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>
