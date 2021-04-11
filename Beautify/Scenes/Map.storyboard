@@ -20,7 +20,7 @@
                         <viewLayoutGuide key="safeArea" id="dtc-oe-We5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Map" image="map" catalog="system" selectedImage="map.fill" id="ggK-aS-tbl"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="location.fill" catalog="system" selectedImage="location.fill" id="ggK-aS-tbl"/>
                     <navigationItem key="navigationItem" id="oac-cS-7lh"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
@@ -172,8 +172,7 @@
     <resources>
         <image name="dollarsign.circle" catalog="system" width="128" height="121"/>
         <image name="dollarsign.circle.fill" catalog="system" width="128" height="121"/>
-        <image name="map" catalog="system" width="128" height="110"/>
-        <image name="map.fill" catalog="system" width="128" height="110"/>
+        <image name="location.fill" catalog="system" width="128" height="121"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
         <image name="star.lefthalf.fill" catalog="system" width="128" height="116"/>
         <namedColor name="ButtonBackground">

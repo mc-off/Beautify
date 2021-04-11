@@ -35,6 +35,8 @@ class MasterCardViewController: UIViewController {
         tableView.register(UINib(nibName: "MasterCardPriceListTableViewCell", bundle: nil), forCellReuseIdentifier: "MasterCardPriceListTableViewCell")
         
         tableView.register(UINib(nibName: "MasterCardReviewTableViewCell", bundle: nil), forCellReuseIdentifier: "MasterCardReviewTableViewCell")
+        
+        tableView.register(UINib(nibName: "PreviousWorkTableViewCell", bundle: nil), forCellReuseIdentifier: "PreviousWorkTableViewCell")
         // Do any additional setup after loading the view.
     }
     
@@ -131,11 +133,15 @@ extension MasterCardViewController: UITableViewDelegate, UITableViewDataSource {
             default:
                 return UITableViewCell()
             }
-        default:
+        case 1:
             let cell =  tableView.dequeueReusableCell(withIdentifier: "MasterCardReviewTableViewCell",
                                           for: indexPath)
             cell.backgroundColor = (indexPath.item % 2 == 0) ? UIColor.systemBackground : UIColor.systemGroupedBackground
             return cell
+        default:
+            return  tableView.dequeueReusableCell(withIdentifier: "PreviousWorkTableViewCell",
+            for: indexPath)
+            
         }
     }
     
