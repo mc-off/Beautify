@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 extension UITextField {
     func addTopBorder() {
@@ -74,17 +75,35 @@ extension UIColor {
 }
 
 extension UIImageView {
-func load(url: String) {
-    DispatchQueue.global().async { [weak self] in
-        if let Url = URL(string: url) {
-            if let data = try? Data(contentsOf: Url) {
-                if let image = UIImage(data: data) {
-                    DispatchQueue.main.async {
-                        self?.image = image
+    func load(url: String) {
+        DispatchQueue.global().async { [weak self] in
+            if let Url = URL(string: url) {
+                if let data = try? Data(contentsOf: Url) {
+                    if let image = UIImage(data: data) {
+                        DispatchQueue.main.async {
+                            self?.image = image
+                        }
                     }
                 }
             }
         }
     }
+    
+    func KFloadImage(url: String){
+        let url = URL(string: url)
+        self.kf.setImage(with: url, placeholder: nil, options: [.transition(ImageTransition.fade(0.2))], progressBlock: .none)
+        
+    }
+    
+    func KFload(url: String, complation: @escaping(UIImage)->()){
+        let url = URL(string: url)
+        self.kf.setImage(with: url, placeholder: nil, options: [.transition(ImageTransition.fade(0.2))], progressBlock: .none) { (result) in
+            switch result {
+                case.success(let data):
+                    complation(data.image)
+                case .failure(_):
+                print("error")
+            }
+        }
     }
 }

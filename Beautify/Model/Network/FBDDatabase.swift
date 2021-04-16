@@ -8,8 +8,7 @@
 
 import Foundation
 import Firebase
-import UIKit
-import MapKit
+
 
 struct FBDatabase {
     
@@ -77,49 +76,7 @@ struct FBDatabase {
     }
     
     
-    func createMaster(photo: UIImage, name: String, type: String, description: String, coordinate: CLLocationCoordinate2D, fromTime: Date, toTime: Date, priceTier: Int, complation: @escaping(Bool, String?) -> ()) {
-        let uid = Utilities.randomString(of: 28)
-        print(uid)
-        guard let imageData = photo.jpegData(compressionQuality: 0.5) else { return }
-        let uploadTask = Storage.storage().reference().child("masters").child("\(uid).jpg")
-        uploadTask.putData(imageData, metadata: nil) { (metadat, error) in
-            if error == nil {
-                print("photo success")
-                uploadTask.downloadURL { (url, error) in
-                    if error == nil {
-                        let DBMaster =
-                        ["name": name,
-                         "type": type,
-                         "description": description,
-                         "profileImage" : url!.absoluteString,
-                         "coordinate": [
-                            "longitude" : coordinate.longitude,
-                            "latitude" : coordinate.latitude
-                            ],
-                         "priceTier": priceTier,
-                         "workHours": [
-                            "everyday" : [
-                                "from" : ISO8601DateFormatter().string(from: fromTime),
-                                "to" : ISO8601DateFormatter().string(from: toTime)
-                            ]
-                            ]
-                            ] as [String : Any]
-                        
-                        Database.database().reference().child("masters").child(uid).setValue(DBMaster) { (error, data) in
-                            complation(true, nil)
-                        }
-                    } else {
-                        uploadTask.delete(completion: nil)
-                        print("Fail on master upload")
-                        complation(false, "Sorry, There is a problem. Try again")
-                    }
-                }
-            } else {
-                print("Fail on photo master upload")
-                complation(false, "Sorry, There is a problem. Try again")
-            }
-        }
-    }
+    
     
     
     

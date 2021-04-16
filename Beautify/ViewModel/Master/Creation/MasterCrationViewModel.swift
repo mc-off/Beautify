@@ -27,9 +27,13 @@ class MasterCreationViewModel {
     
     
     func createPressed(photo: UIImage, name: String, type: String, description: String, coordinate: CLLocationCoordinate2D, fromTime: Date, toTime: Date, priceTier: Int) {
-        FBDatabase.shared.createMaster(photo: photo, name: name, type: type, description: description, coordinate: coordinate, fromTime: fromTime, toTime: toTime, priceTier: priceTier) {
+        FBMasters.shared.createMaster(photo: photo, name: name, type: type, description: description, coordinate: coordinate, fromTime: fromTime, toTime: toTime, priceTier: priceTier) {
             [unowned self] (isSuccess, error) in
             self.messageAlert = isSuccess ?  "Profile Updated Successfully" : error
         }
     }
+    
+    
 }
+
+

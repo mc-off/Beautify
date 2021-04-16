@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import GoogleMaps
 
 class MasterTableViewCell: UITableViewCell {
+    var geocoder = Geocoder(geocoder: GMSGeocoder())
     
     @IBOutlet weak var view: UIView!
     @IBOutlet weak var iconsView: UIView!
@@ -31,6 +33,30 @@ class MasterTableViewCell: UITableViewCell {
         view.layer.shadowOpacity = 0.5
         view.layer.shadowRadius = 10.0
         view.layer.masksToBounds = false
+        
+        profileImage.layer.cornerRadius = 21
+    }
+    
+    var cellVM = MasterViewModel() { didSet {
+        profileImage.KFloadImage(url: cellVM.profileImage!)
+        nameLabel.text = cellVM.name
+        typeLabel.text = cellVM.type
+        geocoder.reverseGeocodeCoordinate(cellVM.coordinate!) { [weak self] success, address in
+            guard
+                success == true,
+                let address = address
+            else { return }
+            
+            self?.addressLabel.text = address
+        }
+        
+        let calendar = Calendar.current
+        let df = DateFormatter()
+        df.dateFormat = "mm"
+        workingHoursLabel.text = cellVM.workHours != nil ? ("Открыто до " + String(
+                                                                calendar.component(.hour, from: cellVM.workHours!.everyday!.to)) + ":" +
+                                                                df.string(from: cellVM.workHours!.everyday!.to)) : "Нет данных"
+        }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

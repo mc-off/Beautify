@@ -8,40 +8,89 @@
 
 import UIKit
 
-class MastersTabViewController: UITableViewController {
+class MastersTabViewController: UIViewController {
     
-
+    @IBOutlet weak var tableView: UITableView!
+    
+    let searchController = UISearchController()
+    let vm               = MasterListViewModel()
+    var filtred          = [MasterViewModel]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        initView()
+        initVM()
+    }
+    
+    private func initView() {
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationItem.searchController = searchController
+        searchController.dimsBackgroundDuringPresentation = true
+        searchController.searchResultsUpdater = self
+        searchController.delegate = self
         tableView.register(UINib(nibName: "MasterTableViewCell", bundle: nil), forCellReuseIdentifier: "MasterTableViewCell")
+    }
+    
+    
+    
+    private func initVM() {
+        vm.reloadTableViewClosure = { [weak self] in
+            guard let self = self else { return }
+            if self.vm.numberOfCells == 0 {
+                self.tableView.alpha = 0
+            } else {
+                self.tableView.reloadData()
+                UIView.animate(withDuration: 0.2) {
+                    self.tableView.alpha = 1
+                }
+            }
+        }
+        vm.initFetch()
     }
     
 }
 
-extension MastersTabViewController {
+extension MastersTabViewController: UITableViewDataSource, UITableViewDelegate  {
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat{
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat{
          return 166 // custom height
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return 5
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return vm.numberOfCells
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MasterTableViewCell", for: indexPath) as! MasterTableViewCell
 
-        cell.nameLabel.text = Utilities.randomString(of: 8)
+        cell.cellVM = vm.getCellViewModel(at: indexPath)
         
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "masterCard", sender: self)
     }
 }
 
+
+extension MastersTabViewController: UISearchControllerDelegate, UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        let text = searchController.searchBar.text?.lowercased()
+        vm.searchAbout(text: text!)
+        
+    }
+    
+    func presentSearchController(_ searchController: UISearchController) {
+        vm.startSearching()
+    }
+    
+    func didDismissSearchController(_ searchController: UISearchController) {
+        vm.endSearching()
+    }
+    
+}

@@ -14,6 +14,7 @@ pod 'Firebase/Auth'
     pod 'GoogleMaps'
     pod 'GooglePlaces'
     pod 'SlideUpPanel'
+    pod 'Kingfisher'
 end
 
 

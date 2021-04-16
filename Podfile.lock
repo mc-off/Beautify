@@ -54,6 +54,7 @@ PODS:
   - GoogleUtilities/Reachability (7.1.1):
     - GoogleUtilities/Logger
   - GTMSessionFetcher/Core (1.5.0)
+  - Kingfisher (6.2.1)
   - leveldb-library (1.22)
   - LocationPicker (1.4.2)
   - nanopb (2.30906.0):
@@ -70,6 +71,7 @@ DEPENDENCIES:
   - Firebase/Storage
   - GoogleMaps
   - GooglePlaces
+  - Kingfisher
   - LocationPicker
   - SlideUpPanel
 
@@ -86,6 +88,7 @@ SPEC REPOS:
     - GooglePlaces
     - GoogleUtilities
     - GTMSessionFetcher
+    - Kingfisher
     - leveldb-library
     - LocationPicker
     - nanopb
@@ -104,12 +107,13 @@ SPEC CHECKSUMS:
   GooglePlaces: 5d87ca13ed98b7a937e0d8bc7026f718c7263271
   GoogleUtilities: 3dc4ff0d5e4840e2fa8eef0889620e8c33d4218c
   GTMSessionFetcher: b3503b20a988c4e20cc189aa798fd18220133f52
+  Kingfisher: e71c6fac2aebb1262888cabc2cb13d313362a48f
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   LocationPicker: 9af49409ec3ca13fdf4bf6b39e1a3c7dec029f4a
   nanopb: 1bf24dd71191072e120b83dd02d08f3da0d65e53
   PromisesObjC: 8c196f5a328c2cba3e74624585467a557dcb482f
   SlideUpPanel: 1d904dc7bc28c5181a098d5431933f34c5a4a017
 
-PODFILE CHECKSUM: 856eaf47c636398312dfce88fb5a967ef6e0dd53
+PODFILE CHECKSUM: c522bde9eae07660649bbea22bf994d11ea00a97
 
 COCOAPODS: 1.10.1
