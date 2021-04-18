@@ -37,7 +37,7 @@ class MasterTableViewCell: UITableViewCell {
         profileImage.layer.cornerRadius = 21
     }
     
-    var cellVM = MasterViewModel() { didSet {
+    var cellVM = MasterShortViewModel() { didSet {
         profileImage.KFloadImage(url: cellVM.profileImage!)
         nameLabel.text = cellVM.name
         typeLabel.text = cellVM.type
@@ -50,12 +50,7 @@ class MasterTableViewCell: UITableViewCell {
             self?.addressLabel.text = address
         }
         
-        let calendar = Calendar.current
-        let df = DateFormatter()
-        df.dateFormat = "mm"
-        workingHoursLabel.text = cellVM.workHours != nil ? ("Открыто до " + String(
-                                                                calendar.component(.hour, from: cellVM.workHours!.everyday!.to)) + ":" +
-                                                                df.string(from: cellVM.workHours!.everyday!.to)) : "Нет данных"
+        workingHoursLabel.text = cellVM.workHours != nil ? ("Открыто до " + Utilities.convertDateToTime(date: cellVM.workHours!.everyday!.to)) : "Нет данных"
         }
     }
 

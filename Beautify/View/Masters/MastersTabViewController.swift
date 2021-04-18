@@ -14,7 +14,7 @@ class MastersTabViewController: UIViewController {
     
     let searchController = UISearchController()
     let vm               = MasterListViewModel()
-    var filtred          = [MasterViewModel]()
+    var filtred          = [MasterListViewModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,7 +73,17 @@ extension MastersTabViewController: UITableViewDataSource, UITableViewDelegate  
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        vm.pressedCell(at: indexPath)
         performSegue(withIdentifier: "masterCard", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "masterCard" {
+            let vc = segue.destination as! MasterCardViewController
+            vc.masterTitle = vm.selectedCell!.name!
+            vc.masterType = vm.selectedCell!.type!
+            vc.uid  = vm.selectedCell!.uid!
+        }
     }
 }
 

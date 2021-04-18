@@ -10,11 +10,11 @@ import Foundation
 
 class MasterListViewModel {
     
-    var masterViewModel     = [MasterViewModel]() { didSet { reloadTableViewClosure?() } }
-    var selectedCell        : MasterViewModel?
+    var masterViewModel     = [MasterShortViewModel]() { didSet { reloadTableViewClosure?() } }
+    var selectedCell        : MasterShortViewModel?
     var numberOfCells       : Int { return masterViewModel.count }
     
-    var originalModel       = [MasterViewModel]()
+    var originalModel       = [MasterShortViewModel]()
     
     var reloadTableViewClosure: (()->())?
     
@@ -26,7 +26,7 @@ class MasterListViewModel {
     // MARK:- Init fetch masters
     
     func initFetch() {
-        FBMasters.shared.loadAllMasters { [weak self] (masters, error) in
+        FBMasters.shared.loadMasters { [weak self] (masters, error) in
             guard let self = self else { return }
             if error == nil {
                 guard let masters = masters else {
@@ -40,18 +40,18 @@ class MasterListViewModel {
     }
     
     private func createMasterViewModel(masters: [Master]) {
-        var vms = [MasterViewModel]()
+        var vms = [MasterShortViewModel]()
         for master in masters {
             vms.append(proccessFetchMasters(master: master))
         }
         masterViewModel.append(contentsOf: vms)
     }
     
-    private func proccessFetchMasters(master: Master) -> MasterViewModel {
-        return MasterViewModel(uid: master.id!, coordinate: master.coordinate, description: master.description, name: master.name, profileImage: master.profileImage, type: master.type, workHours: master.workHours)
+    private func proccessFetchMasters(master: Master) -> MasterShortViewModel {
+        return MasterShortViewModel(uid: master.id!, coordinate: master.coordinate, name: master.name, profileImage: master.profileImage, type: master.type, workHours: master.workHours)
     }
     
-    func getCellViewModel(at indexpath: IndexPath) -> MasterViewModel{
+    func getCellViewModel(at indexpath: IndexPath) -> MasterShortViewModel{
         return masterViewModel[indexpath.row]
     }
     
@@ -86,12 +86,11 @@ class MasterListViewModel {
     
 }
 
-struct MasterViewModel {
+struct MasterShortViewModel {
     
     var uid: String?
-    var coordinate: Coordinate?
-    var address: String?
     var description: String?
+    var coordinate: Coordinate?
     var name: String?
     var priceTier: Int?
     var profileImage: String?

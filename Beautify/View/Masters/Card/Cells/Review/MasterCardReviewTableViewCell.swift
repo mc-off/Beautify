@@ -9,6 +9,7 @@
 import UIKit
 
 class MasterCardReviewTableViewCell: UITableViewCell {
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()

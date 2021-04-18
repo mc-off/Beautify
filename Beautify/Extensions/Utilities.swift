@@ -37,4 +37,14 @@ class Utilities {
         }
         return s
     }
+    
+    static func convertDateToTime(date:Date) -> String {
+        let calendar = Calendar.current
+        let df = DateFormatter()
+        df.dateFormat = "mm"
+        
+        return String(calendar.component(.hour, from: date)) +
+            ":" +
+            df.string(from: date)
+    }
 }

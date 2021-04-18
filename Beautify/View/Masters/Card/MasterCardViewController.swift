@@ -9,6 +9,10 @@
 import UIKit
 
 class MasterCardViewController: UIViewController {
+    
+    public var masterTitle: String?
+    public var masterType: String?
+    public var uid : String?
 
     @IBOutlet weak var headTitleLabel: UILabel!
     @IBOutlet weak var headTypeLabel: UILabel!
@@ -16,8 +20,14 @@ class MasterCardViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    private let vm = MasterCardViewModel()
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        headTitleLabel.text = masterTitle
+        headTypeLabel.text = masterType
         
         headSegmentedControl.superview?.clipsToBounds = true
         
@@ -38,10 +48,16 @@ class MasterCardViewController: UIViewController {
         
         tableView.register(UINib(nibName: "PreviousWorkTableViewCell", bundle: nil), forCellReuseIdentifier: "PreviousWorkTableViewCell")
         // Do any additional setup after loading the view.
+        
+        vm.reloadTableViewClosure = { [unowned self] in
+            self.tableView.reloadData()
+        }
+        vm.initFetch(uid: uid!)
+
     }
     
     @IBAction func headSegmentedControlValueChanged(_ sender: Any) {
-        tableView.reloadData()
+        vm.reloadTableViewClosure?()
     }
     /*
     // MARK: - Navigation
@@ -119,14 +135,24 @@ extension MasterCardViewController: UITableViewDelegate, UITableViewDataSource {
         case 0:
             switch indexPath.section {
             case 0:
-                return  tableView.dequeueReusableCell(withIdentifier: "MasterCardDescriptionTableViewCell",
-                for: indexPath)
+                let cell = tableView.dequeueReusableCell(withIdentifier: "MasterCardDescriptionTableViewCell",
+                for: indexPath) as? MasterCardDescriptionTableViewCell
+                cell?.descriptionLabel.text = vm.masterViewModel.description
+                
+                return cell ?? UITableViewCell()
             case 1:
                 return  tableView.dequeueReusableCell(withIdentifier: "MasterCardContactsTableViewCell",
                 for: indexPath)
             case 2:
-                return  tableView.dequeueReusableCell(withIdentifier: "MasterCardWorkingHoursTableViewCell",
-                for: indexPath)
+                let cell =   tableView.dequeueReusableCell(withIdentifier: "MasterCardWorkingHoursTableViewCell",
+                for: indexPath) as? MasterCardWorkingHoursTableViewCell
+                cell?.workingHoursLabel.text = vm.masterViewModel.workHours != nil ?
+                    ("Сегодня:\n" +
+                        Utilities.convertDateToTime(date: vm.masterViewModel.workHours!.everyday!.from) +
+                    " - " +
+                        Utilities.convertDateToTime(date: vm.masterViewModel.workHours!.everyday!.to)) :
+                    "Нет данных"
+                return cell ?? UITableViewCell()
             case 3:
                 return  tableView.dequeueReusableCell(withIdentifier: "MasterCardPriceListTableViewCell",
                 for: indexPath)
@@ -144,11 +170,6 @@ extension MasterCardViewController: UITableViewDelegate, UITableViewDataSource {
             
         }
     }
-    
-//    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-//        guard let headerView = view as? UITableViewHeaderFooterView else { return }
-//        headerView.tintColor = .clear //use any color you want here .red, .black etc
-//    }
     
 
 }
