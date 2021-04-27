@@ -10,6 +10,21 @@ import UIKit
 
 class MasterCardReviewTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var typeLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var topImage: UIImageView!
+    @IBOutlet weak var starsStackView: UIStackView!
+    
+    
+    var cellVM = ReviewViewModel() { didSet
+        {
+            topImage.KFloadImage(url: cellVM.topImageURL!)
+            usernameLabel.text = cellVM.username
+            descriptionLabel.text = cellVM.description
+        }
+    }
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()

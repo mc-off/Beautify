@@ -18,6 +18,7 @@ struct Master {
     var profileImage: String?
     var type: String?
     var workHours: WorkHoursWeekly?
+    var reviews: [String]?
 }
 
 struct Coordinate {

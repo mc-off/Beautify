@@ -121,6 +121,16 @@ class FBMasters {
                 let longitude = snapshot.childSnapshot(forPath: "coordinate").childSnapshot(forPath: "longitude").value as? Double
                 master.coordinate = Coordinate(longitude: longitude!, latitude: latitude!)
                 
+                let reviews = snapshot.childSnapshot(forPath: "reviews").value as! [String:AnyObject]
+                
+                master.reviews = [String]()
+                
+                for (review,_) in reviews {
+                    master.reviews!.append(review)
+                }
+                
+                print(master.reviews)
+                
                 let fromDate = self.dateFormatter.date(from: snapshot.childSnapshot(forPath: "workHours").childSnapshot(forPath: "everyday").childSnapshot(forPath: "from").value as! String)
                 
                 let toDate = self.dateFormatter.date(from: snapshot.childSnapshot(forPath: "workHours").childSnapshot(forPath: "everyday").childSnapshot(forPath: "to").value as! String)

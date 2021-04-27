@@ -53,10 +53,10 @@ class MasterCardViewController: UIViewController {
             self.tableView.reloadData()
         }
         vm.initFetch(uid: uid!)
-
     }
     
     @IBAction func headSegmentedControlValueChanged(_ sender: Any) {
+        vm.selectedSegment = headSegmentedControl.selectedSegmentIndex
         vm.reloadTableViewClosure?()
     }
     /*
@@ -125,7 +125,7 @@ extension MasterCardViewController: UITableViewDelegate, UITableViewDataSource {
                 return 1
             }
         default:
-            return 10
+            return vm.numberOfCells
         }
         
     }
@@ -161,8 +161,10 @@ extension MasterCardViewController: UITableViewDelegate, UITableViewDataSource {
             }
         case 1:
             let cell =  tableView.dequeueReusableCell(withIdentifier: "MasterCardReviewTableViewCell",
-                                          for: indexPath)
+                                          for: indexPath) as! MasterCardReviewTableViewCell
             cell.backgroundColor = (indexPath.item % 2 == 0) ? UIColor.systemBackground : UIColor.systemGroupedBackground
+            print("Index path " + String(indexPath.item))
+            cell.cellVM = vm.getReviewCellViewModel(at: indexPath.item)
             return cell
         default:
             return  tableView.dequeueReusableCell(withIdentifier: "PreviousWorkTableViewCell",
