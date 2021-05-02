@@ -167,9 +167,12 @@ extension MasterCardViewController: UITableViewDelegate, UITableViewDataSource {
             cell.cellVM = vm.getReviewCellViewModel(at: indexPath.item)
             return cell
         default:
-            return  tableView.dequeueReusableCell(withIdentifier: "PreviousWorkTableViewCell",
-            for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "PreviousWorkTableViewCell",
+            for: indexPath) as! PreviousWorkTableViewCell
             
+            cell.cellVM = vm.worksViewModel.getCellViewModel(at: indexPath)
+            
+            return cell
         }
     }
     

@@ -37,6 +37,20 @@ class WorksViewModel {
         }
     }
     
+    func initFetch(creatorID: String) {
+        FBWorks.shared.loadWorks(creatorID: creatorID) { [weak self] (works, error) in
+            guard let self = self else { return }
+            if error == nil {
+                guard let works = works else {
+                    self.reloadTableViewClosure?()
+                    return
+                }
+                self.worksViewModel.removeAll()
+                self.createWorksViewModel(works: works)
+            }
+        }
+    }
+    
     private func createWorksViewModel(works: [Work]) {
         var vms = [WorkViewModel]()
         for work in works {

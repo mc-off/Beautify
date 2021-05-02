@@ -10,6 +10,7 @@ import Foundation
 
 class MasterCardViewModel {
     
+    var worksViewModel = WorksViewModel() { didSet { reloadTableViewClosure?() } }
     var masterViewModel =  MasterShortViewModel() { didSet { reloadTableViewClosure?() } }
     var reviewsViewModel = [ReviewViewModel]() { didSet { reloadTableViewClosure?() } }
     var selectedInfoCell: MasterShortViewModel?
@@ -23,7 +24,7 @@ class MasterCardViewModel {
         case 1:
             return reviewsViewModel.count
         default:
-            return 5
+            return worksViewModel.numberOfCells
         }
     }
     
@@ -47,6 +48,7 @@ class MasterCardViewModel {
                 self.masterViewModel = self.proccessFetchMaster(master: master!)
             } else { self.message = error! }
             self.fetchReviews(masterID: uid)
+            self.worksViewModel.initFetch(creatorID: uid)
         }
     }
     
