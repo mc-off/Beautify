@@ -28,6 +28,9 @@
 		6D258AB8265E13390002EA5F /* MastesrListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D258AB7265E13390002EA5F /* MastesrListViewModel.swift */; };
 		6D258ABA265E15A40002EA5F /* Master.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D258AB9265E15A40002EA5F /* Master.swift */; };
 		6D258ABE265E47BF0002EA5F /* Geocoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D258ABD265E47BF0002EA5F /* Geocoder.swift */; };
+		6D258AC5265F6D130002EA5F /* Work.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D258AC4265F6D130002EA5F /* Work.swift */; };
+		6D258AC8265F6E530002EA5F /* FBWorks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D258AC7265F6E530002EA5F /* FBWorks.swift */; };
+		6D258ACA265F6FC50002EA5F /* WorksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D258AC9265F6FC50002EA5F /* WorksViewModel.swift */; };
 		6D441F852630050E00A29616 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D441F842630050E00A29616 /* HomeViewModel.swift */; };
 		6D441F8726300E0F00A29616 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6D441F8626300E0F00A29616 /* GoogleService-Info.plist */; };
 		6D441F892630337900A29616 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D441F882630337800A29616 /* Profile.storyboard */; };
@@ -99,6 +102,9 @@
 		6D258AB7265E13390002EA5F /* MastesrListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MastesrListViewModel.swift; sourceTree = "<group>"; };
 		6D258AB9265E15A40002EA5F /* Master.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Master.swift; sourceTree = "<group>"; };
 		6D258ABD265E47BF0002EA5F /* Geocoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Geocoder.swift; sourceTree = "<group>"; };
+		6D258AC4265F6D130002EA5F /* Work.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Work.swift; sourceTree = "<group>"; };
+		6D258AC7265F6E530002EA5F /* FBWorks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBWorks.swift; sourceTree = "<group>"; };
+		6D258AC9265F6FC50002EA5F /* WorksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorksViewModel.swift; sourceTree = "<group>"; };
 		6D441F842630050E00A29616 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		6D441F8626300E0F00A29616 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6D441F882630337800A29616 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
@@ -318,6 +324,14 @@
 			path = Creation;
 			sourceTree = "<group>";
 		};
+		6D258AC6265F6D800002EA5F /* Work */ = {
+			isa = PBXGroup;
+			children = (
+				6D258AC9265F6FC50002EA5F /* WorksViewModel.swift */,
+			);
+			path = Work;
+			sourceTree = "<group>";
+		};
 		6D821162265C07D500BE8374 /* InfoWindow */ = {
 			isa = PBXGroup;
 			children = (
@@ -352,6 +366,7 @@
 		6D87FBEC262FEB0B00D38EC3 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				6D258AC6265F6D800002EA5F /* Work */,
 				6D93E70E263B0B3C00C573F2 /* Master */,
 				6D87FBED262FEB2300D38EC3 /* Auth */,
 				6DE64F8126305786004BA4A1 /* Profile */,
@@ -376,6 +391,7 @@
 				6D87FBF8262FEC3800D38EC3 /* User.swift */,
 				6D258AB9265E15A40002EA5F /* Master.swift */,
 				6D941FA3265ED83B0056ACFE /* Review.swift */,
+				6D258AC4265F6D130002EA5F /* Work.swift */,
 				6D87FBFA262FEC8700D38EC3 /* Deffaults.swift */,
 			);
 			path = Model;
@@ -388,6 +404,7 @@
 				6D87FBFE262FEFCA00D38EC3 /* FBDDatabase.swift */,
 				6D93E711263B181F00C573F2 /* FBMasters.swift */,
 				6D941FA1265ED7CE0056ACFE /* FBReview.swift */,
+				6D258AC7265F6E530002EA5F /* FBWorks.swift */,
 				6D258ABD265E47BF0002EA5F /* Geocoder.swift */,
 			);
 			path = Network;
@@ -667,6 +684,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D252224265DB76C00AF37B7 /* ConstructorCreationFormTableViewCell.swift in Sources */,
+				6D258ACA265F6FC50002EA5F /* WorksViewModel.swift in Sources */,
 				6D87FC04262FF21800D38EC3 /* Alert.swift in Sources */,
 				6D258ABE265E47BF0002EA5F /* Geocoder.swift in Sources */,
 				6D87FBF9262FEC3800D38EC3 /* User.swift in Sources */,
@@ -691,6 +709,7 @@
 				6D0D986A265140FD00BE2B23 /* MasterCardWorkingHoursTableViewCell.swift in Sources */,
 				6D87FC0C262FF2B000D38EC3 /* Enums.swift in Sources */,
 				6D87FBF5262FEBB900D38EC3 /* ResetPasswordViewModel.swift in Sources */,
+				6D258AC8265F6E530002EA5F /* FBWorks.swift in Sources */,
 				6D87FC0A262FF28400D38EC3 /* Constants.swift in Sources */,
 				6DF0488B25F662640033BD66 /* AppDelegate.swift in Sources */,
 				6D252207265D5F8200AF37B7 /* ConstructorViewController.swift in Sources */,
@@ -708,6 +727,7 @@
 				6D441F852630050E00A29616 /* HomeViewModel.swift in Sources */,
 				6D252212265D998300AF37B7 /* ConstructorCreationItemTableViewController.swift in Sources */,
 				6D87FBFD262FECC900D38EC3 /* FBAuthentication.swift in Sources */,
+				6D258AC5265F6D130002EA5F /* Work.swift in Sources */,
 				6D93E715263B213B00C573F2 /* MasterTableViewCell.swift in Sources */,
 				6D87FBFF262FEFCA00D38EC3 /* FBDDatabase.swift in Sources */,
 				6D941FA4265ED83B0056ACFE /* Review.swift in Sources */,
