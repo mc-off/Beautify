@@ -19,12 +19,8 @@ class ConstructorViewController: UITableViewController {
         vm.reloadTableViewClosure = { [weak self] in
             guard let self = self else { return }
             if self.vm.numberOfCells == 0 {
-                self.tableView.alpha = 0
             } else {
                 self.tableView.reloadData()
-                UIView.animate(withDuration: 0.2) {
-                    self.tableView.alpha = 1
-                }
             }
         }
         vm.initFetch()

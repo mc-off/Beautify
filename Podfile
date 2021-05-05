@@ -15,6 +15,8 @@ pod 'Firebase/Auth'
     pod 'GooglePlaces'
     pod 'SlideUpPanel'
     pod 'Kingfisher'
+    pod 'ASHorizontalScrollView', '~> 1.5.2'
+
 end
 
 

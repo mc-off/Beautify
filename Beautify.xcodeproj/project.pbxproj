@@ -31,6 +31,10 @@
 		6D258AC5265F6D130002EA5F /* Work.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D258AC4265F6D130002EA5F /* Work.swift */; };
 		6D258AC8265F6E530002EA5F /* FBWorks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D258AC7265F6E530002EA5F /* FBWorks.swift */; };
 		6D258ACA265F6FC50002EA5F /* WorksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D258AC9265F6FC50002EA5F /* WorksViewModel.swift */; };
+		6D258ACD265F9DC10002EA5F /* ItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D258ACC265F9DC10002EA5F /* ItemView.xib */; };
+		6D258ACF265F9E590002EA5F /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D258ACE265F9E590002EA5F /* Item.swift */; };
+		6D258AD1265FB2AD0002EA5F /* ItemSectionTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D258AD0265FB2AD0002EA5F /* ItemSectionTitleView.xib */; };
+		6D258AD3265FB3380002EA5F /* ItemSectionTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D258AD2265FB3380002EA5F /* ItemSectionTitle.swift */; };
 		6D441F852630050E00A29616 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D441F842630050E00A29616 /* HomeViewModel.swift */; };
 		6D441F8726300E0F00A29616 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6D441F8626300E0F00A29616 /* GoogleService-Info.plist */; };
 		6D441F892630337900A29616 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D441F882630337800A29616 /* Profile.storyboard */; };
@@ -105,6 +109,10 @@
 		6D258AC4265F6D130002EA5F /* Work.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Work.swift; sourceTree = "<group>"; };
 		6D258AC7265F6E530002EA5F /* FBWorks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBWorks.swift; sourceTree = "<group>"; };
 		6D258AC9265F6FC50002EA5F /* WorksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorksViewModel.swift; sourceTree = "<group>"; };
+		6D258ACC265F9DC10002EA5F /* ItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemView.xib; sourceTree = "<group>"; };
+		6D258ACE265F9E590002EA5F /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		6D258AD0265FB2AD0002EA5F /* ItemSectionTitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemSectionTitleView.xib; sourceTree = "<group>"; };
+		6D258AD2265FB3380002EA5F /* ItemSectionTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemSectionTitle.swift; sourceTree = "<group>"; };
 		6D441F842630050E00A29616 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		6D441F8626300E0F00A29616 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6D441F882630337800A29616 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
@@ -280,6 +288,7 @@
 			isa = PBXGroup;
 			children = (
 				6D252211265D998300AF37B7 /* ConstructorCreationItemTableViewController.swift */,
+				6D258ACB265F9DAB0002EA5F /* ItemView */,
 			);
 			path = Item;
 			sourceTree = "<group>";
@@ -330,6 +339,17 @@
 				6D258AC9265F6FC50002EA5F /* WorksViewModel.swift */,
 			);
 			path = Work;
+			sourceTree = "<group>";
+		};
+		6D258ACB265F9DAB0002EA5F /* ItemView */ = {
+			isa = PBXGroup;
+			children = (
+				6D258ACC265F9DC10002EA5F /* ItemView.xib */,
+				6D258AD0265FB2AD0002EA5F /* ItemSectionTitleView.xib */,
+				6D258AD2265FB3380002EA5F /* ItemSectionTitle.swift */,
+				6D258ACE265F9E590002EA5F /* Item.swift */,
+			);
+			path = ItemView;
 			sourceTree = "<group>";
 		};
 		6D821162265C07D500BE8374 /* InfoWindow */ = {
@@ -606,8 +626,10 @@
 				6D441F8726300E0F00A29616 /* GoogleService-Info.plist in Resources */,
 				6D821164265C07F300BE8374 /* MapInfoWindowView.xib in Resources */,
 				6D0D986B265140FD00BE2B23 /* MasterCardWorkingHoursTableViewCell.xib in Resources */,
+				6D258ACD265F9DC10002EA5F /* ItemView.xib in Resources */,
 				6D0D985A26513E5200BE2B23 /* MasterCardDescriptionTableViewCell.xib in Resources */,
 				6D441F892630337900A29616 /* Profile.storyboard in Resources */,
+				6D258AD1265FB2AD0002EA5F /* ItemSectionTitleView.xib in Resources */,
 				6D87FBE9262FEAB500D38EC3 /* Main.storyboard in Resources */,
 				6DF0489425F662670033BD66 /* Assets.xcassets in Resources */,
 				6D252225265DB76C00AF37B7 /* ConstructorCreationFormTableViewCell.xib in Resources */,
@@ -698,6 +720,7 @@
 				6D87FBF1262FEB8400D38EC3 /* SignUpViewModel.swift in Sources */,
 				6DCAE07425F67359009EFDEC /* Utilities.swift in Sources */,
 				6D0D9866265140E700BE2B23 /* MasterCardContactsTableViewCell.swift in Sources */,
+				6D258ACF265F9E590002EA5F /* Item.swift in Sources */,
 				6D93E70D263AE85D00C573F2 /* MasterCreationViewComntroller.swift in Sources */,
 				6D93E710263B0B5400C573F2 /* MasterCrationViewModel.swift in Sources */,
 				6D258ABA265E15A40002EA5F /* Master.swift in Sources */,
@@ -709,6 +732,7 @@
 				6D0D986A265140FD00BE2B23 /* MasterCardWorkingHoursTableViewCell.swift in Sources */,
 				6D87FC0C262FF2B000D38EC3 /* Enums.swift in Sources */,
 				6D87FBF5262FEBB900D38EC3 /* ResetPasswordViewModel.swift in Sources */,
+				6D258AD3265FB3380002EA5F /* ItemSectionTitle.swift in Sources */,
 				6D258AC8265F6E530002EA5F /* FBWorks.swift in Sources */,
 				6D87FC0A262FF28400D38EC3 /* Constants.swift in Sources */,
 				6DF0488B25F662640033BD66 /* AppDelegate.swift in Sources */,

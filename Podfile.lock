@@ -1,4 +1,5 @@
 PODS:
+  - ASHorizontalScrollView (1.5.2)
   - Firebase/Auth (7.3.0):
     - Firebase/CoreOnly
     - FirebaseAuth (~> 7.3.0)
@@ -66,6 +67,7 @@ PODS:
   - SlideUpPanel (1.0.5)
 
 DEPENDENCIES:
+  - ASHorizontalScrollView (~> 1.5.2)
   - Firebase/Auth
   - Firebase/Database
   - Firebase/Storage
@@ -77,6 +79,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - ASHorizontalScrollView
     - Firebase
     - FirebaseAuth
     - FirebaseCore
@@ -96,6 +99,7 @@ SPEC REPOS:
     - SlideUpPanel
 
 SPEC CHECKSUMS:
+  ASHorizontalScrollView: b84b60fa1ce2088d569e5faa8379846c143c824d
   Firebase: 26223c695fe322633274198cb19dca8cb7e54416
   FirebaseAuth: c224a0cf1afa0949bd5c7bfcf154b4f5ce8ddef2
   FirebaseCore: 4d3c72622ce0e2106aaa07bb4b2935ba2c370972
@@ -114,6 +118,6 @@ SPEC CHECKSUMS:
   PromisesObjC: 8c196f5a328c2cba3e74624585467a557dcb482f
   SlideUpPanel: 1d904dc7bc28c5181a098d5431933f34c5a4a017
 
-PODFILE CHECKSUM: c522bde9eae07660649bbea22bf994d11ea00a97
+PODFILE CHECKSUM: 7b15f65ebf0d549b5a83689adf5938effc67252f
 
 COCOAPODS: 1.10.1
