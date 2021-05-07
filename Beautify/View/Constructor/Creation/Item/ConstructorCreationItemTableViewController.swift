@@ -9,11 +9,17 @@
 import UIKit
 import ASHorizontalScrollView
 
-class ConstructorCreationItemTableViewController: UITableViewController {
+class ConstructorCreationItemTableViewController: UITableViewController, ItemTappedDelegate {
+    
+    func didTapItem(itemVM: ItemViewModel) {
+        vm.selectedCell = itemVM
+//        performSegue(withIdentifier: "toForm", sender: self)
+    }
+    
 
     let kCellHeight = 280
     
-    let vm = WorksViewModel()
+    let vm = ItemsViewModel()
 
     
     
@@ -31,11 +37,29 @@ class ConstructorCreationItemTableViewController: UITableViewController {
 
         let nextBtn = UIBarButtonItem(customView: button)
         self.navigationItem.rightBarButtonItems = [nextBtn]
+        
+        vm.reloadTableViewClosure = { [weak self] in
+            guard let self = self else { return }
+            if (self.vm.numberOfGloccyCells == 0 || self.vm.numberOfMattCells == 0) {
+            } else {
+                self.tableView.reloadData()
+            }
+        }
+        vm.initFetch()
     }
     
     @objc func buttonAction(sender: Any) {
         performSegue(withIdentifier: "toForm", sender: self)
     }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "toForm" {
+//            let vc = segue.destination as! MasterCardViewController
+//            vc.masterTitle = vm.selectedCell!.name!
+//            vc.masterType = vm.selectedCell!.type!
+//            vc.uid  = vm.selectedCell!.uid!
+//        }
+//    }
     
 }
 
@@ -65,24 +89,25 @@ extension ConstructorCreationItemTableViewController {
                 horizontalScrollView.setItemsMarginOnce()
             switch indexPath.section {
             case 0:
-                for _ in 1...20{
-                    
-                    let item = Bundle.main.loadNibNamed("ItemView", owner: self, options: nil)![0] as? Item
-                    
-                    item?.backgroundView.layer.cornerRadius = 20
-                    
-                    horizontalScrollView.addItem(item!)
+                if(vm.numberOfGloccyCells>0) {
+                    for i in 0...vm.numberOfGloccyCells-1 {
+                        
+                        let item = Bundle.main.loadNibNamed("ItemView", owner: self, options: nil)![0] as? ItemContainer
+                        item?.cellVM = vm.getGloccyCellViewModel(at: i)
+
+                        horizontalScrollView.addItem(item!)
+                    }
                 }
                 
             default:
-                for _ in 1...20{
-                    
-                    let item = Bundle.main.loadNibNamed("ItemView", owner: self, options: nil)![0] as? Item
-                    
-                    item?.backgroundView.backgroundColor = UIColor.blue
-                    item?.backgroundView.layer.cornerRadius = 20
-                    
-                    horizontalScrollView.addItem(item!)
+                if(vm.numberOfMattCells>0) {
+                    for i in 0...vm.numberOfMattCells-1 {
+                        
+                        let item = Bundle.main.loadNibNamed("ItemView", owner: self, options: nil)![0] as? ItemContainer
+                        item?.cellVM = vm.getMattCellViewModel(at: i)
+                        
+                        horizontalScrollView.addItem(item!)
+                    }
                 }
             }
                 
@@ -103,7 +128,12 @@ extension ConstructorCreationItemTableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return 1
+        switch vm.numberOfGloccyCells+vm.numberOfMattCells {
+        case 0:
+            return 0
+        default:
+            return 1
+        }
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
@@ -124,7 +154,11 @@ extension ConstructorCreationItemTableViewController {
         let itemTitle = Bundle.main.loadNibNamed("ItemSectionTitleView", owner: self, options: nil)![0] as? ItemSectionTitle
         switch section {
         case 0:
-            itemTitle?.titleLabel.text = "Глянцеый лак"
+            if (vm.numberOfGloccyCells>0) {
+                itemTitle?.titleLabel.text = "Глянцеый лак"
+            } else {
+                itemTitle?.titleLabel.text = "Матовый лак"
+            }
         default:
             itemTitle?.titleLabel.text = "Матовый лак"
         }

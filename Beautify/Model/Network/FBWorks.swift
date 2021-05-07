@@ -35,4 +35,28 @@ class FBWorks {
             }
         }
     }
+    
+    func loadItems(complation: @escaping([Item]?, String?)->()) {
+        FBAuthentication.shared.ref.child("items").observeSingleEvent(of: .value) { (snapshot) in
+            if snapshot.exists() {
+                var items = [Item]()
+                let data = snapshot.children.allObjects as! [DataSnapshot]
+                for itemData in data {
+                    var item = Item()
+                    let values = itemData.value as! [String: Any]
+                    item.id = values["id"] as? String ?? ""
+                    item.name = values["name"] as? String ?? ""
+                    item.imageURL = values["imageURL"] as? String ?? ""
+                    item.type = ItemType(rawValue: values["type"] as? String ?? "")
+                    item.color = values["color"] as? String ?? ""
+                                
+                    items.append(item)
+                }
+                complation(items, nil)
+            } else {
+                complation(nil, "Can't load item list")
+            }
+        }
+    }
 }
+

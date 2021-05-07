@@ -78,6 +78,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Item selection" largeTitleDisplayMode="never" id="mFT-TB-ohD"/>
+                    <connections>
+                        <segue destination="l5J-mL-0qc" kind="show" identifier="toForm" id="bZ4-UN-uLr"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4V8-w4-O7X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -120,7 +123,7 @@
             <objects>
                 <tableViewController id="j9W-G5-qAY" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="42W-Jl-3bZ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
