@@ -49,7 +49,7 @@ class ConstructorCreationItemTableViewController: UITableViewController, ItemTap
     }
     
     @objc func buttonAction(sender: Any) {
-        performSegue(withIdentifier: "toForm", sender: self)
+        performSegue(withIdentifier: "toFinal", sender: self)
     }
     
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
