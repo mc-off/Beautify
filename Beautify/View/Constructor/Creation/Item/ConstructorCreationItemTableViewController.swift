@@ -10,16 +10,19 @@ import UIKit
 import ASHorizontalScrollView
 
 class ConstructorCreationItemTableViewController: UITableViewController, ItemTappedDelegate {
-    
     func didTapItem(itemVM: ItemViewModel) {
         vm.selectedCell = itemVM
-//        performSegue(withIdentifier: "toForm", sender: self)
+    }
+    
+    func didUntapItem() {
+        vm.selectedCell = ItemViewModel()
     }
     
 
     let kCellHeight = 280
     
     let vm = ItemsViewModel()
+    var horizontalScrollView: ASHorizontalScrollView?
 
     
     
@@ -46,20 +49,19 @@ class ConstructorCreationItemTableViewController: UITableViewController, ItemTap
             }
         }
         vm.initFetch()
+        vm.selectedCell = ItemViewModel()
     }
     
     @objc func buttonAction(sender: Any) {
         performSegue(withIdentifier: "toFinal", sender: self)
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "toForm" {
-//            let vc = segue.destination as! MasterCardViewController
-//            vc.masterTitle = vm.selectedCell!.name!
-//            vc.masterType = vm.selectedCell!.type!
-//            vc.uid  = vm.selectedCell!.uid!
-//        }
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toFinal" {
+            let vc = segue.destination as! FinallTableViewController
+            vc.itemVM = vm.selectedCell?.id != nil ? vm.selectedCell! : vm.getGloccyCellViewModel(at: 0)
+        }
+    }
     
 }
 
@@ -73,20 +75,20 @@ extension ConstructorCreationItemTableViewController {
         if (cell == nil) {
             cell = UITableViewCell(style: UITableViewCell.CellStyle.subtitle, reuseIdentifier: indentifier)
             cell?.selectionStyle = .none
-            let horizontalScrollView:ASHorizontalScrollView = ASHorizontalScrollView(frame:CGRect(x: 0, y: 0, width: Int(tableView.frame.size.width), height: kCellHeight))
+            horizontalScrollView = ASHorizontalScrollView(frame:CGRect(x: 0, y: 0, width: Int(tableView.frame.size.width), height: kCellHeight))
             
                 //instead of using frame to determine margin, using number of items per screen to calculate margin maybe eaiser than setting mini margin for multiple screen size
-                horizontalScrollView.arrangeType = .byNumber
+                horizontalScrollView!.arrangeType = .byNumber
                 
-                horizontalScrollView.marginSettings_375 = MarginSettings(leftMargin: 16, numberOfItemsPerScreen: 1.75)
-                horizontalScrollView.marginSettings_320 = MarginSettings(leftMargin: 16, numberOfItemsPerScreen: 1.5)
+                horizontalScrollView!.marginSettings_375 = MarginSettings(leftMargin: 16, numberOfItemsPerScreen: 1.75)
+                horizontalScrollView!.marginSettings_320 = MarginSettings(leftMargin: 16, numberOfItemsPerScreen: 1.5)
                 //for all the other screen sizes which are not set here, margin would be calculated by frame instead
                 
-                horizontalScrollView.defaultMarginSettings = MarginSettings(leftMargin: 16, numberOfItemsPerScreen: 1.8)
+                horizontalScrollView!.defaultMarginSettings = MarginSettings(leftMargin: 16, numberOfItemsPerScreen: 1.8)
                 
-                horizontalScrollView.uniformItemSize = CGSize(width: 186, height: 280)
+                horizontalScrollView!.uniformItemSize = CGSize(width: 186, height: 280)
                 //this must be called after changing any size or margin property of this class to get acurrate margin
-                horizontalScrollView.setItemsMarginOnce()
+                horizontalScrollView!.setItemsMarginOnce()
             switch indexPath.section {
             case 0:
                 if(vm.numberOfGloccyCells>0) {
@@ -94,8 +96,9 @@ extension ConstructorCreationItemTableViewController {
                         
                         let item = Bundle.main.loadNibNamed("ItemView", owner: self, options: nil)![0] as? ItemContainer
                         item?.cellVM = vm.getGloccyCellViewModel(at: i)
+                        item?.delegate = self
 
-                        horizontalScrollView.addItem(item!)
+                        horizontalScrollView!.addItem(item!)
                     }
                 }
                 
@@ -105,14 +108,15 @@ extension ConstructorCreationItemTableViewController {
                         
                         let item = Bundle.main.loadNibNamed("ItemView", owner: self, options: nil)![0] as? ItemContainer
                         item?.cellVM = vm.getMattCellViewModel(at: i)
+                        item?.delegate = self
                         
-                        horizontalScrollView.addItem(item!)
+                        horizontalScrollView!.addItem(item!)
                     }
                 }
             }
                 
-            cell?.contentView.addSubview(horizontalScrollView)
-            horizontalScrollView.translatesAutoresizingMaskIntoConstraints = false
+            cell?.contentView.addSubview(horizontalScrollView!)
+            horizontalScrollView!.translatesAutoresizingMaskIntoConstraints = false
             cell?.contentView.addConstraint(NSLayoutConstraint(item: horizontalScrollView, attribute: NSLayoutConstraint.Attribute.left, relatedBy: NSLayoutConstraint.Relation.equal, toItem: cell!.contentView, attribute: NSLayoutConstraint.Attribute.left, multiplier: 1, constant: 0))
             cell?.contentView.addConstraint(NSLayoutConstraint(item: horizontalScrollView, attribute: NSLayoutConstraint.Attribute.top, relatedBy: NSLayoutConstraint.Relation.equal, toItem: cell!.contentView, attribute: NSLayoutConstraint.Attribute.top, multiplier: 1, constant: 0))
             cell?.contentView.addConstraint(NSLayoutConstraint(item: horizontalScrollView, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: CGFloat(kCellHeight)))

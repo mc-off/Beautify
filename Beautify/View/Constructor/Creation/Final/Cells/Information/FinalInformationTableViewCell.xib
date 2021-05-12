@@ -17,10 +17,10 @@
                 <rect key="frame" x="0.0" y="0.0" width="441" height="52"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Маникюр номер один" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xlr-Ix-KOI" userLabel="Title">
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="Маникюр номер один" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="xlr-Ix-KOI" userLabel="Title">
                         <rect key="frame" x="16" y="0.0" width="409" height="52"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
+                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="name"/>
                     </textField>
                 </subviews>
                 <constraints>

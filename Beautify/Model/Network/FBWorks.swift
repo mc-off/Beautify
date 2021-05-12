@@ -58,5 +58,24 @@ class FBWorks {
             }
         }
     }
+    
+    func createWork(creatorID: String, title: String, itemID: String, photoURL: String?, formID: String?, complation: @escaping(Bool, String?) -> ()) {
+        let uid = Utilities.randomString(of: 28)
+        let DBWork =
+        ["creatorID": creatorID,
+         "id": uid,
+         "title": title,
+         "itemID": itemID,
+         "photoURL" : photoURL ?? "https://pngimg.com/uploads/nails/nails_PNG1.png",
+         "formID": formID ?? "formmID"] as [String : Any]
+        
+        Database.database().reference().child("works").child(uid).setValue(DBWork) { (error, data) in
+            if ((error) != nil) {
+                complation(false, error?.localizedDescription)
+            } else {
+                complation(true, nil)
+            }
+        }
+    }
 }
 

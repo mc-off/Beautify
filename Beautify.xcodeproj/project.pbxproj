@@ -74,6 +74,7 @@
 		6D941FA4265ED83B0056ACFE /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D941FA3265ED83B0056ACFE /* Review.swift */; };
 		6D97333D2658B82B0022C54D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D97333C2658B82B0022C54D /* MapViewController.swift */; };
 		6D97333F2658B8E30022C54D /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D97333E2658B8E30022C54D /* Map.storyboard */; };
+		6DB2EBCE26601F0E00CCD285 /* WorkCreationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB2EBCD26601F0E00CCD285 /* WorkCreationViewModel.swift */; };
 		6DCAE07425F67359009EFDEC /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCAE07325F67359009EFDEC /* Utilities.swift */; };
 		6DCE047126514E5A00E5AA83 /* MasterCardReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCE046F26514E5A00E5AA83 /* MasterCardReviewTableViewCell.swift */; };
 		6DCE047226514E5A00E5AA83 /* MasterCardReviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DCE047026514E5A00E5AA83 /* MasterCardReviewTableViewCell.xib */; };
@@ -161,6 +162,7 @@
 		6D941FA3265ED83B0056ACFE /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		6D97333C2658B82B0022C54D /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		6D97333E2658B8E30022C54D /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
+		6DB2EBCD26601F0E00CCD285 /* WorkCreationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkCreationViewModel.swift; sourceTree = "<group>"; };
 		6DCAE07325F67359009EFDEC /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		6DCE046F26514E5A00E5AA83 /* MasterCardReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterCardReviewTableViewCell.swift; sourceTree = "<group>"; };
 		6DCE047026514E5A00E5AA83 /* MasterCardReviewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MasterCardReviewTableViewCell.xib; sourceTree = "<group>"; };
@@ -377,6 +379,7 @@
 			isa = PBXGroup;
 			children = (
 				6D258AD7265FD2DE0002EA5F /* Item */,
+				6DB2EBCD26601F0E00CCD285 /* WorkCreationViewModel.swift */,
 			);
 			path = Creation;
 			sourceTree = "<group>";
@@ -798,6 +801,7 @@
 				6D87FBF1262FEB8400D38EC3 /* SignUpViewModel.swift in Sources */,
 				6DCAE07425F67359009EFDEC /* Utilities.swift in Sources */,
 				6D0D9866265140E700BE2B23 /* MasterCardContactsTableViewCell.swift in Sources */,
+				6DB2EBCE26601F0E00CCD285 /* WorkCreationViewModel.swift in Sources */,
 				6D258ACF265F9E590002EA5F /* ItemContainer.swift in Sources */,
 				6D93E70D263AE85D00C573F2 /* MasterCreationViewComntroller.swift in Sources */,
 				6D93E710263B0B5400C573F2 /* MasterCrationViewModel.swift in Sources */,

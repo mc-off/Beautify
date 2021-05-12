@@ -60,7 +60,7 @@ class WorksViewModel {
     }
     
     private func proccessFetchWorks(work: Work) -> WorkViewModel {
-        return WorkViewModel(id: work.id!, creatorID: work.creatorID, formID: work.formID, itemID: work.itemID, photoURL: work.photoURL)
+        return WorkViewModel(id: work.id!, title: work.title, creatorID: work.creatorID, formID: work.formID, itemID: work.itemID, photoURL: work.photoURL)
     }
     
     func getCellViewModel(at indexpath: IndexPath) -> WorkViewModel{

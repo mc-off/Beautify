@@ -10,6 +10,7 @@ import UIKit
 
 protocol ItemTappedDelegate: AnyObject {
     func didTapItem(itemVM: ItemViewModel)
+    func didUntapItem()
 }
 
 class ItemContainer: UIView {
@@ -47,12 +48,13 @@ class ItemContainer: UIView {
 
     @objc func checkAction(sender : UITapGestureRecognizer) {
         
-        delegate?.didTapItem(itemVM: cellVM)
         isSelected = !isSelected
         
         if(isSelected) {
+            delegate?.didTapItem(itemVM: cellVM)
             addOverlay()
         } else {
+            delegate?.didUntapItem()
             dropOverlay()
         }
         

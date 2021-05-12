@@ -115,6 +115,9 @@
                                 <rect key="frame" x="375" y="11" width="19" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="checkmark" catalog="system"/>
+                                <connections>
+                                    <action selector="createButtonPressed:" destination="j9W-G5-qAY" eventType="touchUpInside" id="dhU-yt-wLp"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>

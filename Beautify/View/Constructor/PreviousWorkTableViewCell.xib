@@ -25,32 +25,23 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ot7-sQ-evJ" userLabel="Item Label">
-                        <rect key="frame" x="212" y="66" width="74" height="20.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Form label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vqv-p0-8v0">
-                        <rect key="frame" x="212" y="125.5" width="80" height="21"/>
+                        <rect key="frame" x="212" y="96" width="74" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="Vqv-p0-8v0" firstAttribute="centerY" secondItem="mLi-hN-56n" secondAttribute="centerY" constant="30" id="9EE-Jd-efb"/>
                     <constraint firstAttribute="bottom" secondItem="mLi-hN-56n" secondAttribute="bottom" constant="16" id="Viv-jF-TSD"/>
-                    <constraint firstItem="Vqv-p0-8v0" firstAttribute="leading" secondItem="ot7-sQ-evJ" secondAttribute="leading" id="ZoM-8J-RKl"/>
                     <constraint firstItem="mLi-hN-56n" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="dCk-ZE-ekY"/>
                     <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="ot7-sQ-evJ" secondAttribute="trailing" constant="10" id="iKn-JS-Wwf"/>
                     <constraint firstItem="ot7-sQ-evJ" firstAttribute="leading" secondItem="mLi-hN-56n" secondAttribute="trailing" constant="16" id="nbW-3a-2Ko"/>
-                    <constraint firstItem="ot7-sQ-evJ" firstAttribute="centerY" secondItem="mLi-hN-56n" secondAttribute="centerY" constant="-30" id="qYY-I9-fZ1"/>
+                    <constraint firstItem="ot7-sQ-evJ" firstAttribute="centerY" secondItem="mLi-hN-56n" secondAttribute="centerY" id="qYY-I9-fZ1"/>
                     <constraint firstItem="mLi-hN-56n" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="rVf-zW-lhG"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="formLabel" destination="Vqv-p0-8v0" id="HXh-6I-qkV"/>
                 <outlet property="itemLabel" destination="ot7-sQ-evJ" id="Jfr-YB-Qhg"/>
                 <outlet property="workImage" destination="mLi-hN-56n" id="aa5-JD-3QG"/>
             </connections>

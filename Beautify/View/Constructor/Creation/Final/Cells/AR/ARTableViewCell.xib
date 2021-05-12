@@ -25,6 +25,9 @@
                             <constraint firstAttribute="width" constant="312" id="cKv-H9-SnC"/>
                         </constraints>
                         <state key="normal" image="ARButton"/>
+                        <connections>
+                            <action selector="buttonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ThQ-Y6-rEK"/>
+                        </connections>
                     </button>
                 </subviews>
                 <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>

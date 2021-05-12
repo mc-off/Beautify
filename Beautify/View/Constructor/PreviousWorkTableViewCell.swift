@@ -11,12 +11,10 @@ import UIKit
 class PreviousWorkTableViewCell: UITableViewCell {
     @IBOutlet weak var workImage: UIImageView!
     @IBOutlet weak var itemLabel: UILabel!
-    @IBOutlet weak var formLabel: UILabel!
     
     var cellVM = WorkViewModel() { didSet {
         workImage.KFloadImage(url: cellVM.photoURL!)
-        itemLabel.text = cellVM.itemID
-        formLabel.text = cellVM.formID
+        itemLabel.text = cellVM.title
     }
     }
 

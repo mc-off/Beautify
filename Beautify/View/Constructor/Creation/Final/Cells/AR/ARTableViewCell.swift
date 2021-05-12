@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol ARButtonDelegate: AnyObject {
+    func buttonTapped()
+}
+
 class ARTableViewCell: UITableViewCell {
 
     @IBOutlet weak var button: UIButton!
@@ -17,6 +21,7 @@ class ARTableViewCell: UITableViewCell {
         button.contentHorizontalAlignment = UIControl.ContentHorizontalAlignment.center
         button.imageView!.contentMode = .scaleAspectFit
     }
+    weak var delegate: ARButtonDelegate?
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
@@ -24,4 +29,7 @@ class ARTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    @IBAction func buttonTapped(_ sender: Any) {
+        delegate?.buttonTapped()
+    }
 }

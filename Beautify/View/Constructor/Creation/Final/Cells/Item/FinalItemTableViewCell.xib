@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -31,7 +32,6 @@
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
-                <color key="backgroundColor" red="1" green="0.34509803919999998" blue="0.28627450980000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
                     <constraint firstItem="edv-NF-lBk" firstAttribute="centerY" secondItem="82e-4A-C5D" secondAttribute="centerY" id="7ez-3m-LK0"/>
                     <constraint firstAttribute="trailingMargin" secondItem="edv-NF-lBk" secondAttribute="trailing" constant="30" id="8F5-QM-oaj"/>
@@ -42,6 +42,7 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" name="ToolActive"/>
             <connections>
                 <outlet property="itemImage" destination="82e-4A-C5D" id="0u3-Zd-kfz"/>
                 <outlet property="itemTitleLabel" destination="edv-NF-lBk" id="1Eh-eN-IoM"/>
@@ -51,5 +52,8 @@
     </objects>
     <resources>
         <image name="Лак" width="186" height="186"/>
+        <namedColor name="ToolActive">
+            <color red="1" green="0.3411764705882353" blue="0.28235294117647058" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
