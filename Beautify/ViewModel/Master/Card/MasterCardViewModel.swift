@@ -15,8 +15,10 @@ class MasterCardViewModel {
     var reviewsViewModel = [ReviewViewModel]() { didSet { reloadTableViewClosure?() } }
     var selectedInfoCell: MasterShortViewModel?
     var selectedReviewCell: ReviewViewModel?
+    var selectedWorkCell: WorkViewModel?
     
     var selectedSegment: Int = 0
+    
     var numberOfCells: Int {
         switch selectedSegment {
         case 0:
@@ -88,6 +90,10 @@ class MasterCardViewModel {
     
     func pressedReviewCell(at indexpath: IndexPath) {
         selectedReviewCell = reviewsViewModel[indexpath.row]
+    }
+    
+    func pressedWorkCell(at indexpath: IndexPath) {
+        selectedWorkCell = worksViewModel.worksViewModel[indexpath.row]
     }
     
 }

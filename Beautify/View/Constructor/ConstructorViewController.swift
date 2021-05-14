@@ -29,7 +29,6 @@ class ConstructorViewController: UITableViewController {
     @IBAction func plusButtonTapped(_ sender: Any) {
         performSegue(withIdentifier: "initWorkCreation", sender: self)
     }
-    
 }
 
 extension ConstructorViewController {
@@ -55,5 +54,18 @@ extension ConstructorViewController {
         cell.cellVM = vm.getCellViewModel(at: indexPath)
 
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        vm.pressedCell(at: indexPath)
+        performSegue(withIdentifier: "workInfo", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "workInfo" {
+            let vc = segue.destination as! WorkInfoTableViewController
+            vc.itemID = vm.selectedCell!.itemID!
+            vc.workTitle = vm.selectedCell!.title
+        }
     }
 }

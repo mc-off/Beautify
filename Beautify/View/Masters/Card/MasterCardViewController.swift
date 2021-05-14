@@ -176,5 +176,19 @@ extension MasterCardViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if (headSegmentedControl.selectedSegmentIndex==2) {
+            vm.pressedWorkCell(at: indexPath)
+            performSegue(withIdentifier: "showWorkInfo", sender: self)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showWorkInfo" {
+            let vc = segue.destination as! WorkInfoTableViewController
+            vc.itemID = vm.selectedWorkCell!.itemID!
+            vc.workTitle = vm.selectedWorkCell!.title!
+        }
+    }
 
 }

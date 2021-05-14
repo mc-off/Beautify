@@ -75,6 +75,8 @@
 		6D97333D2658B82B0022C54D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D97333C2658B82B0022C54D /* MapViewController.swift */; };
 		6D97333F2658B8E30022C54D /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D97333E2658B8E30022C54D /* Map.storyboard */; };
 		6DB2EBCE26601F0E00CCD285 /* WorkCreationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB2EBCD26601F0E00CCD285 /* WorkCreationViewModel.swift */; };
+		6DB2EBD126603D6800CCD285 /* WorkInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB2EBD026603D6800CCD285 /* WorkInfoViewModel.swift */; };
+		6DB2EBD52660417200CCD285 /* WorkInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB2EBD42660417200CCD285 /* WorkInfoTableViewController.swift */; };
 		6DCAE07425F67359009EFDEC /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCAE07325F67359009EFDEC /* Utilities.swift */; };
 		6DCE047126514E5A00E5AA83 /* MasterCardReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCE046F26514E5A00E5AA83 /* MasterCardReviewTableViewCell.swift */; };
 		6DCE047226514E5A00E5AA83 /* MasterCardReviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DCE047026514E5A00E5AA83 /* MasterCardReviewTableViewCell.xib */; };
@@ -163,6 +165,8 @@
 		6D97333C2658B82B0022C54D /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		6D97333E2658B8E30022C54D /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		6DB2EBCD26601F0E00CCD285 /* WorkCreationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkCreationViewModel.swift; sourceTree = "<group>"; };
+		6DB2EBD026603D6800CCD285 /* WorkInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkInfoViewModel.swift; sourceTree = "<group>"; };
+		6DB2EBD42660417200CCD285 /* WorkInfoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkInfoTableViewController.swift; sourceTree = "<group>"; };
 		6DCAE07325F67359009EFDEC /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		6DCE046F26514E5A00E5AA83 /* MasterCardReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterCardReviewTableViewCell.swift; sourceTree = "<group>"; };
 		6DCE047026514E5A00E5AA83 /* MasterCardReviewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MasterCardReviewTableViewCell.xib; sourceTree = "<group>"; };
@@ -286,10 +290,10 @@
 			isa = PBXGroup;
 			children = (
 				6D252206265D5F8200AF37B7 /* ConstructorViewController.swift */,
-				6D25220E265D993300AF37B7 /* Creation */,
-				6D252215265D999B00AF37B7 /* Overview */,
 				6D25220A265D8D4500AF37B7 /* PreviousWorkTableViewCell.swift */,
 				6D25220B265D8D4500AF37B7 /* PreviousWorkTableViewCell.xib */,
+				6D25220E265D993300AF37B7 /* Creation */,
+				6D252215265D999B00AF37B7 /* Overview */,
 			);
 			path = Constructor;
 			sourceTree = "<group>";
@@ -325,6 +329,7 @@
 		6D252215265D999B00AF37B7 /* Overview */ = {
 			isa = PBXGroup;
 			children = (
+				6DB2EBD42660417200CCD285 /* WorkInfoTableViewController.swift */,
 			);
 			path = Overview;
 			sourceTree = "<group>";
@@ -359,6 +364,7 @@
 			isa = PBXGroup;
 			children = (
 				6D258AC9265F6FC50002EA5F /* WorksViewModel.swift */,
+				6DB2EBCF26603D2D00CCD285 /* Overview */,
 				6D258AD6265FD2D60002EA5F /* Creation */,
 			);
 			path = Work;
@@ -567,6 +573,14 @@
 				6D97333C2658B82B0022C54D /* MapViewController.swift */,
 			);
 			path = Map;
+			sourceTree = "<group>";
+		};
+		6DB2EBCF26603D2D00CCD285 /* Overview */ = {
+			isa = PBXGroup;
+			children = (
+				6DB2EBD026603D6800CCD285 /* WorkInfoViewModel.swift */,
+			);
+			path = Overview;
 			sourceTree = "<group>";
 		};
 		6DCE046E26514CBC00E5AA83 /* Review */ = {
@@ -841,8 +855,10 @@
 				6D941FA4265ED83B0056ACFE /* Review.swift in Sources */,
 				6D258AD5265FD00F0002EA5F /* Item.swift in Sources */,
 				6D87FC02262FF1D300D38EC3 /* Extensions.swift in Sources */,
+				6DB2EBD126603D6800CCD285 /* WorkInfoViewModel.swift in Sources */,
 				6D87FBEF262FEB3E00D38EC3 /* SignUpViewController copy.swift in Sources */,
 				6D258ADD265FF82B0002EA5F /* FinallTableViewController.swift in Sources */,
+				6DB2EBD52660417200CCD285 /* WorkInfoTableViewController.swift in Sources */,
 				6D258AD9265FD2FF0002EA5F /* ItemsViewModel.swift in Sources */,
 				6D0D9856265108A100BE2B23 /* MasterCardViewController.swift in Sources */,
 				6DE64F7F26305770004BA4A1 /* ChangePasswordViewController.swift in Sources */,

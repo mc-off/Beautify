@@ -11,6 +11,43 @@ import Firebase
 
 class FBWorks {
     public static let shared = FBWorks()
+    
+    func loadWork(id: String, complation: @escaping(Work?, String?)->()) {
+        FBAuthentication.shared.ref.child("works").child(id).observeSingleEvent(of: .value) { (snapshot) in
+            if snapshot.exists() {
+                    let values = snapshot.value as! [String: Any]
+                    var work = Work()
+                    work.id = values["id"] as? String ?? ""
+                    work.title = values["title"] as? String ?? ""
+                    work.creatorID = values["creatorID"] as? String ?? ""
+                    work.formID = values["formID"] as? String ?? ""
+                    work.itemID = values["itemID"] as? String ?? ""
+                    work.photoURL = values["photoURL"] as? String ?? ""
+                               
+                    complation(work, nil)
+                } else {
+                complation(nil, "Can't load master")
+            }
+        }
+    }
+    
+    func loadItem(id: String, complation: @escaping(Item?, String?)->()) {
+        FBAuthentication.shared.ref.child("items").child(id).observeSingleEvent(of: .value) { (snapshot) in
+            if snapshot.exists() {
+                    let values = snapshot.value as! [String: Any]
+                    var item = Item()
+                    item.id = values["id"] as? String ?? ""
+                    item.name = values["name"] as? String ?? ""
+                    item.imageURL = values["imageURL"] as? String ?? ""
+                    item.type = ItemType(rawValue: values["type"] as? String ?? "")
+                    item.color = values["color"] as? String ?? ""
+                               
+                    complation(item, nil)
+                } else {
+                complation(nil, "Can't load item")
+            }
+        }
+    }
 
     func loadWorks(creatorID: String, complation: @escaping([Work]?, String?)->()) {
         FBAuthentication.shared.ref.child("works").queryOrdered(byChild: "creatorID").queryEqual(toValue: creatorID).observeSingleEvent(of: .value) { (snapshot) in
