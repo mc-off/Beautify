@@ -59,6 +59,11 @@ class MasterCardViewController: UIViewController {
         vm.selectedSegment = headSegmentedControl.selectedSegmentIndex
         vm.reloadTableViewClosure?()
     }
+    
+    
+    @IBAction func bookButtonTapped(_ sender: Any) {
+        performSegue(withIdentifier: "booking", sender: self)
+    }
     /*
     // MARK: - Navigation
 
@@ -184,10 +189,17 @@ extension MasterCardViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showWorkInfo" {
+        
+        switch segue.identifier {
+        case "showWorkInfo":
             let vc = segue.destination as! WorkInfoTableViewController
             vc.itemID = vm.selectedWorkCell!.itemID!
             vc.workTitle = vm.selectedWorkCell!.title!
+        default:
+            let vc = segue.destination as! BookingViewController
+            vc.uid = vm.masterViewModel.uid!
+            vc.minimumDate = vm.masterViewModel.workHours!.everyday!.from
+            vc.maximumDate = vm.masterViewModel.workHours!.everyday!.to
         }
     }
 

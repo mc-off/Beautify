@@ -159,6 +159,9 @@
                                 <rect key="frame" x="375" y="11" width="19" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="checkmark" catalog="system"/>
+                                <connections>
+                                    <action selector="bookButtonTapped:" destination="B7Y-93-t6v" eventType="touchUpInside" id="aD4-30-gIc"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
@@ -168,11 +171,58 @@
                         <outlet property="headTypeLabel" destination="n8e-D8-rhi" id="FYK-Kb-pTp"/>
                         <outlet property="tableView" destination="JvH-g1-ack" id="tOk-3Y-hct"/>
                         <segue destination="waJ-0u-Geu" kind="show" identifier="showWorkInfo" id="hey-uL-AXF"/>
+                        <segue destination="eth-8m-4Uj" kind="show" identifier="booking" id="r1E-2j-VNB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cJ3-a0-h6H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1169.5652173913045" y="594.64285714285711"/>
+        </scene>
+        <!--Букинг-->
+        <scene sceneID="20d-Nj-cJe">
+            <objects>
+                <viewController id="eth-8m-4Uj" customClass="BookingViewController" customModule="Beautify" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jtF-5V-VUE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="30" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="WVJ-7e-gYa">
+                                <rect key="frame" x="20" y="108" width="374" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="d14-sF-0a0"/>
+                                </constraints>
+                            </datePicker>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="82l-dM-QCC"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="WVJ-7e-gYa" firstAttribute="leading" secondItem="82l-dM-QCC" secondAttribute="leading" constant="20" id="RLF-GB-sxW"/>
+                            <constraint firstItem="82l-dM-QCC" firstAttribute="trailing" secondItem="WVJ-7e-gYa" secondAttribute="trailing" constant="20" id="i1W-po-gXl"/>
+                            <constraint firstItem="WVJ-7e-gYa" firstAttribute="top" secondItem="82l-dM-QCC" secondAttribute="top" constant="20" id="tdC-7c-qFk"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Букинг" id="16c-hL-7ud">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="JJg-ba-dqg">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="dT3-G0-Chf">
+                                <rect key="frame" x="375" y="11" width="19" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="checkmark" catalog="system"/>
+                                <connections>
+                                    <action selector="createButtonTapped:" destination="eth-8m-4Uj" eventType="touchUpInside" id="ZwQ-Vi-EFN"/>
+                                </connections>
+                            </button>
+                            <connections>
+                                <action selector="createButtonTapped:" destination="eth-8m-4Uj" id="mEj-Eh-fqE"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="timePicker" destination="WVJ-7e-gYa" id="5cL-zy-v4O"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vwL-Iy-wht" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2154" y="595"/>
         </scene>
         <!--Work Info Table View Controller-->
         <scene sceneID="oBM-sw-61o">
@@ -201,7 +251,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RgR-s7-oG0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2213" y="595"/>
+            <point key="canvasLocation" x="1170" y="1353"/>
         </scene>
         <!--Create mater-->
         <scene sceneID="AFr-Qe-BFP">
@@ -292,7 +342,7 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="30" translatesAutoresizingMaskIntoConstraints="NO" id="erU-xS-UbA">
+                                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="30" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="erU-xS-UbA">
                                                         <rect key="frame" x="0.0" y="88" width="382" height="44"/>
                                                     </datePicker>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="to:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f7h-L6-Gtu" userLabel="to:">
@@ -301,7 +351,7 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="30" translatesAutoresizingMaskIntoConstraints="NO" id="499-yp-kJz">
+                                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="30" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="499-yp-kJz">
                                                         <rect key="frame" x="0.0" y="176" width="382" height="44"/>
                                                     </datePicker>
                                                 </subviews>

@@ -146,4 +146,21 @@ class FBMasters {
             }
         }
     }
+    
+    func createBooking(masterID: String, userID: String, bookDate: Date, complation: @escaping(Bool, String?) -> ()) {
+        let uid = Utilities.randomString(of: 28)
+        let DBBooking =
+        ["id": uid,
+         "masterID": masterID,
+         "userID": userID,
+         "bookDate": ISO8601DateFormatter().string(from: bookDate)] as [String : Any]
+        
+        Database.database().reference().child("bookings").child(uid).setValue(DBBooking) { (error, data) in
+            if ((error) != nil) {
+                complation(false, error?.localizedDescription)
+            } else {
+                complation(true, nil)
+            }
+        }
+    }
 }
