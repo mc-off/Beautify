@@ -15,7 +15,7 @@ class IncomingBookingTableViewCell: UITableViewCell {
     
     var cellVM = MasterShortViewModel() { didSet {
         titleLable.text = cellVM.name
-        workingHours.text = cellVM.workHours != nil ? ("Открыто до " + Utilities.convertDateToTime(date: cellVM.workHours!.everyday!.to)) : "Нет данных"
+        workingHours.text = cellVM.workHours != nil ? ("Сегодня в " + Utilities.convertDateToTime(date: cellVM.workHours!.everyday!.to)) : "Нет данных"
     }
     }
     

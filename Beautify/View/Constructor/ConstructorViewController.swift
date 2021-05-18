@@ -16,6 +16,16 @@ class ConstructorViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib(nibName: "PreviousWorkTableViewCell", bundle: nil), forCellReuseIdentifier: "PreviousWorkTableViewCell")
+        initVM()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        initVM()
+    }
+    
+    
+    private func initVM() {
         vm.reloadTableViewClosure = { [weak self] in
             guard let self = self else { return }
             if self.vm.numberOfCells == 0 {

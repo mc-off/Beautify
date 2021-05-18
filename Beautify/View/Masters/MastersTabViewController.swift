@@ -22,6 +22,11 @@ class MastersTabViewController: UIViewController {
         initVM()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        initVM()
+    }
+    
     private func initView() {
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationItem.searchController = searchController
