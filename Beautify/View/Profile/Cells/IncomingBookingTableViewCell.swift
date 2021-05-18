@@ -15,8 +15,14 @@ class IncomingBookingTableViewCell: UITableViewCell {
     
     var cellVM = MasterShortViewModel() { didSet {
         titleLable.text = cellVM.name
-        workingHours.text = cellVM.workHours != nil ? ("Сегодня в " + Utilities.convertDateToTime(date: cellVM.workHours!.everyday!.to)) : "Нет данных"
+        
     }
+    }
+    
+    var cellBookingVM = BookingObjectViewModel() {
+        didSet {
+            workingHours.text = cellVM.workHours != nil ? ("Сегодня в " + Utilities.convertDateToTime(date: cellBookingVM.bookDate!)) : "Нет данных"
+        }
     }
     
     override func awakeFromNib() {

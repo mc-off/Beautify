@@ -214,6 +214,7 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "IncomingBookingTableViewCell", for: indexPath) as? IncomingBookingTableViewCell
             cell?.cellVM = vm.bookedMaster
+            cell?.cellBookingVM = vm.bookingViewModel
             return cell!
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
