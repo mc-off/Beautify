@@ -29,7 +29,6 @@ class ProfileViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         initVM()
-        tableView.reloadData()
     }
     
     
@@ -43,6 +42,8 @@ class ProfileViewController: UIViewController {
         profileImage.layer.cornerRadius = 50
                 
         tabBarController?.tabBar.clipsToBounds = true
+        
+        tableView.register(UINib(nibName: "IncomingBookingTableViewCell", bundle: nil), forCellReuseIdentifier: "IncomingBookingTableViewCell")
     }
     
      private func initVM() {
@@ -59,6 +60,15 @@ class ProfileViewController: UIViewController {
              }
          }
          vm.loadInfo()
+         vm.reloadTableViewClosure = { [weak self] in
+                guard let self = self else { return }
+            if self.vm.bookedMaster.uid == nil {
+                } else {
+                    self.tableView.reloadData()
+                }
+            }
+        
+         vm.loadBookingInfo()
      }
     
     @IBAction func logoutButtonTapped(_ sender: Any) {
@@ -82,7 +92,10 @@ class ProfileViewController: UIViewController {
         }
     }
 
-
+    @IBAction func editeButtonTapped(_ sender: Any) {
+        performSegue(withIdentifier: "editeProfile", sender: self)
+    }
+    
    
 }
 
@@ -91,70 +104,152 @@ class ProfileViewController: UIViewController {
 extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        switch  vm.bookedMaster.uid==nil {
+        case true:
+            return 3
+        default:
+            return 5
+        }
+       
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        if section == 0 {
-            return HeaderView
-        } else {
+        switch  vm.bookedMaster.uid==nil {
+        case true:
             return nil
+        default:
+            if section == 0 {
+                return HeaderView
+            } else {
+                return nil
+            }
         }
+        
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        switch section {
-        case 1:
-            return "draft"
+        switch  vm.bookedMaster.uid==nil {
+        case true:
+            switch section {
+            case 0:
+                return "Profile"
+            case 1:
+                return "Information"
+            default:
+                return nil
+            }
         default:
-            return nil
+            switch section {
+            case 0:
+                return "Incoming booking"
+            case 1:
+                return "Previous orders"
+            case 2:
+                return "Profile"
+            case 3:
+                return "Information"
+            default:
+                return nil
+            }
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch indexPath.section {
+        case 0:
+            switch  vm.bookedMaster.uid==nil {
+            case true:
+                return 44
+            default:
+                return 160
+            }
+        default:
+            return 44
         }
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         switch section {
         case 0:
-            return 180
-        case 1:
-            return 30
+            switch  vm.bookedMaster.uid==nil {
+            case true:
+                return 40
+            default:
+                return 160
+            }
         default:
-            return 5
+            return 40
         }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch section {
-        case 0:
-            return 2
-        case 1:
-            return 2
-        default:
+        switch  vm.bookedMaster.uid==nil {
+        case true:
             return 1
+        default:
+            switch section {
+            case 0:
+                return 1
+            case 1:
+                return 1
+            case 2:
+                return 1
+            case 3:
+                return 2
+            default:
+                return 1
+            }
         }
+        
     }
+        
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         let row = indexPath.row
-        let section = indexPath.section
-        if row == 0 && section == 0 {
-            cell.textLabel?.text = "Edite Profile"
-        } else if row == 1 && section == 0 {
+        var section = indexPath.section
+        if (vm.bookedMaster.uid==nil ){
+            section = section + 2
+        }
+        switch section {
+        case 0:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "IncomingBookingTableViewCell", for: indexPath) as? IncomingBookingTableViewCell
+            cell?.cellVM = vm.bookedMaster
+            return cell!
+        case 1:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+            cell.textLabel?.text = "Previous orders"
+            return cell
+        case 2:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
             cell.textLabel?.text = "Change Password"
-        } else if row == 0 && section == 1 {
-            cell.textLabel?.text = "Privacy Policy"
-        } else if row == 1 && section == 1 {
-            cell.textLabel?.text = "Terms of Service"
-        } else if row == 0 && section == 2 {
+            return cell
+        case 3:
+            switch row {
+            case 0:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+                cell.textLabel?.text = "Privacy Policy"
+                return cell
+            default:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+                cell.textLabel?.text = "Terms of Service"
+                return cell
+            }
+        default:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
             cell.textLabel?.text = "Sign Out"
             cell.textLabel?.textColor = #colorLiteral(red: 1, green: 0.3032806202, blue: 0.02296007777, alpha: 1)
             cell.accessoryType = .none
+            return cell
         }
-        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.section == 2 && indexPath.row == 0 {
+        switch indexPath.section {
+        case 2:
+            performSegue(withIdentifier: "changePassword", sender: self)
+        case 3:
+            Alert.showAlert(at: self, title: "We will add it soon, Stay tune", message: "")
+        case 4:
             let alert = UIAlertController(title: "Are you sure to sign out?", message: nil, preferredStyle: .actionSheet)
             alert.addAction(.init(title: "Sign Out", style: .destructive, handler: { [weak self](_) in
                 guard let self = self else { return }
@@ -173,12 +268,8 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
             DispatchQueue.main.async {
                 self.present(alert, animated: true)
             }
-        } else if indexPath.section == 0 && indexPath.row == 1 {
-            performSegue(withIdentifier: "changePassword", sender: self)
-        } else if indexPath.section == 0 && indexPath.row == 0 {
-            performSegue(withIdentifier: "editeProfile", sender: self)
-        } else if indexPath.section == 1 {
-            Alert.showAlert(at: self, title: "We will add it soon, Stay tune", message: "")
+        default:
+            print("tapped " + String(indexPath.section)+":"+String(indexPath.row))
         }
     }
     

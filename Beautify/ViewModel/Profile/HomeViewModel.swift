@@ -18,8 +18,14 @@ class HomeViewModel {
             loadInfoClosure?()
         }
     }
+    var bookedMaster = MasterShortViewModel() {
+        didSet {
+            reloadTableViewClosure?()
+        }
+    }
     
     var loadInfoClosure: (()->())?
+    var reloadTableViewClosure: (()->())?
     
     
     func loadInfo() {
@@ -40,5 +46,30 @@ class HomeViewModel {
                 }
             }
         }
+    }
+    
+    func loadBookingInfo() {
+        FBMasters.shared.loadBookings(userID: currentUser.id!) { [weak self] (bookings, error) in
+            guard let self = self else { return }
+            if error != nil {
+                print(error!)
+            } else {
+                guard let bookings = bookings else { return }
+                let bookingID = bookings.last?.masterID
+                FBMasters.shared.loadMasterInfo(for: bookingID!) { [weak self] (master, error) in
+                    guard let self = self else { return }
+                    if error != nil {
+                        print(error!)
+                    } else {
+                        guard let master = master else { return }
+                        self.bookedMaster = self.proccessFetchMasters(master: master)
+                    }
+                }
+            }
+        }
+    }
+    
+    private func proccessFetchMasters(master: Master) -> MasterShortViewModel {
+        return MasterShortViewModel(uid: master.id!, coordinate: master.coordinate, name: master.name, profileImage: master.profileImage, type: master.type, workHours: master.workHours)
     }
 }

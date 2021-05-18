@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="KGk-i7-Jjw" customClass="IncomingBookingTableViewCell" customModule="Beautify" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="565" height="171"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="535.5" height="171"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="u8m-a6-KUD">
+                        <rect key="frame" x="16" y="93.5" width="503.5" height="61.5"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Reu-hI-pff">
+                                <rect key="frame" x="0.0" y="8" width="46" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="5H8-tm-lCU"/>
+                                    <constraint firstAttribute="height" constant="46" id="QcO-bW-iWU"/>
+                                </constraints>
+                                <state key="normal" title="Phone" image="Phone">
+                                    <color key="titleShadowColor" name="ToolActive"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FZp-iH-zP6">
+                                <rect key="frame" x="114.5" y="8" width="46" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="mcs-3a-RF6"/>
+                                    <constraint firstAttribute="height" constant="46" id="yL9-Qb-S0T"/>
+                                </constraints>
+                                <state key="normal" title="Phone" image="Phone"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bkG-Wo-e4y">
+                                <rect key="frame" x="229" y="8" width="46" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="LEw-q1-eEt"/>
+                                    <constraint firstAttribute="width" constant="46" id="phv-M5-iTB"/>
+                                </constraints>
+                                <state key="normal" title="Phone" image="Phone"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0jG-ak-CK2">
+                                <rect key="frame" x="343" y="8" width="46" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="6MS-nb-vWN"/>
+                                    <constraint firstAttribute="height" constant="46" id="cfc-NO-FgP"/>
+                                </constraints>
+                                <state key="normal" title="Phone" image="Phone"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XOa-46-Wzk">
+                                <rect key="frame" x="457.5" y="8" width="46" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="KQv-ei-tWm"/>
+                                    <constraint firstAttribute="height" constant="46" id="nsg-rh-MEh"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="Phone"/>
+                            </button>
+                        </subviews>
+                    </stackView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MasterName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="daF-7t-VHT">
+                        <rect key="frame" x="16" y="16" width="118" height="24"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Working hours" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fc4-IB-4nv">
+                        <rect key="frame" x="16" y="56" width="116.5" height="21.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="u8m-a6-KUD" firstAttribute="top" secondItem="fc4-IB-4nv" secondAttribute="bottom" constant="16" id="5Ca-F8-jgA"/>
+                    <constraint firstItem="fc4-IB-4nv" firstAttribute="top" secondItem="daF-7t-VHT" secondAttribute="bottom" constant="16" id="UCY-PD-ICf"/>
+                    <constraint firstAttribute="trailing" secondItem="u8m-a6-KUD" secondAttribute="trailing" constant="16" id="dS4-EG-iNd"/>
+                    <constraint firstItem="daF-7t-VHT" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="gPu-kR-dNK"/>
+                    <constraint firstItem="u8m-a6-KUD" firstAttribute="leading" secondItem="daF-7t-VHT" secondAttribute="leading" id="hPN-Ou-5AD"/>
+                    <constraint firstItem="fc4-IB-4nv" firstAttribute="leading" secondItem="daF-7t-VHT" secondAttribute="leading" id="lKw-f1-mPD"/>
+                    <constraint firstAttribute="bottom" secondItem="u8m-a6-KUD" secondAttribute="bottom" constant="16" id="ppQ-b7-I90"/>
+                    <constraint firstItem="daF-7t-VHT" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="sZT-1M-i0A"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="titleLable" destination="daF-7t-VHT" id="XXl-qz-HFK"/>
+                <outlet property="workingHours" destination="fc4-IB-4nv" id="mot-bZ-l3k"/>
+            </connections>
+            <point key="canvasLocation" x="209.42028985507247" y="164.39732142857142"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Phone" width="46" height="46"/>
+        <namedColor name="ToolActive">
+            <color red="1" green="0.3411764705882353" blue="0.28235294117647058" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

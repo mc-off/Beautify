@@ -163,4 +163,26 @@ class FBMasters {
             }
         }
     }
+    
+    func loadBookings(userID: String,  complation: @escaping([Booking]?, String?) -> ()) {
+        FBAuthentication.shared.ref.child("bookings").queryOrdered(byChild: "userID").queryEqual(toValue: userID).observeSingleEvent(of: .value) { (snapshot) in
+            if snapshot.exists() {
+                var bookings = [Booking]()
+                let data = snapshot.children.allObjects as! [DataSnapshot]
+                for bookingData in data {
+                    var book = Booking()
+                    let values = bookingData.value as! [String: Any]
+                    book.id = values["id"] as? String ?? ""
+                    book.masterID = values["masterID"] as? String ?? ""
+                    book.userID = values["userID"] as? String ?? ""
+                    book.bookDate = self.dateFormatter.date(from: values["bookDate"] as! String)
+
+                    bookings.append(book)
+                }
+                complation(bookings, nil)
+            } else {
+                complation(nil, "Can't load masters list")
+            }
+        }
+    }
 }
