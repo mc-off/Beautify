@@ -96,7 +96,6 @@
                             </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" red="0.97254901959999995" green="0.96862745100000003" blue="0.96862745100000003" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="156" id="KXy-D0-hHh"/>
                         <constraint firstItem="Xzu-E9-LNV" firstAttribute="top" secondItem="Cqm-Ss-niM" secondAttribute="top" constant="10" id="Lqu-x9-gM5"/>
@@ -125,7 +124,7 @@
                 <outlet property="titleLabel" destination="Xzu-E9-LNV" id="UmY-qp-fmo"/>
                 <outlet property="typeLabel" destination="cr0-Oy-Wb5" id="NjG-Ag-j5K"/>
             </connections>
-            <point key="canvasLocation" x="-1031.1594202898552" y="-799.55357142857144"/>
+            <point key="canvasLocation" x="-1031.8840579710145" y="-799.55357142857144"/>
         </view>
     </objects>
     <resources>

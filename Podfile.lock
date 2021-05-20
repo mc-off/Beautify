@@ -31,6 +31,25 @@ PODS:
   - FirebaseStorage (7.3.0):
     - FirebaseCore (~> 7.0)
     - GTMSessionFetcher/Core (~> 1.4)
+  - Google-Maps-iOS-Utils (3.9.0):
+    - Google-Maps-iOS-Utils/Clustering (= 3.9.0)
+    - Google-Maps-iOS-Utils/Geometry (= 3.9.0)
+    - Google-Maps-iOS-Utils/GeometryUtils (= 3.9.0)
+    - Google-Maps-iOS-Utils/Heatmap (= 3.9.0)
+    - Google-Maps-iOS-Utils/QuadTree (= 3.9.0)
+    - GoogleMaps
+  - Google-Maps-iOS-Utils/Clustering (3.9.0):
+    - Google-Maps-iOS-Utils/QuadTree
+    - GoogleMaps
+  - Google-Maps-iOS-Utils/Geometry (3.9.0):
+    - GoogleMaps
+  - Google-Maps-iOS-Utils/GeometryUtils (3.9.0):
+    - GoogleMaps
+  - Google-Maps-iOS-Utils/Heatmap (3.9.0):
+    - Google-Maps-iOS-Utils/QuadTree
+    - GoogleMaps
+  - Google-Maps-iOS-Utils/QuadTree (3.9.0):
+    - GoogleMaps
   - GoogleDataTransport (8.1.0):
     - nanopb (~> 2.30906.0)
   - GoogleMaps (4.1.0):
@@ -71,6 +90,7 @@ DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Database
   - Firebase/Storage
+  - Google-Maps-iOS-Utils (~> 3.9.0)
   - GoogleMaps
   - GooglePlaces
   - Kingfisher
@@ -86,6 +106,7 @@ SPEC REPOS:
     - FirebaseCoreDiagnostics
     - FirebaseDatabase
     - FirebaseStorage
+    - Google-Maps-iOS-Utils
     - GoogleDataTransport
     - GoogleMaps
     - GooglePlaces
@@ -106,6 +127,7 @@ SPEC CHECKSUMS:
   FirebaseCoreDiagnostics: d50e11039e5984d92c8a512be2395f13df747350
   FirebaseDatabase: 22199cb121a527ae59df646d61426fbb12f5627a
   FirebaseStorage: 5002b1895bfe74a5ce92ad54f966e6162d0da2e5
+  Google-Maps-iOS-Utils: ae3b4e74b2d734454be32cf62ba8d6ad7283e0c1
   GoogleDataTransport: 116c84c4bdeb76be2a7a46de51244368f9794eab
   GoogleMaps: 008e2c80e38605b56b560e8deb73d4194ff30bef
   GooglePlaces: 5d87ca13ed98b7a937e0d8bc7026f718c7263271
@@ -118,6 +140,6 @@ SPEC CHECKSUMS:
   PromisesObjC: 8c196f5a328c2cba3e74624585467a557dcb482f
   SlideUpPanel: 1d904dc7bc28c5181a098d5431933f34c5a4a017
 
-PODFILE CHECKSUM: 7b15f65ebf0d549b5a83689adf5938effc67252f
+PODFILE CHECKSUM: 0d54f8279a09e130e3bea12ada40bbd6f59d5a9b
 
 COCOAPODS: 1.10.1

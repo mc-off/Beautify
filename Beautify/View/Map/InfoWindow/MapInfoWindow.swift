@@ -9,7 +9,7 @@
 import UIKit
 
 protocol MapMarkerDelegate: AnyObject {
-    func didTapInfoButton()
+    func didTapInfoButton(vm: MasterShortViewModel)
 }
 
 class MapInfoWindow: UIView {
@@ -21,11 +21,18 @@ class MapInfoWindow: UIView {
     @IBOutlet weak var button: UIButton!
     
     
+    var cellVM = MasterShortViewModel() {
+        didSet {
+            titleLabel.text = cellVM.name
+            typeLabel.text = cellVM.type
+        }
+    }
+    
     weak var delegate: MapMarkerDelegate?
     
     
     @IBAction func buttonTapped(_ sender: Any) {
         print("Tapped in view")
-        delegate?.didTapInfoButton()
+        delegate?.didTapInfoButton(vm: cellVM)
     }
 }
