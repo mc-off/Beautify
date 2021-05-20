@@ -59,10 +59,11 @@ class MapViewController: UIViewController, GMSMapViewDelegate, MapMarkerDelegate
         
         
       let camera = GMSCameraPosition.camera(
-        withLatitude: 51.5,
-        longitude: -0.127,
+        withLatitude: 56.31,
+        longitude: 44.02,
         zoom: 14
       )
+        
       mapView = GMSMapView.map(withFrame: self.view.bounds, camera: camera)
       self.view.addSubview(mapView!)
 
