@@ -10,11 +10,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Profile-->
+        <!--Профиль-->
         <scene sceneID="qGD-ZF-M4N">
             <objects>
                 <navigationController id="6Z2-oZ-irK" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" image="person.fill" catalog="system" landscapeImage="person" id="zWi-5N-9RW"/>
+                    <tabBarItem key="tabBarItem" title="Профиль" image="person.fill" catalog="system" id="zWi-5N-9RW"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="E1c-rW-1Z1">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -27,7 +27,7 @@
             </objects>
             <point key="canvasLocation" x="2059" y="357"/>
         </scene>
-        <!--Profile-->
+        <!--Профиль-->
         <scene sceneID="J1M-ql-nvC">
             <objects>
                 <viewController id="Ydd-ds-cmf" customClass="ProfileViewController" customModule="Beautify" customModuleProvider="target" sceneMemberID="viewController">
@@ -63,7 +63,7 @@
                             <constraint firstAttribute="trailing" secondItem="Bci-hT-NDj" secondAttribute="trailing" id="xU9-Ri-Y4x"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Profile" largeTitleDisplayMode="always" id="qA2-gq-diV">
+                    <navigationItem key="navigationItem" title="Профиль" largeTitleDisplayMode="always" id="qA2-gq-diV">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="uLI-we-l3q">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Pii-ye-dx8">
                                 <rect key="frame" x="373" y="11" width="21" height="22"/>
@@ -120,7 +120,7 @@
             </objects>
             <point key="canvasLocation" x="2904" y="357"/>
         </scene>
-        <!--Edite Profile-->
+        <!--Изменить профиль-->
         <scene sceneID="EpG-Ur-ggI">
             <objects>
                 <viewController hidesBottomBarWhenPushed="YES" id="dJW-QN-Lbi" customClass="EditeProfileViewController" customModule="Beautify" customModuleProvider="target" sceneMemberID="viewController">
@@ -128,8 +128,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Your Photo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HN8-6p-mMd">
-                                <rect key="frame" x="128" y="218" width="158" height="25"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выберите фото" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HN8-6p-mMd">
+                                <rect key="frame" x="140.5" y="218" width="133" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="BCW-yW-dJa"/>
                                 </constraints>
@@ -157,12 +157,12 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="gJC-xw-vZE">
                                 <rect key="frame" x="16" y="268" width="382" height="115"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="8nT-BC-xkA">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Имя" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="8nT-BC-xkA">
                                         <rect key="frame" x="0.0" y="0.0" width="382" height="57.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" textContentType="name"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Second name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="kHD-Xc-VYq">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Фамилия" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="kHD-Xc-VYq">
                                         <rect key="frame" x="0.0" y="57.5" width="382" height="57.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" textContentType="name"/>
@@ -185,7 +185,7 @@
                             <constraint firstItem="Wmc-Hw-3ZJ" firstAttribute="centerX" secondItem="Bc3-4y-8za" secondAttribute="centerX" id="v85-hY-t0o"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Edite Profile" largeTitleDisplayMode="never" id="0wM-8t-vxo">
+                    <navigationItem key="navigationItem" title="Изменить профиль" largeTitleDisplayMode="never" id="0wM-8t-vxo">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="hhz-Gs-pAh">
                             <connections>
                                 <action selector="savePressed:" destination="dJW-QN-Lbi" id="oQ1-dK-Qmh"/>
@@ -202,7 +202,7 @@
             </objects>
             <point key="canvasLocation" x="2521.739130434783" y="1082.8125"/>
         </scene>
-        <!--Password update-->
+        <!--Обновить пароль-->
         <scene sceneID="4kc-hn-tAT">
             <objects>
                 <viewController hidesBottomBarWhenPushed="YES" id="kcc-7q-XER" customClass="ChangePasswordViewController" customModule="Beautify" customModuleProvider="target" sceneMemberID="viewController">
@@ -213,12 +213,12 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="6NP-BM-kZo">
                                 <rect key="frame" x="16" y="203" width="382" height="115"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zNJ-NG-hg8">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Пароль" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zNJ-NG-hg8">
                                         <rect key="frame" x="0.0" y="0.0" width="382" height="57.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Nm-DW-pb2">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Подтверджение пароля" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Nm-DW-pb2">
                                         <rect key="frame" x="0.0" y="57.5" width="382" height="57.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
@@ -268,7 +268,7 @@
                                     <constraint firstAttribute="height" constant="48" id="tfe-1a-PG4"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change your password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kGt-Fi-pMw">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Обновите ваш пароль" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kGt-Fi-pMw">
                                 <rect key="frame" x="25" y="128" width="364" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <nil key="textColor"/>
@@ -293,7 +293,7 @@
                             <outletCollection property="gestureRecognizers" destination="agv-5c-uZh" appends="YES" id="JJw-2d-iNn"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" title="Password update" largeTitleDisplayMode="never" id="FdJ-tX-MWw"/>
+                    <navigationItem key="navigationItem" title="Обновить пароль" largeTitleDisplayMode="never" id="FdJ-tX-MWw"/>
                     <connections>
                         <outlet property="activityIndicator" destination="whP-Ud-MyJ" id="v85-6T-hE5"/>
                         <outlet property="changeButton" destination="QwC-z5-uYu" id="f3G-bF-a54"/>
@@ -311,7 +311,6 @@
     <color key="tintColor" name="ToolActive"/>
     <resources>
         <image name="Avatar" width="64" height="64"/>
-        <image name="person" catalog="system" width="128" height="117"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="square.and.pencil" catalog="system" width="128" height="115"/>
         <namedColor name="ActivityIndecatorColor">

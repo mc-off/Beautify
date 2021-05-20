@@ -127,22 +127,22 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
         case true:
             switch section {
             case 1:
-                return "Profile"
+                return "Профиль"
             case 2:
-                return "Information"
+                return "Информация"
             default:
                 return nil
             }
         default:
             switch section {
             case 1:
-                return "Incoming booking"
+                return "Предстоящая запись"
             case 2:
-                return "Previous orders"
+                return "Заказы"
             case 3:
-                return "Profile"
+                return "Профиль"
             case 4:
-                return "Information"
+                return "Информация"
             default:
                 return nil
             }
@@ -217,26 +217,26 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
             return cell!
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-            cell.textLabel?.text = "Previous orders"
+            cell.textLabel?.text = "Прошлые заказы"
             return cell
         case 3:
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-            cell.textLabel?.text = "Change Password"
+            cell.textLabel?.text = "Сменить пароль"
             return cell
         case 4:
             switch row {
             case 0:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-                cell.textLabel?.text = "Privacy Policy"
+                cell.textLabel?.text = "Правила политики использования"
                 return cell
             default:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-                cell.textLabel?.text = "Terms of Service"
+                cell.textLabel?.text = "Условия обслуживания"
                 return cell
             }
         case 5:
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-            cell.textLabel?.text = "Sign Out"
+            cell.textLabel?.text = "Выход из аккаунта"
             cell.textLabel?.textColor = #colorLiteral(red: 1, green: 0.3032806202, blue: 0.02296007777, alpha: 1)
             cell.accessoryType = .none
             return cell
@@ -250,14 +250,14 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
         case 3:
             performSegue(withIdentifier: "changePassword", sender: self)
         case 4:
-            Alert.showAlert(at: self, title: "We will add it soon, Stay tune", message: "")
+            Alert.showAlert(at: self, title: "КТТС", message: "")
         case 5:
-            let alert = UIAlertController(title: "Are you sure to sign out?", message: nil, preferredStyle: .actionSheet)
-            alert.addAction(.init(title: "Sign Out", style: .destructive, handler: { [weak self](_) in
+            let alert = UIAlertController(title: "Вы действительно хотите выйти?", message: nil, preferredStyle: .actionSheet)
+            alert.addAction(.init(title: "Да", style: .destructive, handler: { [weak self](_) in
                 guard let self = self else { return }
                 FBAuthentication.shared.signOutUser { (isSuccess, error) in
                     if error != nil {
-                        Alert.showAlert(at: self, title: "Sign Out Validation", message: error!)
+                        Alert.showAlert(at: self, title: "Вы успешно вышли из аккаунта", message: error!)
                     } else {
                         let storyboard = UIStoryboard(name: "Main", bundle: nil)
                         let loginVC = storyboard.instantiateViewController(withIdentifier: "loginVC")
@@ -266,7 +266,7 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
                     }
                 }
             }))
-            alert.addAction(.init(title: "Cancel", style: .cancel, handler: nil))
+            alert.addAction(.init(title: "Отменить", style: .cancel, handler: nil))
             DispatchQueue.main.async {
                 self.present(alert, animated: true)
             }

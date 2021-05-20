@@ -26,7 +26,7 @@
             </objects>
             <point key="canvasLocation" x="-1104" y="127"/>
         </scene>
-        <!--Map-->
+        <!--Карта-->
         <scene sceneID="Zgd-mQ-4v4">
             <objects>
                 <viewController id="Ih6-W7-Zev" customClass="MapViewController" customModule="Beautify" customModuleProvider="target" sceneMemberID="viewController">
@@ -36,7 +36,7 @@
                         <viewLayoutGuide key="safeArea" id="dtc-oe-We5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Map" image="location.fill" catalog="system" selectedImage="location.fill" id="ggK-aS-tbl"/>
+                    <tabBarItem key="tabBarItem" title="Карта" image="location.fill" catalog="system" selectedImage="location.fill" id="ggK-aS-tbl"/>
                     <navigationItem key="navigationItem" id="oac-cS-7lh"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -292,9 +292,9 @@
                                             <constraint firstAttribute="height" constant="32" id="kw6-Zr-WM2"/>
                                         </constraints>
                                         <segments>
-                                            <segment title="Description"/>
-                                            <segment title="Reviews"/>
-                                            <segment title="Works"/>
+                                            <segment title="Описание"/>
+                                            <segment title="Отзывы"/>
+                                            <segment title="Работы"/>
                                         </segments>
                                         <color key="selectedSegmentTintColor" name="ToolActive"/>
                                         <connections>
@@ -357,7 +357,7 @@
             </objects>
             <point key="canvasLocation" x="839" y="127"/>
         </scene>
-        <!--Букинг-->
+        <!--Бронирование-->
         <scene sceneID="ZMS-Jw-8FG">
             <objects>
                 <viewController id="uXq-YU-bbH" customClass="BookingViewController" customModule="Beautify" customModuleProvider="target" sceneMemberID="viewController">
@@ -380,7 +380,7 @@
                             <constraint firstItem="Jkc-0D-EOd" firstAttribute="leading" secondItem="hkF-ME-woS" secondAttribute="leading" constant="20" id="vAd-2z-K2p"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Букинг" id="j4x-lG-4GT">
+                    <navigationItem key="navigationItem" title="Бронирование" id="j4x-lG-4GT">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="Mvf-87-liT">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Yry-h8-xHB">
                                 <rect key="frame" x="375" y="11" width="19" height="22"/>

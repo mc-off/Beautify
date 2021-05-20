@@ -114,9 +114,9 @@
                                             <constraint firstAttribute="height" constant="32" id="Vcy-pm-9rz"/>
                                         </constraints>
                                         <segments>
-                                            <segment title="Description"/>
-                                            <segment title="Reviews"/>
-                                            <segment title="Works"/>
+                                            <segment title="Описание"/>
+                                            <segment title="Отзывы"/>
+                                            <segment title="Работы"/>
                                         </segments>
                                         <color key="selectedSegmentTintColor" name="ToolActive"/>
                                         <connections>
@@ -178,7 +178,7 @@
             </objects>
             <point key="canvasLocation" x="1169.5652173913045" y="594.64285714285711"/>
         </scene>
-        <!--Букинг-->
+        <!--Бронирование-->
         <scene sceneID="20d-Nj-cJe">
             <objects>
                 <viewController id="eth-8m-4Uj" customClass="BookingViewController" customModule="Beautify" customModuleProvider="target" sceneMemberID="viewController">
@@ -201,7 +201,7 @@
                             <constraint firstItem="WVJ-7e-gYa" firstAttribute="top" secondItem="82l-dM-QCC" secondAttribute="top" constant="20" id="tdC-7c-qFk"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Букинг" id="16c-hL-7ud">
+                    <navigationItem key="navigationItem" title="Бронирование" id="16c-hL-7ud">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="JJg-ba-dqg">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="dT3-G0-Chf">
                                 <rect key="frame" x="375" y="11" width="19" height="22"/>
@@ -253,7 +253,7 @@
             </objects>
             <point key="canvasLocation" x="1170" y="1353"/>
         </scene>
-        <!--Create mater-->
+        <!--Создать-->
         <scene sceneID="AFr-Qe-BFP">
             <objects>
                 <viewController id="qut-wc-tdF" customClass="MasterCreationViewController" customModule="Beautify" customModuleProvider="target" sceneMemberID="viewController">
@@ -424,7 +424,7 @@
                             <constraint firstItem="74R-sw-S4q" firstAttribute="leading" secondItem="L0w-XS-iZV" secondAttribute="leading" id="u2m-n5-eED"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Create mater" largeTitleDisplayMode="never" id="YUN-CK-xP0">
+                    <navigationItem key="navigationItem" title="Создать" largeTitleDisplayMode="never" id="YUN-CK-xP0">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="osO-dh-C7f">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="End-Tn-DLn">
                                 <rect key="frame" x="375" y="11" width="19" height="22"/>
@@ -466,11 +466,11 @@
             </objects>
             <point key="canvasLocation" x="1912" y="-147"/>
         </scene>
-        <!--Masters-->
+        <!--Заведения-->
         <scene sceneID="Tgd-Dh-vUE">
             <objects>
                 <navigationController id="x3N-aJ-HPV" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Masters" image="Today" landscapeImage="Today" selectedImage="Today" id="JNS-So-XE8" userLabel="Masters"/>
+                    <tabBarItem key="tabBarItem" title="Заведения" image="Today" landscapeImage="Today" selectedImage="Today" id="JNS-So-XE8" userLabel="Masters"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="o8b-72-3j5">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
@@ -510,7 +510,7 @@
                             <constraint firstItem="ZJk-Vw-87l" firstAttribute="leading" secondItem="0UJ-PS-3Sa" secondAttribute="leading" id="wBf-P2-sr3"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Masters" largeTitleDisplayMode="always" id="nco-0g-CNM">
+                    <navigationItem key="navigationItem" title="Заведения" largeTitleDisplayMode="always" id="nco-0g-CNM">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="yCw-fn-VSz">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="HDP-7r-ubi">
                                 <rect key="frame" x="376" y="11" width="18" height="22"/>
