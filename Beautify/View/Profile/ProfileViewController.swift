@@ -165,7 +165,7 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         switch section {
         case 0:
-            switch  vm.bookedMaster.uid==nil {
+            switch  vm.user.id==nil {
             case true:
                 return 40
             default:
@@ -188,7 +188,14 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch  vm.bookedMaster.uid==nil {
         case true:
-            return 1
+            switch section {
+            case 0:
+                return 0
+            case 2:
+                return 2
+            default:
+                return 1
+            }
         default:
             switch section {
             case 0:
@@ -246,7 +253,12 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        switch indexPath.section {
+        
+        var section = indexPath.section
+        if (vm.bookedMaster.uid==nil ){
+            section = section + 2
+        }
+        switch  section{
         case 3:
             performSegue(withIdentifier: "changePassword", sender: self)
         case 4:
