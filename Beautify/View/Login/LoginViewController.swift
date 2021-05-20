@@ -64,7 +64,7 @@ class LoginViewController: UIViewController {
                 guard let self = self else { return }
                 self.activityIndicator.stopAnimating()
                 self.loginButton.isEnabled = true
-                Alert.showAlert(at: self, title: "Sing In Validation", message: self.vm.message!)
+                Alert.showAlert(at: self, title: "Валидация входа", message: self.vm.message!)
             }
         }
         
@@ -117,10 +117,10 @@ class LoginViewController: UIViewController {
             //Setup delegates
             emailTextField.addTopBorder()
             emailTextField.addBottomBorder()
-            emailTextField.addPrefix(labelText: "Login")
+            emailTextField.addPrefix(labelText: "Логин")
             
             passwordTextField.addBottomBorder()
-            passwordTextField.addPrefix(labelText: "Password")
+            passwordTextField.addPrefix(labelText: "Пароль")
             
             tapGesture.addTarget(self, action: #selector(dismissKeyboard))
             

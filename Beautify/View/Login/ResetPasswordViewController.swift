@@ -88,7 +88,7 @@ class ResetPasswordViewController: UIViewController {
             //Setup backgroundColor
             emailTextField.addTopBorder()
             emailTextField.addBottomBorder()
-            emailTextField.addPrefix(labelText: "Login")
+            emailTextField.addPrefix(labelText: "Логин")
         
             
             tapGesture.addTarget(self, action: #selector(dismissKeyboard))

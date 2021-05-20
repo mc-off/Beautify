@@ -95,13 +95,13 @@ extension MasterCardViewController: UITableViewDelegate, UITableViewDataSource {
         if (headSegmentedControl.selectedSegmentIndex == 0) {
             switch section {
             case 0:
-                return "Overview"
+                return "Обзор"
             case 1:
-                return "Contacts"
+                return "Контакты"
             case 2:
-                return "Working time"
+                return "График работы"
             case 3:
-                return "Price list"
+                return "Прайс лист"
             default:
                 return nil
             }

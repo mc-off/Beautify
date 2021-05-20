@@ -134,16 +134,16 @@ class SignupViewController: UIViewController {
         //Setup text fields
         firstTextField.addTopBorder()
         firstTextField.addBottomBorder()
-        firstTextField.addPrefix(labelText: "Name")
+        firstTextField.addPrefix(labelText: "Имя")
         
         lastTextfield.addBottomBorder()
-        lastTextfield.addPrefix(labelText: "Surname")
+        lastTextfield.addPrefix(labelText: "Фамилия")
         
         emailTextfield.addBottomBorder()
-        emailTextfield.addPrefix(labelText: "Login")
+        emailTextfield.addPrefix(labelText: "Логин")
         
         passwordTextfield.addBottomBorder()
-        passwordTextfield.addPrefix(labelText: "Password")
+        passwordTextfield.addPrefix(labelText: "Пароль")
         
         self.navigationController?.navigationBar.tintColor = UIColor(named: "ToolActive")
 

@@ -74,9 +74,9 @@ class ChangePasswordViewController: UIViewController {
         //Setup delegates
         passwordextField.addTopBorder()
         passwordextField.addBottomBorder()
-        passwordextField.addPrefix(labelText: "Password")
+        passwordextField.addPrefix(labelText: "Пароль")
         
-        repasswordTextField.addPrefix(labelText: "Confirm")
+        repasswordTextField.addPrefix(labelText: "Подтверждение")
         
         tapGesture.addTarget(self, action: #selector(dismissKeyboard))
         

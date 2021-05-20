@@ -49,10 +49,10 @@ class EditeProfileViewController: UIViewController {
         firstTextField.addTopBorder()
         firstTextField.addBottomBorder()
         
-        firstTextField.addPrefix(labelText: "Name")
+        firstTextField.addPrefix(labelText: "Имя")
         
         secondTextField.addBottomBorder()
-        secondTextField.addPrefix(labelText: "Surname")
+        secondTextField.addPrefix(labelText: "Фамилия")
     }
     
     private func initVM() {
