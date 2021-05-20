@@ -30,8 +30,8 @@ class ConstructorCreationItemTableViewController: UITableViewController, ItemTap
         super.viewDidLoad()
         
         let button = UIButton(type: .system)
-        button.setImage(UIImage(systemName: "chevron.forward"), for: .normal) // 22x22 1x, 44x44 2x, 66x66 3x
-        button.setTitle("Form", for: .normal)
+        button.setImage(UIImage(systemName: "chevron.forward"), for: .normal)
+        button.setTitle("Финал", for: .normal)
         button.sizeToFit()
         button.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
         button.titleLabel?.transform = CGAffineTransform(scaleX: -1.0, y: 1.0)
