@@ -24,15 +24,9 @@ class BookingsListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        initVM()
         tableView.register(UINib(nibName: "BookingTableViewCell", bundle: nil), forCellReuseIdentifier: "BookingTableViewCell")
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         initVM()
     }
-    
     
     
     private func initVM() {
