@@ -109,6 +109,24 @@ extension UIColor {
             return  lum < 0.50
         }
     
+    func switchBlueToRed() -> Int? {
+        var fRed : CGFloat = 0
+        var fGreen : CGFloat = 0
+        var fBlue : CGFloat = 0
+        var fAlpha: CGFloat = 0
+        if self.getRed(&fRed, green: &fGreen, blue: &fBlue, alpha: &fAlpha) {
+            let iRed = Int(fBlue * 255.0) //using fBlue here for converted color
+            let iGreen = Int(fGreen * 255.0)
+            let iBlue = Int(fRed * 255.0) //using fRed here for converted color
+            let iAlpha = Int(fAlpha * 255.0)
+            
+            let rgb = (iAlpha << 24) + (iRed << 16) + (iGreen << 8) + iBlue
+            return rgb
+        } else {
+            return nil
+        }
+    }
+    
 }
 
 extension UIImageView {

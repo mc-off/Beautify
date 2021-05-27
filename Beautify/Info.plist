@@ -9,6 +9,8 @@
 	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Camera is needed to capture videos for images segmentation markup</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>The app needs to use your Photo Library to take pictures</string>
 	<key>CFBundleExecutable</key>

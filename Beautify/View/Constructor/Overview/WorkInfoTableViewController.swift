@@ -11,7 +11,10 @@ import UIKit
 class WorkInfoTableViewController: UITableViewController, ARButtonDelegate {
     
     func buttonTapped() {
-        print("Button tapped")
+        let vc = ARViewController()
+        let color = UIColor(hex: vm.itemViewModel.color!.uppercased())
+        vc.selectedColor = color
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     
