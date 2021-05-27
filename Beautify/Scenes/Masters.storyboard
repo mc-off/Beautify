@@ -186,19 +186,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="30" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="WVJ-7e-gYa">
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="30" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="WVJ-7e-gYa">
                                 <rect key="frame" x="20" y="108" width="374" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="d14-sF-0a0"/>
                                 </constraints>
                             </datePicker>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="YRa-TB-LEN">
+                                <rect key="frame" x="0.0" y="208" width="414" height="605"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="4fS-6a-rKH">
+                                        <rect key="frame" x="0.0" y="49.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4fS-6a-rKH" id="3OW-R9-Bxx">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="eth-8m-4Uj" id="LoV-NW-kgy"/>
+                                    <outlet property="delegate" destination="eth-8m-4Uj" id="Dvs-Sl-17H"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="82l-dM-QCC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="82l-dM-QCC" firstAttribute="trailing" secondItem="YRa-TB-LEN" secondAttribute="trailing" id="CFX-DS-bsC"/>
+                            <constraint firstItem="YRa-TB-LEN" firstAttribute="leading" secondItem="82l-dM-QCC" secondAttribute="leading" id="OyV-jg-Hfu"/>
                             <constraint firstItem="WVJ-7e-gYa" firstAttribute="leading" secondItem="82l-dM-QCC" secondAttribute="leading" constant="20" id="RLF-GB-sxW"/>
+                            <constraint firstItem="YRa-TB-LEN" firstAttribute="top" secondItem="WVJ-7e-gYa" secondAttribute="bottom" id="U5k-Wa-uF4"/>
                             <constraint firstItem="82l-dM-QCC" firstAttribute="trailing" secondItem="WVJ-7e-gYa" secondAttribute="trailing" constant="20" id="i1W-po-gXl"/>
                             <constraint firstItem="WVJ-7e-gYa" firstAttribute="top" secondItem="82l-dM-QCC" secondAttribute="top" constant="20" id="tdC-7c-qFk"/>
+                            <constraint firstItem="82l-dM-QCC" firstAttribute="bottom" secondItem="YRa-TB-LEN" secondAttribute="bottom" id="ygx-4b-Rp7"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Бронирование" id="16c-hL-7ud">
@@ -217,7 +239,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="tableView" destination="YRa-TB-LEN" id="DIX-DQ-9dm"/>
                         <outlet property="timePicker" destination="WVJ-7e-gYa" id="5cL-zy-v4O"/>
+                        <segue destination="waJ-0u-Geu" kind="show" identifier="workInfo" id="rbr-ZS-uBb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vwL-Iy-wht" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -532,6 +556,9 @@
             <point key="canvasLocation" x="329" y="-147"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="rbr-ZS-uBb"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.34509803919999998" blue="0.28627450980000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
     <resources>
         <image name="Today" width="18.5" height="23.5"/>

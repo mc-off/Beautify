@@ -147,13 +147,15 @@ class FBMasters {
         }
     }
     
-    func createBooking(masterID: String, userID: String, bookDate: Date, complation: @escaping(Bool, String?) -> ()) {
+    func createBooking(masterID: String, userID: String, bookDate: Date, workID: String, complation: @escaping(Bool, String?) -> ()) {
         let uid = Utilities.randomString(of: 28)
         let DBBooking =
         ["id": uid,
          "masterID": masterID,
          "userID": userID,
+         "workID": workID,
          "bookDate": ISO8601DateFormatter().string(from: bookDate)] as [String : Any]
+         
         
         Database.database().reference().child("bookings").child(uid).setValue(DBBooking) { (error, data) in
             if ((error) != nil) {

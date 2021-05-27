@@ -13,4 +13,5 @@ struct Booking {
     var masterID: String?
     var userID: String?
     var bookDate: Date?
+    var workID: String?
 }

@@ -61,6 +61,8 @@
 		6D70969E26601D0700DCDAB3 /* BookingInfoTimeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D70969C26601D0700DCDAB3 /* BookingInfoTimeTableViewCell.xib */; };
 		6D7096A026601F2100DCDAB3 /* BookingInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D70969F26601F2100DCDAB3 /* BookingInfoViewController.swift */; };
 		6D7096A22660210C00DCDAB3 /* BookingInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7096A12660210C00DCDAB3 /* BookingInfoViewModel.swift */; };
+		6D7096A52660403C00DCDAB3 /* BookingWorkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7096A32660403C00DCDAB3 /* BookingWorkTableViewCell.swift */; };
+		6D7096A62660432D00DCDAB3 /* BookingWorkTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D7096A42660403C00DCDAB3 /* BookingWorkTableViewCell.xib */; };
 		6D821164265C07F300BE8374 /* MapInfoWindowView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D821163265C07F300BE8374 /* MapInfoWindowView.xib */; };
 		6D821168265C0A1800BE8374 /* MapInfoWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D821167265C0A1800BE8374 /* MapInfoWindow.swift */; };
 		6D87FBE9262FEAB500D38EC3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D87FBE8262FEAB500D38EC3 /* Main.storyboard */; };
@@ -172,6 +174,8 @@
 		6D70969C26601D0700DCDAB3 /* BookingInfoTimeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookingInfoTimeTableViewCell.xib; sourceTree = "<group>"; };
 		6D70969F26601F2100DCDAB3 /* BookingInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingInfoViewController.swift; sourceTree = "<group>"; };
 		6D7096A12660210C00DCDAB3 /* BookingInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingInfoViewModel.swift; sourceTree = "<group>"; };
+		6D7096A32660403C00DCDAB3 /* BookingWorkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingWorkTableViewCell.swift; sourceTree = "<group>"; };
+		6D7096A42660403C00DCDAB3 /* BookingWorkTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookingWorkTableViewCell.xib; sourceTree = "<group>"; };
 		6D7DBA2D2656757200AF25BF /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		6D821163265C07F300BE8374 /* MapInfoWindowView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapInfoWindowView.xib; sourceTree = "<group>"; };
 		6D821167265C0A1800BE8374 /* MapInfoWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapInfoWindow.swift; sourceTree = "<group>"; };
@@ -263,6 +267,8 @@
 			children = (
 				6D0D9855265108A100BE2B23 /* MasterCardViewController.swift */,
 				6DB2EBDB2660778900CCD285 /* BookingViewController.swift */,
+				6D7096A32660403C00DCDAB3 /* BookingWorkTableViewCell.swift */,
+				6D7096A42660403C00DCDAB3 /* BookingWorkTableViewCell.xib */,
 				6D0D985B26513E6300BE2B23 /* Cells */,
 			);
 			path = Card;
@@ -877,6 +883,7 @@
 				6D258AE3265FF8E80002EA5F /* FinalInformationTableViewCell.xib in Resources */,
 				6D252225265DB76C00AF37B7 /* ConstructorCreationFormTableViewCell.xib in Resources */,
 				6D258AE8265FFED40002EA5F /* FinalItemTableViewCell.xib in Resources */,
+				6D7096A62660432D00DCDAB3 /* BookingWorkTableViewCell.xib in Resources */,
 				6D70969E26601D0700DCDAB3 /* BookingInfoTimeTableViewCell.xib in Resources */,
 				6DCE047226514E5A00E5AA83 /* MasterCardReviewTableViewCell.xib in Resources */,
 				6D97333F2658B8E30022C54D /* Map.storyboard in Resources */,
@@ -993,6 +1000,7 @@
 				6D258AB8265E13390002EA5F /* MastesrListViewModel.swift in Sources */,
 				6D0D985926513E5200BE2B23 /* MasterCardDescriptionTableViewCell.swift in Sources */,
 				6D1B85AB266140770049BC02 /* ARViewController.swift in Sources */,
+				6D7096A52660403C00DCDAB3 /* BookingWorkTableViewCell.swift in Sources */,
 				6DE64F84263057A4004BA4A1 /* ChangePasswordViewModel.swift in Sources */,
 				6DF0488D25F662640033BD66 /* SceneDelegate.swift in Sources */,
 				6DE64F7E26305770004BA4A1 /* EditeProfileViewController.swift in Sources */,

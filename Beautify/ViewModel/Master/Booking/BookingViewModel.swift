@@ -13,10 +13,17 @@ class BookingViewModel {
     public  var messageAlert  : String? {  didSet { showAlertClosure?() }}
     
     
+    var userWorksViewModel = WorksViewModel()
+    var masterWorksViewModel = WorksViewModel()
+    var selectedCell        : WorkViewModel?
+    
+    
+    
     
     
     var createClosure   : (()->())?
     var showAlertClosure: (()->())?
+    var reloadTableViewClosure: (()->())?
     
     
     
@@ -25,7 +32,7 @@ class BookingViewModel {
     
     
     func createPressed(masterID: String, bookDate: Date) {
-        FBMasters.shared.createBooking(masterID: masterID, userID: currentUser.id!, bookDate: bookDate) {
+        FBMasters.shared.createBooking(masterID: masterID, userID: currentUser.id!, bookDate: bookDate, workID: selectedCell!.id!) {
             [unowned self] (isSuccess, error) in
             self.messageAlert = isSuccess ?  "Booking created successfully" : error
         }
