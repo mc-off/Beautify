@@ -85,6 +85,8 @@
                         <outlet property="titleLabel" destination="6sp-2r-a3k" id="lA4-f3-uzM"/>
                         <segue destination="kcc-7q-XER" kind="show" identifier="changePassword" id="gqq-mH-vW6"/>
                         <segue destination="dJW-QN-Lbi" kind="show" identifier="editeProfile" id="Zlo-Kl-S2r"/>
+                        <segue destination="nfC-1b-dkr" kind="show" identifier="bookingHistory" id="nfO-89-7GZ"/>
+                        <segue destination="hq1-dd-aiq" kind="show" identifier="currentBooking" id="24I-2p-GhR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PSZ-F1-okK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -119,6 +121,68 @@
                 </view>
             </objects>
             <point key="canvasLocation" x="2904" y="357"/>
+        </scene>
+        <!--История заказов-->
+        <scene sceneID="AdG-uN-57V">
+            <objects>
+                <viewController id="nfC-1b-dkr" customClass="BookingsListViewController" customModule="Beautify" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="O2G-Su-pg2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="96w-ku-cZg">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="rUn-9l-Xrz">
+                                        <rect key="frame" x="0.0" y="49.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rUn-9l-Xrz" id="A7u-aW-4ar">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="nfC-1b-dkr" id="0gq-ZF-jHh"/>
+                                    <outlet property="delegate" destination="nfC-1b-dkr" id="8r5-Ov-nnw"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fQY-In-LNz"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="96w-ku-cZg" firstAttribute="top" secondItem="fQY-In-LNz" secondAttribute="top" id="1MP-6p-FZS"/>
+                            <constraint firstItem="96w-ku-cZg" firstAttribute="leading" secondItem="fQY-In-LNz" secondAttribute="leading" id="BkV-cF-QIz"/>
+                            <constraint firstItem="fQY-In-LNz" firstAttribute="trailing" secondItem="96w-ku-cZg" secondAttribute="trailing" id="RQO-Gz-a3A"/>
+                            <constraint firstAttribute="bottom" secondItem="96w-ku-cZg" secondAttribute="bottom" id="oyu-Uw-ukd"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="История заказов" largeTitleDisplayMode="never" id="DSS-a4-e7D"/>
+                    <connections>
+                        <outlet property="tableView" destination="96w-ku-cZg" id="EA6-ul-kTc"/>
+                        <segue destination="hq1-dd-aiq" kind="show" identifier="booking" id="hQl-22-QHG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="49L-xe-oRt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4151" y="1083"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="gBo-Sq-fBp">
+            <objects>
+                <viewController id="hq1-dd-aiq" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZZu-NY-1Ic">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="9lg-Eu-uTn"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="H16-hv-3Wo"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rmU-cq-48r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3867" y="363"/>
         </scene>
         <!--Изменить профиль-->
         <scene sceneID="EpG-Ur-ggI">
@@ -308,6 +372,9 @@
             <point key="canvasLocation" x="3252" y="1083"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="hQl-22-QHG"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" name="ToolActive"/>
     <resources>
         <image name="Avatar" width="64" height="64"/>

@@ -88,6 +88,7 @@ class HomeViewModel {
 
 struct BookingObjectViewModel {
     var id:String?
+    var masterName: String?
     var masterID: String?
     var userID: String?
     var bookDate: Date?

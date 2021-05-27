@@ -259,6 +259,8 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
             section = section + 2
         }
         switch  section{
+        case 2:
+            performSegue(withIdentifier: "bookingHistory", sender: self)
         case 3:
             performSegue(withIdentifier: "changePassword", sender: self)
         case 4:
