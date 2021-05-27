@@ -22,7 +22,7 @@ class FBReviews {
                     let values = reviewData.value as! [String: Any]
                     review.id = values["id"] as? String ?? ""
                     review.description = values["description"] as? String ?? ""
-                    review.username = "Aboba"
+                    review.username = "Алина"
                     review.userID = values["userID"] as? String ?? ""
                     review.masterID = values["masterID"] as? String ?? ""
                     review.topImageURL = values["topImageURL"] as? String ?? ""

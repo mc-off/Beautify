@@ -14,6 +14,9 @@ class WorkInfoTableViewController: UITableViewController, ARButtonDelegate {
         let vc = ARViewController()
         let color = UIColor(hex: vm.itemViewModel.color!.uppercased())
         vc.selectedColor = color
+        vc.hidesBottomBarWhenPushed = true
+
+        self.tabBarController?.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

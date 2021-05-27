@@ -14,7 +14,14 @@ class FinallTableViewController: UITableViewController, ARButtonDelegate {
     
     
     func buttonTapped() {
-        print(titleCell?.titleLabel.text)
+        let vc = ARViewController()
+        let color = UIColor(hex: itemVM.color!.uppercased())
+        vc.selectedColor = color
+        vc.hidesBottomBarWhenPushed = true
+        vc.navigationController?.view.backgroundColor = UIColor.black
+
+        self.tabBarController?.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     let vm = WorkCreationViewModel()

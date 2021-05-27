@@ -69,7 +69,7 @@ class ARViewController: UIViewController {
         }
         
         session = AVCaptureSession()
-        session.sessionPreset = .high
+        session.sessionPreset = .iFrame1280x720
         
         guard let device = AVCaptureDevice.default(.builtInWideAngleCamera, for: AVMediaType.video, position: position) else {
             throw PixelError.canNotSetupAVSession
