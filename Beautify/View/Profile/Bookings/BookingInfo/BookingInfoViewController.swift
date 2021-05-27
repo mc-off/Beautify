@@ -29,6 +29,8 @@ class BookingInfoViewController: UIViewController {
     private func initView() {
         tableView.register(UINib(nibName: "BookingInfoTimeTableViewCell", bundle: nil), forCellReuseIdentifier: "BookingInfoTimeTableViewCell")
         tableView.register(UINib(nibName: "BookingInfoMasterTableViewCell", bundle: nil), forCellReuseIdentifier: "BookingInfoMasterTableViewCell")
+        tableView.register(UINib(nibName: "PreviousWorkTableViewCell", bundle: nil), forCellReuseIdentifier: "PreviousWorkTableViewCell")
+        
     }
     
     private func initVM() {
@@ -37,6 +39,7 @@ class BookingInfoViewController: UIViewController {
         }
         vm.bookingViewModel = bookingVM!
         vm.initMasterFetch(uid: masterID!)
+        vm.initWorkFetch(uid: workID ?? "")
     }
 
     /*
@@ -54,7 +57,11 @@ class BookingInfoViewController: UIViewController {
 extension BookingInfoViewController: UITableViewDelegate, UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
-       return 2
+        if (workID == nil) {
+            return 2
+        } else {
+            return 3
+        }
     }
     
 //    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -67,6 +74,8 @@ extension BookingInfoViewController: UITableViewDelegate, UITableViewDataSource 
                 return "Мастерская"
             case 1:
                 return "Время"
+            case 2:
+                return "Работа"
             default:
                 return nil
             }
@@ -90,21 +99,39 @@ extension BookingInfoViewController: UITableViewDelegate, UITableViewDataSource 
             cell?.cellVM = vm.masterViewModel
             
             return cell ?? UITableViewCell()
+        case 2:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "PreviousWorkTableViewCell",
+            for: indexPath) as? PreviousWorkTableViewCell
+            cell?.cellVM = vm.workViewModel
+            
+            return cell ?? UITableViewCell()
         default:
             return UITableViewCell()
         }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "masterInfo", sender: self)
+        switch indexPath.section {
+        case 0:
+            performSegue(withIdentifier: "masterInfo", sender: self)
+        case 2:
+            performSegue(withIdentifier: "workInfo", sender: self)
+        default:
+            print("Tapped extra row")
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "masterInfo" {
+        switch segue.identifier {
+        case "masterInfo":
             let vc = segue.destination as! MasterCardViewController
             vc.masterTitle = vm.masterViewModel.name!
             vc.masterType = vm.masterViewModel.type!
             vc.uid  = vm.masterViewModel.uid!
+        default:
+            let vc = segue.destination as! WorkInfoTableViewController
+            vc.itemID = vm.workViewModel.itemID!
+            vc.workTitle = vm.workViewModel.title
         }
     }
 

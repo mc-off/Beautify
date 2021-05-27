@@ -217,6 +217,7 @@
                         <outlet property="tableView" destination="lQ4-tY-Sw7" id="tjM-ZA-PZz"/>
                         <segue destination="k1N-Za-6jg" kind="presentation" identifier="masterInfo" id="KM7-1f-8WZ"/>
                         <segue destination="Aex-iQ-OhX" kind="show" id="Pne-Op-L0n"/>
+                        <segue destination="ejg-Qn-F82" kind="show" identifier="workInfo" id="wqd-Bt-vx6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rmU-cq-48r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -586,14 +587,45 @@
                         <outlet property="headTitleLabel" destination="OeJ-5S-3Lk" id="6H9-AO-q2w"/>
                         <outlet property="headTypeLabel" destination="o5f-C6-KZk" id="leY-Ud-3Ia"/>
                         <outlet property="tableView" destination="ePC-dD-znM" id="MZx-BC-Is1"/>
+                        <segue destination="ejg-Qn-F82" kind="show" identifier="showWorkInfo" id="liq-fU-jXm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lcu-iC-uD5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4871" y="552"/>
         </scene>
+        <!--Обзор-->
+        <scene sceneID="d8P-0c-THU">
+            <objects>
+                <tableViewController id="ejg-Qn-F82" customClass="WorkInfoTableViewController" customModule="Beautify" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="oSr-Ur-AFR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Osh-yN-9hh">
+                                <rect key="frame" x="0.0" y="49.5" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Osh-yN-9hh" id="lxV-0P-dRI">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ejg-Qn-F82" id="fho-8l-QfQ"/>
+                            <outlet property="delegate" destination="ejg-Qn-F82" id="kN5-jn-3ZQ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Обзор" largeTitleDisplayMode="always" id="Lhe-3U-573"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RRq-1G-1LM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4870" y="-170"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="liq-fU-jXm"/>
         <segue reference="24I-2p-GhR"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" name="ToolActive"/>

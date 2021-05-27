@@ -295,6 +295,7 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
         if segue.identifier == "currentBooking" {
             let vc = segue.destination as! BookingInfoViewController
             vc.masterID = vm.bookingViewModel.masterID!
+            vc.workID = vm.bookingViewModel.workID!
             vc.bookingVM = vm.bookingViewModel
         }
     }

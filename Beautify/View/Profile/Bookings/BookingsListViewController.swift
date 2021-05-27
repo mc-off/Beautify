@@ -77,6 +77,7 @@ extension BookingsListViewController: UITableViewDataSource, UITableViewDelegate
         if segue.identifier == "bookingInfo" {
             let vc = segue.destination as! BookingInfoViewController
             vc.masterID = vm.selectedCell!.masterID!
+            vc.workID = vm.selectedCell!.workID!
             vc.bookingVM = vm.selectedCell!
         }
     }

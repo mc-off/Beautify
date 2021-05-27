@@ -82,7 +82,7 @@ class HomeViewModel {
     }
     
     private func proccessFetchBookings(booking: Booking) -> BookingObjectViewModel {
-        return BookingObjectViewModel(id: booking.id, masterID: booking.masterID, userID: booking.userID, bookDate: booking.bookDate)
+        return BookingObjectViewModel(id: booking.id, masterID: booking.masterID, userID: booking.userID, bookDate: booking.bookDate, workID: booking.workID)
     }
 }
 
@@ -92,4 +92,5 @@ struct BookingObjectViewModel {
     var masterID: String?
     var userID: String?
     var bookDate: Date?
+    var workID: String?
 }

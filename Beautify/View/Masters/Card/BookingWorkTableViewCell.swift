@@ -20,7 +20,7 @@ class BookingWorkTableViewCell: UITableViewCell {
     @IBOutlet weak var itemLabel: UILabel!
     
     var cellVM = WorkViewModel() { didSet {
-        workImage.KFloadImage(url: cellVM.photoURL!)
+        workImage.KFloadImage(url: cellVM.photoURL  ?? "https://www.pngitem.com/pimgs/m/143-1432762_nails-png-transparent-png.png")
         itemLabel.text = cellVM.title
     }
     }

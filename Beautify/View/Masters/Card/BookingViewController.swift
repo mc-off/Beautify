@@ -50,15 +50,15 @@ class BookingViewController: UIViewController, WorkTappedDelegate {
                 self.tableView.reloadData()
             }
         }
-        vm.userWorksViewModel.initFetch()
         vm.masterWorksViewModel.reloadTableViewClosure = { [weak self] in
             guard let self = self else { return }
-            if self.vm.userWorksViewModel.numberOfCells == 0 {
+            if self.vm.masterWorksViewModel.numberOfCells == 0 {
             } else {
                 self.tableView.reloadData()
             }
         }
         vm.masterWorksViewModel.initFetch(creatorID: uid)
+        vm.userWorksViewModel.initFetch()
     }
     
     @IBAction func createButtonTapped(_ sender: Any) {
@@ -71,20 +71,25 @@ class BookingViewController: UIViewController, WorkTappedDelegate {
 extension BookingViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        if ((vm.userWorksViewModel.numberOfCells != 0) && (vm.masterWorksViewModel.numberOfCells != 0)) {
-            return 2
-        } else if ((vm.userWorksViewModel.numberOfCells != 0) || (vm.masterWorksViewModel.numberOfCells != 0)) {
-            return 1
+        if (vm.userWorksViewModel.numberOfCells > 0) {
+            if (vm.masterWorksViewModel.numberOfCells > 0) {
+                return 2
+            } else {
+                return 1
+            }
         } else {
-            return 0
+            if (vm.masterWorksViewModel.numberOfCells > 0) {
+                return 1
+            } else {
+                return 0
+            }
         }
-        
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
         case 0:
-            if (vm.masterWorksViewModel.numberOfCells != 0) {
+            if (vm.masterWorksViewModel.numberOfCells > 0) {
                 return "Работы мастерской"
             } else {
                 return "Мои работы"
@@ -101,7 +106,7 @@ extension BookingViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
-            if (vm.masterWorksViewModel.numberOfCells != 0) {
+            if (vm.masterWorksViewModel.numberOfCells > 0) {
                 return vm.masterWorksViewModel.numberOfCells
             } else {
                 return vm.userWorksViewModel.numberOfCells
@@ -116,7 +121,7 @@ extension BookingViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
         case 0:
-            if (vm.masterWorksViewModel.numberOfCells != 0) {
+            if (vm.masterWorksViewModel.numberOfCells > 0) {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "BookingWorkTableViewCell", for: indexPath) as! BookingWorkTableViewCell
                 cell.cellVM = vm.masterWorksViewModel.getCellViewModel(at: indexPath)
                 cell.delegate = self

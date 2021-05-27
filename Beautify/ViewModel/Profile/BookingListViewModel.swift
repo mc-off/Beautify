@@ -51,7 +51,7 @@ class BookingListViewModel {
     }
     
     private func proccessFetchBookings(booking: Booking, master: Master) -> BookingObjectViewModel {
-        return BookingObjectViewModel(id: booking.id, masterName: master.name, masterID: booking.masterID, userID: booking.userID, bookDate: booking.bookDate)
+        return BookingObjectViewModel(id: booking.id, masterName: master.name, masterID: booking.masterID, userID: booking.userID, bookDate: booking.bookDate, workID: booking.workID)
     }
     
     func getCellViewModel(at indexpath: IndexPath) -> BookingObjectViewModel {

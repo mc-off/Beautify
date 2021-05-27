@@ -176,6 +176,7 @@ class FBMasters {
                     let values = bookingData.value as! [String: Any]
                     book.id = values["id"] as? String ?? ""
                     book.masterID = values["masterID"] as? String ?? ""
+                    book.workID = values["workID"] as? String ?? ""
                     book.userID = values["userID"] as? String ?? ""
                     book.bookDate = self.dateFormatter.date(from: values["bookDate"] as! String)
 
