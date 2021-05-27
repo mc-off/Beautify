@@ -54,4 +54,11 @@ class Utilities {
         
         return String(df.string(from: date))
     }
+    
+    static func convertDateToFullCalendar(date:Date) -> String {
+        let df = DateFormatter()
+        df.dateFormat = "dd.MM.YYYY HH:mm"
+        
+        return String(df.string(from: date))
+    }
 }

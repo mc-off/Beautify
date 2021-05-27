@@ -259,6 +259,8 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
             section = section + 2
         }
         switch  section{
+        case 1:
+            performSegue(withIdentifier: "currentBooking", sender: self)
         case 2:
             performSegue(withIdentifier: "bookingHistory", sender: self)
         case 3:
@@ -286,6 +288,14 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
             }
         default:
             print("tapped " + String(indexPath.section)+":"+String(indexPath.row))
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "currentBooking" {
+            let vc = segue.destination as! BookingInfoViewController
+            vc.masterID = vm.bookingViewModel.masterID!
+            vc.bookingVM = vm.bookingViewModel
         }
     }
     

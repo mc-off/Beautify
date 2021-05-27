@@ -68,4 +68,17 @@ extension BookingsListViewController: UITableViewDataSource, UITableViewDelegate
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        vm.pressedCell(at: indexPath)
+        performSegue(withIdentifier: "bookingInfo", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "bookingInfo" {
+            let vc = segue.destination as! BookingInfoViewController
+            vc.masterID = vm.selectedCell!.masterID!
+            vc.bookingVM = vm.selectedCell!
+        }
+    }
+    
 }
