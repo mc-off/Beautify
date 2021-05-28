@@ -17,6 +17,7 @@
 		6D0D986A265140FD00BE2B23 /* MasterCardWorkingHoursTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0D9868265140FD00BE2B23 /* MasterCardWorkingHoursTableViewCell.swift */; };
 		6D0D986B265140FD00BE2B23 /* MasterCardWorkingHoursTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D0D9869265140FD00BE2B23 /* MasterCardWorkingHoursTableViewCell.xib */; };
 		6D166BE6263551FC004FC587 /* MastersTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D166BE5263551FC004FC587 /* MastersTabViewController.swift */; };
+		6D191CD4266C1DBA002225CD /* ReviewCreationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D191CD3266C1DBA002225CD /* ReviewCreationViewModel.swift */; };
 		6D1B85A426613FD50049BC02 /* result_model.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 6D1B85A326613FD50049BC02 /* result_model.tflite */; };
 		6D1B85A7266140100049BC02 /* DeeplabModel.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6D1B85A6266140100049BC02 /* DeeplabModel.mm */; };
 		6D1B85AB266140770049BC02 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1B85A9266140770049BC02 /* ARViewController.swift */; };
@@ -90,6 +91,7 @@
 		6D941FA4265ED83B0056ACFE /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D941FA3265ED83B0056ACFE /* Review.swift */; };
 		6D97333D2658B82B0022C54D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D97333C2658B82B0022C54D /* MapViewController.swift */; };
 		6D97333F2658B8E30022C54D /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D97333E2658B8E30022C54D /* Map.storyboard */; };
+		6D9A1A23266C13E80034F03F /* ReviewCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9A1A22266C13E80034F03F /* ReviewCreationViewController.swift */; };
 		6DB2EBCE26601F0E00CCD285 /* WorkCreationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB2EBCD26601F0E00CCD285 /* WorkCreationViewModel.swift */; };
 		6DB2EBD126603D6800CCD285 /* WorkInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB2EBD026603D6800CCD285 /* WorkInfoViewModel.swift */; };
 		6DB2EBD52660417200CCD285 /* WorkInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB2EBD42660417200CCD285 /* WorkInfoTableViewController.swift */; };
@@ -128,6 +130,7 @@
 		6D0D9868265140FD00BE2B23 /* MasterCardWorkingHoursTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterCardWorkingHoursTableViewCell.swift; sourceTree = "<group>"; };
 		6D0D9869265140FD00BE2B23 /* MasterCardWorkingHoursTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MasterCardWorkingHoursTableViewCell.xib; sourceTree = "<group>"; };
 		6D166BE5263551FC004FC587 /* MastersTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MastersTabViewController.swift; sourceTree = "<group>"; };
+		6D191CD3266C1DBA002225CD /* ReviewCreationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCreationViewModel.swift; sourceTree = "<group>"; };
 		6D1B85A326613FD50049BC02 /* result_model.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = result_model.tflite; sourceTree = "<group>"; };
 		6D1B85A5266140100049BC02 /* DeeplabModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeeplabModel.h; sourceTree = "<group>"; };
 		6D1B85A6266140100049BC02 /* DeeplabModel.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DeeplabModel.mm; sourceTree = "<group>"; };
@@ -204,6 +207,7 @@
 		6D941FA3265ED83B0056ACFE /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		6D97333C2658B82B0022C54D /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		6D97333E2658B8E30022C54D /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
+		6D9A1A22266C13E80034F03F /* ReviewCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCreationViewController.swift; sourceTree = "<group>"; };
 		6DB2EBCD26601F0E00CCD285 /* WorkCreationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkCreationViewModel.swift; sourceTree = "<group>"; };
 		6DB2EBD026603D6800CCD285 /* WorkInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkInfoViewModel.swift; sourceTree = "<group>"; };
 		6DB2EBD42660417200CCD285 /* WorkInfoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkInfoTableViewController.swift; sourceTree = "<group>"; };
@@ -527,6 +531,7 @@
 			isa = PBXGroup;
 			children = (
 				6D70969F26601F2100DCDAB3 /* BookingInfoViewController.swift */,
+				6D9A1A21266C13B90034F03F /* Review */,
 				6D70969326601BEB00DCDAB3 /* BookingInfoCells */,
 			);
 			path = BookingInfo;
@@ -701,6 +706,14 @@
 			path = Map;
 			sourceTree = "<group>";
 		};
+		6D9A1A21266C13B90034F03F /* Review */ = {
+			isa = PBXGroup;
+			children = (
+				6D9A1A22266C13E80034F03F /* ReviewCreationViewController.swift */,
+			);
+			path = Review;
+			sourceTree = "<group>";
+		};
 		6DB2EBCF26603D2D00CCD285 /* Overview */ = {
 			isa = PBXGroup;
 			children = (
@@ -753,6 +766,7 @@
 				6DE64F82263057A4004BA4A1 /* ChangePasswordViewModel.swift */,
 				6DE64F83263057A4004BA4A1 /* EditeProfileViewModel.swift */,
 				6D264315265FF8B000FA3E6F /* BookingListViewModel.swift */,
+				6D191CD3266C1DBA002225CD /* ReviewCreationViewModel.swift */,
 				6D7096A12660210C00DCDAB3 /* BookingInfoViewModel.swift */,
 				6D441F842630050E00A29616 /* HomeViewModel.swift */,
 			);
@@ -1015,6 +1029,7 @@
 				6D258AE2265FF8E80002EA5F /* FinalInformationTableViewCell.swift in Sources */,
 				6D87FBFD262FECC900D38EC3 /* FBAuthentication.swift in Sources */,
 				6D258AC5265F6D130002EA5F /* Work.swift in Sources */,
+				6D191CD4266C1DBA002225CD /* ReviewCreationViewModel.swift in Sources */,
 				6D93E715263B213B00C573F2 /* MasterTableViewCell.swift in Sources */,
 				6D87FBFF262FEFCA00D38EC3 /* FBDDatabase.swift in Sources */,
 				6D264314265FF6FB00FA3E6F /* BookingsListViewController.swift in Sources */,
@@ -1024,6 +1039,7 @@
 				6DB2EBD126603D6800CCD285 /* WorkInfoViewModel.swift in Sources */,
 				6DB2EBDF2660795F00CCD285 /* BookingViewModel.swift in Sources */,
 				6D87FBEF262FEB3E00D38EC3 /* SignUpViewController copy.swift in Sources */,
+				6D9A1A23266C13E80034F03F /* ReviewCreationViewController.swift in Sources */,
 				6D7096A026601F2100DCDAB3 /* BookingInfoViewController.swift in Sources */,
 				6D258ADD265FF82B0002EA5F /* FinallTableViewController.swift in Sources */,
 				6DB2EBD52660417200CCD285 /* WorkInfoTableViewController.swift in Sources */,

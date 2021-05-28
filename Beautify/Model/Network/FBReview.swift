@@ -11,6 +11,39 @@ import Firebase
 class FBReviews {
     public static let shared = FBReviews()
     
+    func createReview(masterID: String, userID: String, description: String, grade: Int, reviewImage: UIImage, complation: @escaping(Bool, String?) -> ()) {
+        let uid = Utilities.randomString(of: 28)
+        guard let imageData = reviewImage.jpegData(compressionQuality: 0.5) else { return }
+        let uploadTask = Storage.storage().reference().child("reviews").child("\(uid).jpg")
+        uploadTask.putData(imageData, metadata: nil) { (metaData, error) in
+            if error != nil {
+                complation(false, error?.localizedDescription)
+                return
+            } else {
+                uploadTask.downloadURL { [unowned self] (url, error) in
+                    if error != nil {
+                        uploadTask.delete(completion: nil)
+                        complation(false, error?.localizedDescription)
+                    } else {
+                        let DBReview =
+                            ["masterID": masterID,
+                             "userID": userID,
+                             "id": userID,
+                             "description": description,
+                             "grade": grade,
+                             "topImageURL": url?.absoluteString] as [String : Any]
+                        Database.database().reference().child("reviews").child(userID).setValue(DBReview) { (error, data) in
+                            if error != nil {
+                                complation(false, "There was a problem, Thanks to try again")
+                            } else {
+                                complation(true, nil)
+                            }
+                        }
+            }
+                }
+            }
+        }
+    }
     
     func loadReviews(masterID: String, complation: @escaping([Review]?, String?)->()) {
         FBAuthentication.shared.ref.child("reviews").queryOrdered(byChild: "masterID").queryEqual(toValue: masterID).observeSingleEvent(of: .value) { (snapshot) in

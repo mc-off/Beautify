@@ -210,13 +210,16 @@
                                 <rect key="frame" x="373" y="11" width="21" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="square.and.pencil" catalog="system"/>
+                                <connections>
+                                    <action selector="reviewButtonTapped:" destination="hq1-dd-aiq" eventType="touchUpInside" id="f6M-DU-hrO"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="lQ4-tY-Sw7" id="tjM-ZA-PZz"/>
                         <segue destination="k1N-Za-6jg" kind="presentation" identifier="masterInfo" id="KM7-1f-8WZ"/>
-                        <segue destination="Aex-iQ-OhX" kind="show" id="Pne-Op-L0n"/>
+                        <segue destination="Aex-iQ-OhX" kind="show" identifier="reviewCreation" id="Pne-Op-L0n"/>
                         <segue destination="ejg-Qn-F82" kind="show" identifier="workInfo" id="wqd-Bt-vx6"/>
                     </connections>
                 </viewController>
@@ -224,21 +227,147 @@
             </objects>
             <point key="canvasLocation" x="3867" y="363"/>
         </scene>
-        <!--View Controller-->
+        <!--Отзыв-->
         <scene sceneID="KH4-oz-OQv">
             <objects>
-                <viewController id="Aex-iQ-OhX" sceneMemberID="viewController">
+                <viewController id="Aex-iQ-OhX" customClass="ReviewCreationViewController" customModule="Beautify" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gY0-xe-3yw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="dm4-fc-266">
+                                <rect key="frame" x="16" y="118" width="382" height="161.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Отзыв" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zSO-fy-oRh">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="19.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" placeholder="Текст" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fbm-EB-Nsr">
+                                        <rect key="frame" x="0.0" y="31.5" width="382" height="130"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="130" id="mun-Q1-WOJ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="zSO-fy-oRh" firstAttribute="top" secondItem="dm4-fc-266" secondAttribute="top" constant="12" id="aXK-Y4-kcw"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="cte-T1-PMd">
+                                <rect key="frame" x="16" y="361" width="382" height="344.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Фотография" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YBm-TO-kVn">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="19.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YYq-FV-Bd5">
+                                        <rect key="frame" x="0.0" y="31.5" width="382" height="313"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="313" id="3Yg-Tj-C3h"/>
+                                            <constraint firstAttribute="width" constant="382" id="4qZ-Zn-iJR"/>
+                                        </constraints>
+                                        <state key="normal" title="Фото" image="avatar-salon"/>
+                                        <connections>
+                                            <action selector="photoPicker:" destination="Aex-iQ-OhX" eventType="touchUpInside" id="4va-D6-poq"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="vfx-oW-gvh">
+                                <rect key="frame" x="16" y="289.5" width="382" height="61.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Оценка" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Sr-kI-CAG">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="19.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eah-rU-afw" customClass="CosmosView" customModule="Cosmos">
+                                        <rect key="frame" x="0.0" y="31.5" width="382" height="30"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                                <real key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="totalStars">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="starSize">
+                                                <real key="value" value="30"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="filledColor">
+                                                <color key="value" name="ToolActive"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="emptyColor">
+                                                <color key="value" name="ButtonBackground"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="fillMode">
+                                                <integer key="value" value="0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="emptyBorderColor">
+                                                <color key="value" name="ToolActive"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="filledBorderColor">
+                                                <color key="value" name="ToolActive"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="minTouchRating">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="eah-rU-afw" firstAttribute="centerX" secondItem="vfx-oW-gvh" secondAttribute="centerX" id="Qe4-e4-Dy5"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="GHP-hH-pFL"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vfx-oW-gvh" firstAttribute="top" secondItem="dm4-fc-266" secondAttribute="bottom" constant="10" id="0K6-jo-fAi"/>
+                            <constraint firstItem="GHP-hH-pFL" firstAttribute="trailing" secondItem="cte-T1-PMd" secondAttribute="trailing" constant="16" id="2eE-In-Dw5"/>
+                            <constraint firstItem="GHP-hH-pFL" firstAttribute="trailing" secondItem="vfx-oW-gvh" secondAttribute="trailing" constant="16" id="Y5k-fb-Hlz"/>
+                            <constraint firstItem="dm4-fc-266" firstAttribute="leading" secondItem="GHP-hH-pFL" secondAttribute="leading" constant="16" id="b06-7V-TIQ"/>
+                            <constraint firstItem="cte-T1-PMd" firstAttribute="leading" secondItem="GHP-hH-pFL" secondAttribute="leading" constant="16" id="e3r-H2-evL"/>
+                            <constraint firstItem="dm4-fc-266" firstAttribute="top" secondItem="GHP-hH-pFL" secondAttribute="top" constant="30" id="eG5-Sv-ozv"/>
+                            <constraint firstItem="cte-T1-PMd" firstAttribute="top" secondItem="vfx-oW-gvh" secondAttribute="bottom" constant="10" id="loQ-qO-R0M"/>
+                            <constraint firstItem="GHP-hH-pFL" firstAttribute="trailing" secondItem="dm4-fc-266" secondAttribute="trailing" constant="16" id="r2g-4X-QD1"/>
+                            <constraint firstItem="vfx-oW-gvh" firstAttribute="leading" secondItem="GHP-hH-pFL" secondAttribute="leading" constant="16" id="uEY-Hb-GJE"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="gFN-Uv-nzQ"/>
+                    <navigationItem key="navigationItem" title="Отзыв" id="gFN-Uv-nzQ">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="Upt-cF-P8x">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="7h8-kb-uT6">
+                                <rect key="frame" x="375" y="11" width="19" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="checkmark" catalog="system"/>
+                                <connections>
+                                    <action selector="createButtonPressed:" destination="Aex-iQ-OhX" eventType="touchUpInside" id="kdR-Wn-3oc"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="descriptionTextField" destination="Fbm-EB-Nsr" id="88d-RW-Gcr"/>
+                        <outlet property="imagePicker" destination="YYq-FV-Bd5" id="sMQ-Rb-amn"/>
+                        <outlet property="ratingView" destination="eah-rU-afw" id="Q5k-49-z75"/>
+                        <outlet property="tapGesture" destination="SsJ-eb-j1K" id="ZAn-Rq-lBc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bOL-uU-MBn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="SsJ-eb-j1K">
+                    <connections>
+                        <outlet property="delegate" destination="Aex-iQ-OhX" id="rSw-s7-1AL"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="5638" y="363"/>
+            <point key="canvasLocation" x="5637.68115942029" y="362.94642857142856"/>
         </scene>
         <!--Изменить профиль-->
         <scene sceneID="EpG-Ur-ggI">
@@ -599,7 +728,7 @@
             <objects>
                 <tableViewController id="ejg-Qn-F82" customClass="WorkInfoTableViewController" customModule="Beautify" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="oSr-Ur-AFR">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -624,13 +753,19 @@
             <point key="canvasLocation" x="4870" y="-170"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="eah-rU-afw">
+            <size key="intrinsicContentSize" width="170" height="30"/>
+        </designable>
+    </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="liq-fU-jXm"/>
+        <segue reference="wqd-Bt-vx6"/>
         <segue reference="24I-2p-GhR"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" name="ToolActive"/>
     <resources>
         <image name="Avatar" width="64" height="64"/>
+        <image name="avatar-salon" width="414.5" height="313"/>
         <image name="checkmark" catalog="system" width="128" height="114"/>
         <image name="dollarsign.circle" catalog="system" width="128" height="121"/>
         <image name="dollarsign.circle.fill" catalog="system" width="128" height="121"/>

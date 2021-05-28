@@ -41,7 +41,12 @@ class BookingInfoViewController: UIViewController {
         vm.initMasterFetch(uid: masterID!)
         vm.initWorkFetch(uid: workID ?? "")
     }
-
+    
+    
+    @IBAction func reviewButtonTapped(_ sender: Any) {
+        performSegue(withIdentifier: "reviewCreation", sender: self)
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -128,6 +133,9 @@ extension BookingInfoViewController: UITableViewDelegate, UITableViewDataSource 
             vc.masterTitle = vm.masterViewModel.name!
             vc.masterType = vm.masterViewModel.type!
             vc.uid  = vm.masterViewModel.uid!
+        case "reviewCreation":
+            let vc = segue.destination as! ReviewCreationViewController
+            vc.masterID = vm.masterViewModel.uid!
         default:
             let vc = segue.destination as! WorkInfoTableViewController
             vc.itemID = vm.workViewModel.itemID!

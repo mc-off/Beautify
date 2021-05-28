@@ -18,6 +18,8 @@ pod 'Firebase/Auth'
     pod 'ASHorizontalScrollView', '~> 1.5.2'
     pod 'Google-Maps-iOS-Utils', '~> 3.9.0'
     pod 'TensorFlowLiteGpuExperimental', '0.0.1'
+    pod 'Cosmos', '~> 23.0'
+
 
 
 end
