@@ -30,62 +30,72 @@
                         <color key="textColor" systemColor="secondaryLabelColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Avatar" translatesAutoresizingMaskIntoConstraints="NO" id="IrG-Qh-RB7">
-                        <rect key="frame" x="224.5" y="60" width="106" height="106"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Avatar" translatesAutoresizingMaskIntoConstraints="NO" id="IrG-Qh-RB7">
+                        <rect key="frame" x="223" y="60" width="106" height="106"/>
                         <constraints>
-                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="106" id="kTz-f5-VnB"/>
+                            <constraint firstAttribute="height" constant="106" id="kTz-f5-VnB"/>
                             <constraint firstAttribute="width" constant="106" id="ztz-4r-Le7"/>
                         </constraints>
                     </imageView>
-                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2qL-7Q-H9Q">
-                        <rect key="frame" x="222.5" y="22" width="110" height="20"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="5Cs-YM-G8G">
-                                <rect key="frame" x="0.0" y="-0.5" width="22" height="20"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="7fm-e0-Jc5">
-                                <rect key="frame" x="22" y="-0.5" width="22" height="20"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="uvB-e7-Tdd">
-                                <rect key="frame" x="44" y="-0.5" width="22" height="20"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="rhz-TB-3Nt">
-                                <rect key="frame" x="66" y="-0.5" width="22" height="20"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.lefthalf.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="j1a-uK-DJf">
-                                <rect key="frame" x="88" y="-0.5" width="22" height="20"/>
-                            </imageView>
-                        </subviews>
-                    </stackView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sLm-iT-aEa">
-                        <rect key="frame" x="16" y="64" width="198.5" height="101"/>
+                        <rect key="frame" x="16" y="64" width="197" height="101"/>
                         <string key="text">Самый большой отзыв о том, как же получить скидку скидку скидку скидку скидку скидку скидку скидку скидку скидку скидку скидку скидку скидку скидку  скидку скидку скидку скидку скидку скидку скидку скидку скидку скидку скидку скидку скидку скидку</string>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8E1-tB-R2X" customClass="CosmosView" customModule="Cosmos">
+                        <rect key="frame" x="217" y="22" width="114" height="20"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                <real key="value" value="4"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="totalStars">
+                                <integer key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="starSize">
+                                <real key="value" value="22"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="fillMode">
+                                <integer key="value" value="0"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="starMargin">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="updateOnTouch" value="NO"/>
+                            <userDefinedRuntimeAttribute type="color" keyPath="filledColor">
+                                <color key="value" systemColor="systemYellowColor"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="filledBorderColor">
+                                <color key="value" systemColor="systemYellowColor"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="emptyBorderColor">
+                                <color key="value" systemColor="systemYellowColor"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="2qL-7Q-H9Q" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="22" id="1w7-ae-dNx"/>
+                    <constraint firstAttribute="trailing" secondItem="8E1-tB-R2X" secondAttribute="trailing" constant="14" id="3Jk-pW-qQp"/>
                     <constraint firstAttribute="bottom" secondItem="IrG-Qh-RB7" secondAttribute="bottom" constant="10" id="6OB-Cn-kuB"/>
                     <constraint firstItem="9CK-eA-Ibd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="7g3-XD-SlA"/>
                     <constraint firstItem="sLm-iT-aEa" firstAttribute="bottom" secondItem="IrG-Qh-RB7" secondAttribute="bottom" id="7gX-sF-CIS"/>
+                    <constraint firstItem="8E1-tB-R2X" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="22" id="Dn8-X3-luT"/>
                     <constraint firstItem="sLm-iT-aEa" firstAttribute="top" secondItem="e5m-Ng-60X" secondAttribute="bottom" constant="10" id="E4M-2K-kWw"/>
-                    <constraint firstItem="IrG-Qh-RB7" firstAttribute="top" secondItem="2qL-7Q-H9Q" secondAttribute="bottom" constant="18" id="KPE-MK-Tex"/>
+                    <constraint firstItem="IrG-Qh-RB7" firstAttribute="top" secondItem="8E1-tB-R2X" secondAttribute="bottom" constant="18" id="JGT-Zz-FW5"/>
                     <constraint firstItem="sLm-iT-aEa" firstAttribute="leading" secondItem="e5m-Ng-60X" secondAttribute="leading" id="PVa-V8-hBS"/>
                     <constraint firstItem="e5m-Ng-60X" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Zh0-m9-TT6"/>
                     <constraint firstItem="e5m-Ng-60X" firstAttribute="top" secondItem="9CK-eA-Ibd" secondAttribute="bottom" constant="8" id="bJF-7c-xjD"/>
                     <constraint firstItem="IrG-Qh-RB7" firstAttribute="leading" secondItem="sLm-iT-aEa" secondAttribute="trailing" constant="10" id="bqQ-qJ-Dfm"/>
                     <constraint firstAttribute="trailing" secondItem="IrG-Qh-RB7" secondAttribute="trailing" constant="16" id="dS4-tb-NvX"/>
                     <constraint firstItem="9CK-eA-Ibd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="gqh-nL-Zfj"/>
-                    <constraint firstAttribute="trailing" secondItem="2qL-7Q-H9Q" secondAttribute="trailing" constant="14" id="vNN-Sz-Ydt"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="tintColor" systemColor="systemYellowColor"/>
             <connections>
                 <outlet property="descriptionLabel" destination="sLm-iT-aEa" id="MKx-1R-TYM"/>
-                <outlet property="starsStackView" destination="2qL-7Q-H9Q" id="AzH-vU-fly"/>
+                <outlet property="ratingView" destination="8E1-tB-R2X" id="coA-kN-UuN"/>
                 <outlet property="topImage" destination="IrG-Qh-RB7" id="4Qf-Rn-IRn"/>
                 <outlet property="typeLabel" destination="e5m-Ng-60X" id="SfO-a7-oAo"/>
                 <outlet property="usernameLabel" destination="9CK-eA-Ibd" id="PX5-Qn-iVd"/>
@@ -93,10 +103,13 @@
             <point key="canvasLocation" x="82.608695652173921" y="176.11607142857142"/>
         </tableViewCell>
     </objects>
+    <designables>
+        <designable name="8E1-tB-R2X">
+            <size key="intrinsicContentSize" width="114" height="22"/>
+        </designable>
+    </designables>
     <resources>
         <image name="Avatar" width="64" height="64"/>
-        <image name="star.fill" catalog="system" width="128" height="116"/>
-        <image name="star.lefthalf.fill" catalog="system" width="128" height="116"/>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

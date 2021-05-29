@@ -11,7 +11,7 @@ import Firebase
 class FBReviews {
     public static let shared = FBReviews()
     
-    func createReview(masterID: String, userID: String, description: String, grade: Int, reviewImage: UIImage, complation: @escaping(Bool, String?) -> ()) {
+    func createReview(masterID: String, userID: String, description: String, grade: Double, reviewImage: UIImage, complation: @escaping(Bool, String?) -> ()) {
         let uid = Utilities.randomString(of: 28)
         guard let imageData = reviewImage.jpegData(compressionQuality: 0.5) else { return }
         let uploadTask = Storage.storage().reference().child("reviews").child("\(uid).jpg")
@@ -59,7 +59,7 @@ class FBReviews {
                     review.userID = values["userID"] as? String ?? ""
                     review.masterID = values["masterID"] as? String ?? ""
                     review.topImageURL = values["topImageURL"] as? String ?? ""
-                    review.grade = values["topImageURL"] as? Int ?? 0
+                    review.grade = values["grade"] as? Double ?? 0
                                 
                     reviews.append(review)
                 }

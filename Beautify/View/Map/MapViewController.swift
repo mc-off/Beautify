@@ -14,9 +14,7 @@ import CoreLocation
 class MapViewController: UIViewController, GMSMapViewDelegate, MapMarkerDelegate {
     
     func didTapInfoButton(vm: MasterShortViewModel) {
-        self.passedVM.name = vm.name
-        self.passedVM.type = vm.type
-        self.passedVM.uid = vm.uid
+        self.passedVM = vm
         performSegue(withIdentifier: "mapToMaster", sender: self)
     }
     
@@ -26,6 +24,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate, MapMarkerDelegate
                 vc.masterTitle = passedVM.name!
                 vc.masterType = passedVM.type!
                 vc.uid  = passedVM.uid!
+            vc.priceSegmentValue = passedVM.priceTier!
         }
     }
     

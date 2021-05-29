@@ -88,6 +88,7 @@ extension MastersTabViewController: UITableViewDataSource, UITableViewDelegate  
             vc.masterTitle = vm.selectedCell!.name!
             vc.masterType = vm.selectedCell!.type!
             vc.uid  = vm.selectedCell!.uid!
+            vc.priceSegmentValue = vm.selectedCell!.priceTier!
         }
     }
 }

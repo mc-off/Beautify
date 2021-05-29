@@ -15,5 +15,5 @@ struct Review {
     var masterID: String?
     var topImageURL: String?
     var description: String?
-    var grade: Int?
+    var grade: Double?
 }

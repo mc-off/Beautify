@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Cosmos
 
 protocol MapMarkerDelegate: AnyObject {
     func didTapInfoButton(vm: MasterShortViewModel)
@@ -16,15 +17,16 @@ class MapInfoWindow: UIView {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var typeLabel: UILabel!
-    @IBOutlet weak var starsStackView: UIStackView!
-    @IBOutlet weak var priceStackView: UIStackView!
+    @IBOutlet weak var stars: CosmosView!
     @IBOutlet weak var button: UIButton!
+    @IBOutlet weak var priceSegment: CosmosView!
     
     
     var cellVM = MasterShortViewModel() {
         didSet {
             titleLabel.text = cellVM.name
             typeLabel.text = cellVM.type
+            priceSegment.rating = Double(cellVM.priceTier ?? -1) + 1
         }
     }
     

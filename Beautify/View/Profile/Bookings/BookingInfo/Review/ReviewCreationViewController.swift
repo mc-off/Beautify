@@ -49,7 +49,7 @@ class ReviewCreationViewController: UIViewController {
     }
     
     @IBAction func createButtonPressed(_ sender: Any) {
-        vm.createPressed(masterID: masterID!, userID: currentUser.id!, description: descriptionTextField.text ?? "", grade: Int(ratingView.rating), reviewImage: image)
+        vm.createPressed(masterID: masterID!, userID: currentUser.id!, description: descriptionTextField.text ?? "", grade: ratingView.rating, reviewImage: image)
     }
     
     

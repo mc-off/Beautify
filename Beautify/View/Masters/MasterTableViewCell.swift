@@ -8,6 +8,7 @@
 
 import UIKit
 import GoogleMaps
+import Cosmos
 
 class MasterTableViewCell: UITableViewCell {
     var geocoder = Geocoder(geocoder: GMSGeocoder())
@@ -21,8 +22,8 @@ class MasterTableViewCell: UITableViewCell {
     @IBOutlet weak var typeLabel: UILabel!
     @IBOutlet weak var workingHoursLabel: UILabel!
    
-    @IBOutlet weak var stars: UIStackView!
-    @IBOutlet weak var priceRange: UIStackView!
+    @IBOutlet weak var stars: CosmosView!
+    @IBOutlet weak var priceRange: CosmosView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -41,6 +42,7 @@ class MasterTableViewCell: UITableViewCell {
         profileImage.KFloadImage(url: cellVM.profileImage!)
         nameLabel.text = cellVM.name
         typeLabel.text = cellVM.type
+        priceRange.rating = Double(cellVM.priceTier!+1)
         geocoder.reverseGeocodeCoordinate(cellVM.coordinate!) { [weak self] success, address in
             guard
                 success == true,

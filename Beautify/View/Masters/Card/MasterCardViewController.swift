@@ -7,17 +7,21 @@
 //
 
 import UIKit
+import Cosmos
 
 class MasterCardViewController: UIViewController {
     
     public var masterTitle: String?
     public var masterType: String?
     public var uid : String?
+    public var priceSegmentValue: Int?
 
     @IBOutlet weak var headTitleLabel: UILabel!
     @IBOutlet weak var headTypeLabel: UILabel!
     @IBOutlet weak var headSegmentedControl: UISegmentedControl!
-
+    @IBOutlet weak var stars: CosmosView!
+    @IBOutlet weak var priceSegment: CosmosView!
+    
     @IBOutlet weak var tableView: UITableView!
     
     private let vm = MasterCardViewModel()
@@ -28,6 +32,8 @@ class MasterCardViewController: UIViewController {
         
         headTitleLabel.text = masterTitle
         headTypeLabel.text = masterType
+        priceSegment.rating = Double(priceSegmentValue ?? 0) + 1
+        
         
         headSegmentedControl.superview?.clipsToBounds = true
         

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Cosmos
 
 class MasterCardReviewTableViewCell: UITableViewCell {
     
@@ -14,13 +15,14 @@ class MasterCardReviewTableViewCell: UITableViewCell {
     @IBOutlet weak var typeLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var topImage: UIImageView!
-    @IBOutlet weak var starsStackView: UIStackView!
+    @IBOutlet weak var ratingView: CosmosView!
     
     
     var cellVM = ReviewViewModel() { didSet
         {
             topImage.KFloadImage(url: cellVM.topImageURL!)
             usernameLabel.text = cellVM.username
+        ratingView.rating = Double(cellVM.grade!)
             descriptionLabel.text = cellVM.description
         }
     }

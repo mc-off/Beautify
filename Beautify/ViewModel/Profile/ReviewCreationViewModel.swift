@@ -24,7 +24,7 @@ class ReviewCreationViewModel {
     
     
     
-    func createPressed(masterID: String, userID: String, description: String, grade: Int, reviewImage: UIImage) {
+    func createPressed(masterID: String, userID: String, description: String, grade: Double, reviewImage: UIImage) {
         FBReviews.shared.createReview(masterID: masterID, userID: userID, description: description, grade: grade, reviewImage: reviewImage) {
             [unowned self] (isSuccess, error) in
             self.messageAlert = isSuccess ?  "Отзыв успешно создан" : error
