@@ -21,7 +21,7 @@ class IncomingBookingTableViewCell: UITableViewCell {
     
     var cellBookingVM = BookingObjectViewModel() {
         didSet {
-            workingHours.text = cellVM.workHours != nil ? ("Сегодня в " + Utilities.convertDateToTime(date: cellBookingVM.bookDate!)) : "Нет данных"
+            workingHours.text = cellVM.workHours != nil ? (Utilities.dayDifference(date: cellBookingVM.bookDate!) + " в " + Utilities.convertDateToTime(date: cellBookingVM.bookDate!)) : "Нет данных"
         }
     }
     

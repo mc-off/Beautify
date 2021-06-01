@@ -61,4 +61,20 @@ class Utilities {
         
         return String(df.string(from: date))
     }
+    
+    static func dayDifference(date:Date) -> String
+    {
+        let calendar = Calendar.current
+        if calendar.isDateInYesterday(date) { return "Вчера" }
+        else if calendar.isDateInToday(date) { return "Сегодня" }
+        else if calendar.isDateInTomorrow(date) { return "Завтра" }
+        else {
+            let startOfNow = calendar.startOfDay(for: Date())
+            let startOfTimeStamp = calendar.startOfDay(for: date)
+            let components = calendar.dateComponents([.day], from: startOfNow, to: startOfTimeStamp)
+            let day = components.day!
+            if day < 1 { return "\(-day) дней назад" }
+            else { return "Через \(day) дней" }
+        }
+    }
 }

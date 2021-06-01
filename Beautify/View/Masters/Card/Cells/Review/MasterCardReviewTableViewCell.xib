@@ -24,28 +24,28 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Постоянный клиент" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e5m-Ng-60X">
-                        <rect key="frame" x="16" y="39.5" width="117" height="14.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Первый раз" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e5m-Ng-60X">
+                        <rect key="frame" x="16" y="39.5" width="70" height="15"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" systemColor="secondaryLabelColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Avatar" translatesAutoresizingMaskIntoConstraints="NO" id="IrG-Qh-RB7">
-                        <rect key="frame" x="223" y="60" width="106" height="106"/>
+                        <rect key="frame" x="224.5" y="60" width="106" height="106"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="106" id="kTz-f5-VnB"/>
                             <constraint firstAttribute="width" constant="106" id="ztz-4r-Le7"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sLm-iT-aEa">
-                        <rect key="frame" x="16" y="64" width="197" height="101"/>
+                        <rect key="frame" x="16" y="64" width="198.5" height="101"/>
                         <string key="text">Самый большой отзыв о том, как же получить скидку скидку скидку скидку скидку скидку скидку скидку скидку скидку скидку скидку скидку скидку скидку  скидку скидку скидку скидку скидку скидку скидку скидку скидку скидку скидку скидку скидку скидку</string>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8E1-tB-R2X" customClass="CosmosView" customModule="Cosmos">
-                        <rect key="frame" x="217" y="22" width="114" height="20"/>
+                        <rect key="frame" x="218.5" y="22" width="114" height="20"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="rating">
                                 <real key="value" value="4"/>
@@ -96,8 +96,8 @@
             <connections>
                 <outlet property="descriptionLabel" destination="sLm-iT-aEa" id="MKx-1R-TYM"/>
                 <outlet property="ratingView" destination="8E1-tB-R2X" id="coA-kN-UuN"/>
+                <outlet property="statusLabel" destination="e5m-Ng-60X" id="3Ug-mh-cbi"/>
                 <outlet property="topImage" destination="IrG-Qh-RB7" id="4Qf-Rn-IRn"/>
-                <outlet property="typeLabel" destination="e5m-Ng-60X" id="SfO-a7-oAo"/>
                 <outlet property="usernameLabel" destination="9CK-eA-Ibd" id="PX5-Qn-iVd"/>
             </connections>
             <point key="canvasLocation" x="82.608695652173921" y="176.11607142857142"/>

@@ -15,7 +15,7 @@ class BookingTableViewCell: UITableViewCell {
     
     var cellVM = BookingObjectViewModel() { didSet {
             titleLabel.text = cellVM.masterName
-            detailLabel.text = Utilities.convertDateToCalendar(date: cellVM.bookDate!)
+            detailLabel.text = cellVM.bookDate != nil ? (Utilities.dayDifference(date: cellVM.bookDate!) + " в " + Utilities.convertDateToTime(date: cellVM.bookDate!)) : "Нет данных"
         }
     }
 

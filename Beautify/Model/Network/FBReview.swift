@@ -29,10 +29,11 @@ class FBReviews {
                             ["masterID": masterID,
                              "userID": userID,
                              "id": userID,
+                             "username": currentUser.first!,
                              "description": description,
                              "grade": grade,
                              "topImageURL": url?.absoluteString] as [String : Any]
-                        Database.database().reference().child("reviews").child(userID).setValue(DBReview) { (error, data) in
+                        Database.database().reference().child("reviews").child(uid).setValue(DBReview) { (error, data) in
                             if error != nil {
                                 complation(false, "There was a problem, Thanks to try again")
                             } else {
@@ -55,11 +56,12 @@ class FBReviews {
                     let values = reviewData.value as! [String: Any]
                     review.id = values["id"] as? String ?? ""
                     review.description = values["description"] as? String ?? ""
-                    review.username = "Алина"
+                    review.username = values["username"] as? String ?? "Арина"
                     review.userID = values["userID"] as? String ?? ""
                     review.masterID = values["masterID"] as? String ?? ""
                     review.topImageURL = values["topImageURL"] as? String ?? ""
                     review.grade = values["grade"] as? Double ?? 0
+                    review.status = values["status"] as? String ?? "Первый раз"
                                 
                     reviews.append(review)
                 }

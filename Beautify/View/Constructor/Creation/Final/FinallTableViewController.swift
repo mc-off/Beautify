@@ -64,7 +64,7 @@ class FinallTableViewController: UITableViewController, ARButtonDelegate {
     }
     
     @IBAction func createButtonPressed(_ sender: Any) {
-        vm.createPressed(title: (titleCell?.titleLabel.text)!, itemID: itemVM.id!)
+        vm.createPressed(title: (titleCell?.titleLabel.text)!, itemID: itemVM.id!, photoURL: itemVM.imageURL!)
     }
     
     // MARK: - Table view data source

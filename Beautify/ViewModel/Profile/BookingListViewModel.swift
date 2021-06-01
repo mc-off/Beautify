@@ -24,7 +24,7 @@ class BookingListViewModel {
         FBMasters.shared.loadBookings(userID: currentUser.id!)  { [weak self] (bookings, error) in
             guard let self = self else { return }
             if error == nil {
-                guard let bookings = bookings else {
+                guard var bookings = bookings else {
                     self.reloadTableViewClosure?()
                     return
                 }

@@ -56,13 +56,16 @@ class HomeViewModel {
     }
     
     func loadBookingInfo() {
+        self.bookedMaster = MasterShortViewModel()
         FBMasters.shared.loadBookings(userID: currentUser.id!) { [weak self] (bookings, error) in
             guard let self = self else { return }
             if error != nil {
+                self.bookedMaster.uid = nil
                 print(error!)
             } else {
                 guard let bookings = bookings else { return }
-                let bookingViewModel = bookings.last
+                
+                let bookingViewModel = bookings.first
                 FBMasters.shared.loadMasterInfo(for: bookingViewModel!.masterID!) { [weak self] (master, error) in
                     guard let self = self else { return }
                     if error != nil {

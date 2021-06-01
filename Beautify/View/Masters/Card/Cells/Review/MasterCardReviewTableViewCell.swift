@@ -12,7 +12,7 @@ import Cosmos
 class MasterCardReviewTableViewCell: UITableViewCell {
     
     @IBOutlet weak var usernameLabel: UILabel!
-    @IBOutlet weak var typeLabel: UILabel!
+    @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var topImage: UIImageView!
     @IBOutlet weak var ratingView: CosmosView!
@@ -22,6 +22,7 @@ class MasterCardReviewTableViewCell: UITableViewCell {
         {
             topImage.KFloadImage(url: cellVM.topImageURL!)
             usernameLabel.text = cellVM.username
+        statusLabel.text = cellVM.status
         ratingView.rating = Double(cellVM.grade!)
             descriptionLabel.text = cellVM.description
         }

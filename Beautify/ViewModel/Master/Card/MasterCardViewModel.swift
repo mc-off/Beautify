@@ -81,7 +81,7 @@ class MasterCardViewModel {
     }
     
     private func proccessFetchReview(review: Review) -> ReviewViewModel {
-        return ReviewViewModel(id: review.id, userID: review.userID, username: review.username, masterID: review.masterID, topImageURL: review.topImageURL, description: review.description, grade: review.grade)
+        return ReviewViewModel(id: review.id, userID: review.userID, username: review.username, masterID: review.masterID, topImageURL: review.topImageURL, description: review.description, grade: review.grade, status: review.status)
     }
     
     func getReviewCellViewModel(at indexpath: Int) -> ReviewViewModel{
@@ -106,5 +106,6 @@ struct ReviewViewModel {
     var topImageURL: String?
     var description: String?
     var grade: Double?
+    var status: String?
 }
 

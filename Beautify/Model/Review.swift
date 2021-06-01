@@ -16,4 +16,5 @@ struct Review {
     var topImageURL: String?
     var description: String?
     var grade: Double?
+    var status: String?
 }

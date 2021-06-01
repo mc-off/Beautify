@@ -182,9 +182,10 @@ class FBMasters {
 
                     bookings.append(book)
                 }
+                bookings.sort(by: {$0.bookDate! > $1.bookDate!})
                 complation(bookings, nil)
             } else {
-                complation(nil, "Can't load masters list")
+                complation(nil, "Can't load bookings list")
             }
         }
     }

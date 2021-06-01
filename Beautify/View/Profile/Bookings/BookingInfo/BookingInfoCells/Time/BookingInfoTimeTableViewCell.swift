@@ -13,7 +13,7 @@ class BookingInfoTimeTableViewCell: UITableViewCell {
     @IBOutlet weak var timeLabel: UILabel!
     
     var cellVM = BookingObjectViewModel() { didSet {
-            timeLabel.text = Utilities.convertDateToFullCalendar(date: cellVM.bookDate!)
+            timeLabel.text = cellVM.bookDate != nil ? (Utilities.dayDifference(date: cellVM.bookDate!) + " в " + Utilities.convertDateToTime(date: cellVM.bookDate!)) : "Нет данных"
         }
     }
 
