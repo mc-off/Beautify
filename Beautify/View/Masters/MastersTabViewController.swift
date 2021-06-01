@@ -85,10 +85,12 @@ extension MastersTabViewController: UITableViewDataSource, UITableViewDelegate  
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "masterCard" {
             let vc = segue.destination as! MasterCardViewController
-            vc.masterTitle = vm.selectedCell!.name!
-            vc.masterType = vm.selectedCell!.type!
-            vc.uid  = vm.selectedCell!.uid!
-            vc.priceSegmentValue = vm.selectedCell!.priceTier!
+            vc.masterTitle = vm.selectedCell!.name
+            vc.masterType = vm.selectedCell!.type
+            vc.uid  = vm.selectedCell!.uid
+            vc.priceSegmentValue = vm.selectedCell!.priceTier
+            vc.grade = vm.selectedCell!.grade
+            vc.gradeAmount = vm.selectedCell!.gradeAmount
         }
     }
 }

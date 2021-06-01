@@ -73,8 +73,16 @@ class Utilities {
             let startOfTimeStamp = calendar.startOfDay(for: date)
             let components = calendar.dateComponents([.day], from: startOfNow, to: startOfTimeStamp)
             let day = components.day!
-            if day < 1 { return "\(-day) дней назад" }
-            else { return "Через \(day) дней" }
+            switch (day) {
+            case _ where day < -5:
+                return convertDateToCalendar(date: date)
+            case -4 ... -2:
+                return "\(day) дня назад"
+            case 2...4:
+                return "Через \(day) дня"
+            default:
+                return "Через \(day) дней"
+            }
         }
     }
 }

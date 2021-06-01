@@ -48,7 +48,7 @@ class MasterListViewModel {
     }
     
     private func proccessFetchMasters(master: Master) -> MasterShortViewModel {
-        return MasterShortViewModel(uid: master.id!, coordinate: master.coordinate, name: master.name, priceTier: master.priceTier, profileImage: master.profileImage, type: master.type, workHours: master.workHours)
+        return MasterShortViewModel(uid: master.id!, coordinate: master.coordinate, name: master.name, priceTier: master.priceTier, profileImage: master.profileImage, type: master.type, workHours: master.workHours, grade: master.grade, gradeAmount: master.gradeAmount)
     }
     
     func getCellViewModel(at indexpath: IndexPath) -> MasterShortViewModel{
@@ -97,6 +97,8 @@ struct MasterShortViewModel {
     var type: String?
     var workHours: WorkHoursWeekly?
     var reviews: [String]?
+    var grade: Double?
+    var gradeAmount: Int?
 }
 
 

@@ -19,6 +19,8 @@ struct Master {
     var type: String?
     var workHours: WorkHoursWeekly?
     var reviews: [String]?
+    var grade: Double?
+    var gradeAmount: Int?
 }
 
 struct Coordinate {

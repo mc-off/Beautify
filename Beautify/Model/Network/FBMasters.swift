@@ -83,6 +83,8 @@ class FBMasters {
                         masterModel.coordinate = Coordinate(longitude: longitude!, latitude: latitude!)
                         
                         masterModel.priceTier = master.childSnapshot(forPath: "priceTier").value as? Int
+                        masterModel.grade = master.childSnapshot(forPath: "grade").value as? Double
+                        masterModel.gradeAmount = master.childSnapshot(forPath: "gradeAmount").value as? Int
                         masterModel.profileImage = master.childSnapshot(forPath: "profileImage").value as? String
                         masterModel.description = master.childSnapshot(forPath: "description").value as? String
                         masterModel.type = master.childSnapshot(forPath: "type").value as? String
@@ -115,6 +117,8 @@ class FBMasters {
                 master.name = values["name"] as? String ?? ""
                 master.description = values["description"] as? String ?? ""
                 master.type = values["type"] as? String ?? ""
+                master.grade = values["grade"] as? Double ?? 0
+                master.gradeAmount = values["gradeAmount"] as? Int ?? 0
                 master.priceTier = snapshot.childSnapshot(forPath: "priceTier").value as? Int
                 master.profileImage = values["profileImage"] as? String ?? ""
                 let latitude = snapshot.childSnapshot(forPath: "coordinate").childSnapshot(forPath: "latitude").value as? Double
@@ -130,7 +134,7 @@ class FBMasters {
                         master.reviews!.append(review)
                     }
                 }
-                                
+                                                
                 let fromDate = self.dateFormatter.date(from: snapshot.childSnapshot(forPath: "workHours").childSnapshot(forPath: "everyday").childSnapshot(forPath: "from").value as! String)
                 
                 let toDate = self.dateFormatter.date(from: snapshot.childSnapshot(forPath: "workHours").childSnapshot(forPath: "everyday").childSnapshot(forPath: "to").value as! String)

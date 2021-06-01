@@ -39,7 +39,7 @@ class BookingInfoViewModel {
     }
     
     private func proccessFetchMaster(master: Master) -> MasterShortViewModel {
-        return MasterShortViewModel(uid: master.id!, description: master.description, coordinate: master.coordinate, name: master.name, priceTier: master.priceTier, profileImage: master.profileImage, type: master.type, workHours: master.workHours, reviews: master.reviews)
+        return MasterShortViewModel(uid: master.id!, description: master.description, coordinate: master.coordinate, name: master.name, priceTier: master.priceTier, profileImage: master.profileImage, type: master.type, workHours: master.workHours, reviews: master.reviews, grade: master.grade, gradeAmount: master.gradeAmount)
     }
     
     func initWorkFetch(uid: String) {

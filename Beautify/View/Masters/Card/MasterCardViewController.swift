@@ -15,6 +15,10 @@ class MasterCardViewController: UIViewController {
     public var masterType: String?
     public var uid : String?
     public var priceSegmentValue: Int?
+    public var grade: Double?
+    public var gradeAmount: Int?
+
+
 
     @IBOutlet weak var headTitleLabel: UILabel!
     @IBOutlet weak var headTypeLabel: UILabel!
@@ -33,6 +37,16 @@ class MasterCardViewController: UIViewController {
         headTitleLabel.text = masterTitle
         headTypeLabel.text = masterType
         priceSegment.rating = Double(priceSegmentValue ?? 0) + 1
+        
+        if let grade = grade {
+            stars.rating = grade
+            stars.text = "(\(gradeAmount ?? 0))"
+        } else {
+            stars.rating = 0
+            stars.text = "(0)"
+        }
+    
+
         
         
         headSegmentedControl.superview?.clipsToBounds = true

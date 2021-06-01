@@ -134,6 +134,8 @@ extension BookingInfoViewController: UITableViewDelegate, UITableViewDataSource 
             vc.masterType = vm.masterViewModel.type!
             vc.uid  = vm.masterViewModel.uid!
             vc.priceSegmentValue = vm.masterViewModel.priceTier!
+            vc.grade = vm.masterViewModel.grade
+            vc.gradeAmount = vm.masterViewModel.gradeAmount
         case "reviewCreation":
             let vc = segue.destination as! ReviewCreationViewController
             vc.masterID = vm.masterViewModel.uid!

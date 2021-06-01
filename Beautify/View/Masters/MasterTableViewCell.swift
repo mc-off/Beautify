@@ -42,6 +42,7 @@ class MasterTableViewCell: UITableViewCell {
         profileImage.KFloadImage(url: cellVM.profileImage!)
         nameLabel.text = cellVM.name
         typeLabel.text = cellVM.type
+        stars.rating = cellVM.grade ?? 0
         priceRange.rating = Double(cellVM.priceTier!+1)
         geocoder.reverseGeocodeCoordinate(cellVM.coordinate!) { [weak self] success, address in
             guard
