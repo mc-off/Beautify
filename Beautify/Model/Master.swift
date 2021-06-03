@@ -21,6 +21,7 @@ struct Master {
     var reviews: [String]?
     var grade: Double?
     var gradeAmount: Int?
+    var contacts: [Contact]?
 }
 
 struct Coordinate {
@@ -35,4 +36,16 @@ struct WorkHoursWeekly {
 struct WorkHours {
     var from: Date
     var to: Date
+}
+
+struct Contact {
+    var value: String?
+    var type: ContactType?
+}
+
+enum ContactType: String {
+    case phone
+    case instagram
+    case vk
+    case site
 }

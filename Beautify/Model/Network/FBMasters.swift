@@ -134,6 +134,28 @@ class FBMasters {
                         master.reviews!.append(review)
                     }
                 }
+                
+                master.contacts = []
+                
+                let contactsData = snapshot.childSnapshot(forPath: "contacts").children.allObjects as! [DataSnapshot]
+                
+                for contactData in contactsData {
+                    let contactValues = contactData.value as! [String: Any]
+                    var contact = Contact()
+                    
+                    contact.value = contactValues["value"] as? String ?? ""
+                    contact.type = ContactType(rawValue: contactValues["type"] as? String ?? "")
+                    
+                    master.contacts?.append(contact)
+                }
+                
+                master.reviews = [String]()
+                
+                if reviews != nil {
+                    for (review,_) in reviews! {
+                        master.reviews!.append(review)
+                    }
+                }
                                                 
                 let fromDate = self.dateFormatter.date(from: snapshot.childSnapshot(forPath: "workHours").childSnapshot(forPath: "everyday").childSnapshot(forPath: "from").value as! String)
                 
