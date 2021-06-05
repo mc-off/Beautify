@@ -24,6 +24,8 @@ class MapViewController: UIViewController, GMSMapViewDelegate, MapMarkerDelegate
                 vc.masterTitle = passedVM.name!
                 vc.masterType = passedVM.type!
                 vc.uid  = passedVM.uid!
+            vc.grade = passedVM.grade
+            vc.gradeAmount = passedVM.gradeAmount
             vc.priceSegmentValue = passedVM.priceTier!
         }
     }
@@ -103,6 +105,8 @@ class MapViewController: UIViewController, GMSMapViewDelegate, MapMarkerDelegate
                         master.uid = values["id"] as? String ?? ""
                         master.name = values["name"] as? String ?? ""
                         master.type = values["type"] as? String ?? ""
+                        master.grade = values["grade"] as? Double ?? 0
+                        master.gradeAmount = values["gradeAmount"] as? Int ?? 0
                         master.priceTier = snapshot.childSnapshot(forPath: "priceTier").value as? Int
                         master.coordinate = Coordinate(longitude: longitude!, latitude: latitude!)
                         

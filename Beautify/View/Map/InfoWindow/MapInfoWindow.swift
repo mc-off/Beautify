@@ -26,6 +26,8 @@ class MapInfoWindow: UIView {
         didSet {
             titleLabel.text = cellVM.name
             typeLabel.text = cellVM.type
+            stars.rating = cellVM.grade ?? 0
+            stars.text = "(\(cellVM.gradeAmount ?? 0))"
             priceSegment.rating = Double(cellVM.priceTier ?? -1) + 1
         }
     }
