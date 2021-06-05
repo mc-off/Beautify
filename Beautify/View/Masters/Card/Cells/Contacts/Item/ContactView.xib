@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -10,39 +11,42 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="fil-Mi-FzH" customClass="ContactItemView" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="186" height="280"/>
+        <view contentMode="scaleToFill" id="fil-Mi-FzH" customClass="ContactItemView" customModule="Beautify" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="48" height="48"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dHE-VP-wDF">
-                    <rect key="frame" x="0.0" y="53" width="186" height="227"/>
+                    <rect key="frame" x="1" y="1" width="46" height="46"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phone.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="gb6-E3-gzI">
-                            <rect key="frame" x="0.0" y="21.5" width="186" height="17.5"/>
+                            <rect key="frame" x="8" y="9.5" width="30" height="27.5"/>
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="SwL-cY-VuC"/>
+                                <constraint firstAttribute="width" constant="30" id="bNP-f7-763"/>
+                            </constraints>
                         </imageView>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemRedColor"/>
                     <constraints>
-                        <constraint firstItem="gb6-E3-gzI" firstAttribute="leading" secondItem="dHE-VP-wDF" secondAttribute="leading" id="6OG-Fg-3Sp"/>
-                        <constraint firstAttribute="trailing" secondItem="gb6-E3-gzI" secondAttribute="trailing" id="NFQ-7c-iSP"/>
-                        <constraint firstItem="gb6-E3-gzI" firstAttribute="top" secondItem="dHE-VP-wDF" secondAttribute="top" constant="20" id="koX-Hf-8N0"/>
+                        <constraint firstItem="gb6-E3-gzI" firstAttribute="centerX" secondItem="dHE-VP-wDF" secondAttribute="centerX" id="CWW-Ok-tHQ"/>
+                        <constraint firstAttribute="height" constant="46" id="Qqx-uR-5kJ"/>
+                        <constraint firstAttribute="width" constant="46" id="S9k-x4-LTP"/>
+                        <constraint firstItem="gb6-E3-gzI" firstAttribute="centerY" secondItem="dHE-VP-wDF" secondAttribute="centerY" id="cjv-jA-9bN"/>
                     </constraints>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="5vm-Go-VPD"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="dHE-VP-wDF" secondAttribute="trailing" id="2GW-mP-Gdb"/>
-                <constraint firstAttribute="bottom" secondItem="dHE-VP-wDF" secondAttribute="bottom" id="6Zt-wf-df0"/>
-                <constraint firstItem="dHE-VP-wDF" firstAttribute="top" secondItem="fil-Mi-FzH" secondAttribute="top" constant="53" id="VTu-Vd-9bP"/>
-                <constraint firstItem="dHE-VP-wDF" firstAttribute="leading" secondItem="fil-Mi-FzH" secondAttribute="leading" id="ZjV-Jg-9WS"/>
+                <constraint firstItem="dHE-VP-wDF" firstAttribute="centerX" secondItem="fil-Mi-FzH" secondAttribute="centerX" id="6Vi-o9-xjZ"/>
+                <constraint firstItem="dHE-VP-wDF" firstAttribute="centerY" secondItem="fil-Mi-FzH" secondAttribute="centerY" id="giv-AG-qTl"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="backgroundView" destination="dHE-VP-wDF" id="ttd-VP-o6a"/>
-                <outlet property="itemImage" destination="gb6-E3-gzI" id="lnd-4e-W6g"/>
+                <outlet property="backgroundView" destination="dHE-VP-wDF" id="Xu7-Dh-JcD"/>
+                <outlet property="iconView" destination="gb6-E3-gzI" id="Dv9-53-pAJ"/>
             </connections>
-            <point key="canvasLocation" x="-41" y="96"/>
+            <point key="canvasLocation" x="-42.028985507246382" y="265.84821428571428"/>
         </view>
     </objects>
     <resources>

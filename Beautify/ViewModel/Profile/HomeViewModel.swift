@@ -81,7 +81,7 @@ class HomeViewModel {
     }
     
     private func proccessFetchMasters(master: Master) -> MasterShortViewModel {
-        return MasterShortViewModel(uid: master.id!, coordinate: master.coordinate, name: master.name, profileImage: master.profileImage, type: master.type, workHours: master.workHours)
+        return MasterShortViewModel(uid: master.id!, coordinate: master.coordinate, name: master.name, profileImage: master.profileImage, type: master.type, workHours: master.workHours, contacts: master.contacts)
     }
     
     private func proccessFetchBookings(booking: Booking) -> BookingObjectViewModel {

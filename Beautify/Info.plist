@@ -4,6 +4,9 @@
 <dict>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
+		<string>vk</string>
+		<string>fb</string>
+		<string>instagram</string>
 		<string>googlechromes</string>
 		<string>comgooglemaps</string>
 	</array>

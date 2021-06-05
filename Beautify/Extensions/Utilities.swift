@@ -85,4 +85,19 @@ class Utilities {
             }
         }
     }
+    
+    static func openAction(username: String, appBaseURL: String, webBaseURL: String) {
+
+        let appURL = URL(string: appBaseURL+"\(username)")!
+        let application = UIApplication.shared
+
+        if application.canOpenURL(appURL) {
+            application.open(appURL)
+        } else {
+            // if Instagram app is not installed, open URL inside Safari
+            let webURL = URL(string: webBaseURL+"\(username)")!
+            application.open(webURL)
+        }
+
+    }
 }

@@ -54,6 +54,7 @@
 		6D441F852630050E00A29616 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D441F842630050E00A29616 /* HomeViewModel.swift */; };
 		6D441F8726300E0F00A29616 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6D441F8626300E0F00A29616 /* GoogleService-Info.plist */; };
 		6D441F892630337900A29616 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D441F882630337800A29616 /* Profile.storyboard */; };
+		6D62731C266D2421006121CC /* ContactView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D679AAB266D17DB0053E2BA /* ContactView.xib */; };
 		6D679AAA266D17AA0053E2BA /* ContactItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D679AA9266D17AA0053E2BA /* ContactItemView.swift */; };
 		6D709690265FFCBF00DCDAB3 /* BookingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D70968E265FFCBF00DCDAB3 /* BookingTableViewCell.swift */; };
 		6D709691265FFCBF00DCDAB3 /* BookingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D70968F265FFCBF00DCDAB3 /* BookingTableViewCell.xib */; };
@@ -891,6 +892,7 @@
 				6D0D9863265140D400BE2B23 /* MasterCardPriceListTableViewCell.xib in Resources */,
 				6DE64F7B2630390B004BA4A1 /* Masters.storyboard in Resources */,
 				6DB2EBEA26608C9B00CCD285 /* IncomingBookingTableViewCell.xib in Resources */,
+				6D62731C266D2421006121CC /* ContactView.xib in Resources */,
 				6D93E716263B213B00C573F2 /* MasterTableViewCell.xib in Resources */,
 				6DF0489725F662670033BD66 /* LaunchScreen.storyboard in Resources */,
 				6D709691265FFCBF00DCDAB3 /* BookingTableViewCell.xib in Resources */,

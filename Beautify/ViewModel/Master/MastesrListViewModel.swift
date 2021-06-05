@@ -99,6 +99,7 @@ struct MasterShortViewModel {
     var reviews: [String]?
     var grade: Double?
     var gradeAmount: Int?
+    var contacts: [Contact]?
 }
 
 

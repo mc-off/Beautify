@@ -55,7 +55,7 @@ class MasterCardViewModel {
     }
     
     private func proccessFetchMaster(master: Master) -> MasterShortViewModel {
-        return MasterShortViewModel(uid: master.id!, description: master.description, coordinate: master.coordinate, name: master.name, profileImage: master.profileImage, type: master.type, workHours: master.workHours, reviews: master.reviews, grade: master.grade, gradeAmount: master.gradeAmount)
+        return MasterShortViewModel(uid: master.id!, description: master.description, coordinate: master.coordinate, name: master.name, profileImage: master.profileImage, type: master.type, workHours: master.workHours, reviews: master.reviews, grade: master.grade, gradeAmount: master.gradeAmount, contacts: master.contacts)
     }
     
     func fetchReviews(masterID: String) {
