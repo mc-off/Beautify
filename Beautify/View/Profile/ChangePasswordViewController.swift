@@ -76,7 +76,7 @@ class ChangePasswordViewController: UIViewController {
         passwordextField.addBottomBorder()
         passwordextField.addPrefix(labelText: "Пароль")
         
-        repasswordTextField.addPrefix(labelText: "Подтверждение")
+        repasswordTextField.addPrefix(labelText: "Снова")
         
         tapGesture.addTarget(self, action: #selector(dismissKeyboard))
         

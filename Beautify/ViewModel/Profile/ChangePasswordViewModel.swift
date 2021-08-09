@@ -20,10 +20,10 @@ class ChangePasswordViewModel {
         if password == repassword {
             FBAuthentication.shared.changePassword(password: password) { [weak self] (isSuccess, error) in
                 guard let self = self else { return }
-                self.message = isSuccess ? "Password Updated" : error!
+                self.message = isSuccess ? "Пароль обновлен" : error!
             }
         } else {
-            message = "The Password and Re-password not similar"
+            message = "Введенные пароли не совпадают"
         }
     }
     

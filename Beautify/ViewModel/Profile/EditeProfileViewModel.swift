@@ -30,7 +30,7 @@ class EditeProfileViewModel {
     
     func UpdateProfile(photo: UIImage, firstName: String?, lastName: String?) {
         FBDatabase.shared.editeProfile(profileImage: photo, firstName: firstName, lastName: lastName) { [unowned self] (isSuccess, error) in
-            self.message = isSuccess ?  "Profile Updated Successfully" : error
+            self.message = isSuccess ?  "Профиль успешно обновлен" : error
         }
     }
     

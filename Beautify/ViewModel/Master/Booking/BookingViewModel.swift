@@ -34,7 +34,7 @@ class BookingViewModel {
     func createPressed(masterID: String, bookDate: Date) {
         FBMasters.shared.createBooking(masterID: masterID, userID: currentUser.id!, bookDate: bookDate, workID: selectedCell!.id!) {
             [unowned self] (isSuccess, error) in
-            self.messageAlert = isSuccess ?  "Booking created successfully" : error
+            self.messageAlert = isSuccess ?  "Бронирование успешно" : error
         }
     }
     

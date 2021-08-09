@@ -25,7 +25,7 @@ class WorkCreationViewModel {
     func createPressed(title: String, itemID: String, photoURL: String?) {
         FBWorks.shared.createWork(creatorID: currentUser.id!, title: title, itemID: itemID, photoURL: photoURL, formID: nil) {
             [unowned self] (isSuccess, error) in
-            self.messageAlert = isSuccess ?  "Work created successfully" : error
+            self.messageAlert = isSuccess ?  "Работа создана успешно" : error
         }
     }
     

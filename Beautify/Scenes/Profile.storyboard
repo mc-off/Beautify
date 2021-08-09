@@ -488,7 +488,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="382" height="48"/>
                                                 <color key="backgroundColor" name="ButtonBackground"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                <state key="normal" title="Update Password">
+                                                <state key="normal" title="Обновить пароль">
                                                     <color key="titleColor" name="ToolActive"/>
                                                 </state>
                                                 <connections>

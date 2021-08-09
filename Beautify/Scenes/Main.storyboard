@@ -316,7 +316,7 @@
                                                     <constraint firstAttribute="height" constant="120" id="y9Z-2l-VdP"/>
                                                 </constraints>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" image="Avatar" backgroundImage="Avatar">
+                                                <state key="normal" image="avatar-salon" backgroundImage="avatar-salon">
                                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
@@ -531,7 +531,7 @@
     </scenes>
     <color key="tintColor" name="ToolActive"/>
     <resources>
-        <image name="Avatar" width="64" height="64"/>
+        <image name="avatar-salon" width="414.5" height="313"/>
         <image name="bag" catalog="system" width="128" height="128"/>
         <image name="bag.fill" catalog="system" width="128" height="128"/>
         <image name="folder" catalog="system" width="128" height="97"/>
